@@ -16,7 +16,11 @@ PagosYa permite manejar múltiples tiendas físicas y equipos de trabajo desde u
 - Control de asistencia vinculado a la apertura de caja.
 - Reportes individuales por tienda y por empleado.
 
+  **Cargos**
+-Crear Cargos y acessos a estos cargos.
+
 **Beneficios**
 - Supervisión total sin necesidad de estar presente.
 - Reducción de errores y mejor control del personal.
 - Permite ver ventas y rendimientos por sucursal o persona.
+
