@@ -18,10 +18,11 @@ PagosYa continúa expandiendo su ecosistema para digitalizar el comercio bolivia
 - Módulo avanzado de control horario con geolocalización.
 
 **Fase 3 (futura)**
-- Integración con **Yape / BCP API pública**.
+- Integración con **multiplos bancos**.
 - Pasarela multi-banco.
 - Versión móvil nativa para Android e iOS.
 - Programa de afiliados y revendedores.
 
 **Visión**
 Convertirse en la principal herramienta de gestión y validación de pagos QR de Bolivia, ofreciendo tecnología de nivel bancario a precios accesibles.
+
