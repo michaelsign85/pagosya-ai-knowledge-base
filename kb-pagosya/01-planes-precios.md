@@ -17,7 +17,6 @@ PagosYa ofrece tres planes mensuales, sin comisión por venta:
 - Todo lo de EmprendeYa +
 - Sistema POS completo
 - Gestión de productos e inventario
-- Sistema de facturación (SIAT)
 - Gestión de clientes
 - Hasta **Bs. 60,000 en ventas / mes**
 - Hasta 3 tiendas y 3 empleados
@@ -37,3 +36,4 @@ PagosYa ofrece tres planes mensuales, sin comisión por venta:
   - Agregar **1 tienda + 1 empleado adicional** (combo).
 
 Los créditos se pueden comprar directamente desde el panel de suscripción.
+
