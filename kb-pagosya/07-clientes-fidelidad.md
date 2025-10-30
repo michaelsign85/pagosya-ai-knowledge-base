@@ -12,9 +12,9 @@ El módulo de **Clientes** permite administrar toda la base de clientes de maner
 2. Historial de compras y total gastado.
 3. Programa de **fidelidad por puntos**.
 4. Segmentación por visitas o monto de compra.
-5. Comunicación directa por WhatsApp o correo.
 
 **Ventajas**
 - Aumenta la retención y recompra.
 - Permite personalizar promociones y descuentos.
 - Sincroniza con el POS y la tienda online.
+
