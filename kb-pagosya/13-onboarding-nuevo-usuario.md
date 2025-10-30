@@ -11,7 +11,7 @@ PagosYa simplifica el registro de nuevos usuarios con un flujo guiado y 100% dig
 1. El comercio crea su cuenta en la web o app.
 2. El sistema crea automáticamente la **primera tienda** y el perfil del propietario.
 3. El propietario elige un **plan de suscripción** (EmprendeYa, ExpandeYa o ConquistaYa).
-4. Activa su cuenta bancaria o la vincula desde el menú “Configuración”.
+4. Llena el formulario de Solicituid API de cuenta bancaria y al recibir las API las vincula desde el menú “Configuración”.
 5. Puede invitar empleados mediante **QR o enlace personalizado**.
 6. Los empleados se registran y heredan automáticamente la tienda del propietario.
 
@@ -19,3 +19,4 @@ PagosYa simplifica el registro de nuevos usuarios con un flujo guiado y 100% dig
 - Activación inmediata del plan con periodo de prueba (si aplica).
 - Tutorial guiado desde el dashboard.
 - Enlace directo a soporte humano vía WhatsApp.
+
