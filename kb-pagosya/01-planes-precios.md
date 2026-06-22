@@ -67,6 +67,37 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ---
 
+### 📅 CobraYa — Cobranza Recurrente *(NUEVO — 2026)*
+
+> Plan especializado para negocios que cobran membresías, mensualidades o cuotas periódicas: academias, escuelas, guarderías, condominios, coworkings y clubes.
+
+| Plan | Clientes | Mensual | Anual | Por cliente/mes |
+|------|----------|---------|-------|-----------------|
+| **CobraYa 300** ⭐ | Hasta 300 | **Bs. 199** | Bs. 1.990 | Bs. 0.66 |
+| **CobraYa 500** | Hasta 500 | **Bs. 399** | Bs. 3.990 | Bs. 0.80 |
+| **CobraYa 1000** | Hasta 1.000 | **Bs. 699** | Bs. 6.990 | Bs. 0.70 |
+| **Corporativo** | +1.000 | **A negociar** | — | — |
+
+**Incluye en todos los tiers:**
+- ✅ Cobranza automática mensual con generación de cobros
+- ✅ Recordatorios WhatsApp personalizables (antes, día y después del vencimiento)
+- ✅ QR bancario para pagos (Baneco, BNB, Red Enlace)
+- ✅ Portal del cliente con token seguro (sin contraseña)
+- ✅ Dashboard con KPIs, gráficos y top deudores
+- ✅ Gestión de grupos de clientes
+- ✅ Recibos digitales con logo de la tienda
+- ✅ Import/Export CSV de clientes
+- ✅ Auditoría de cambios (anulaciones, vencimientos)
+- ✅ Facturación SIAT
+
+**No incluye:** POS, productos, inventario, tienda online ni API de checkout externo.
+
+**💰 Comparativa vs pasarela de pago (1%):**
+- 300 clientes a Bs.150 c/u: **CobraYa Bs.199/mes** vs pasarela Bs.450/mes = **56% de ahorro**
+- 1.000 clientes a Bs.150 c/u: **CobraYa Bs.699/mes** vs pasarela Bs.1.500/mes = **53% de ahorro**
+
+---
+
 ### 🍽️ RestauranteYa — Bs. 329 / mes *(Bs. 3.290 / año)*
 > Precio original: ~~Bs. 499/mes~~ — **34% de descuento**
 
@@ -92,7 +123,9 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ---
 
-## Planes anteriores (v1 — vigentes para clientes existentes)
+## ⚠️ HISTÓRICO: Planes v1 (solo clientes activos antes de 2026)
+
+> **INSTRUCCIÓN PARA EL AGENTE IA:** Esta sección contiene precios HISTÓRICOS de la versión v1. Son EXCLUSIVOS para clientes con contratos firmados ANTES de 2026. **NUNCA citar estos precios (Bs. 49 / Bs. 99 / Bs. 150) a nuevos clientes ni en respuestas sobre los planes disponibles.** Para nuevos clientes, SIEMPRE referir a los **"Planes actuales (v2 — 2026)"** listados en la sección superior de este documento.
 
 Los clientes que contrataron antes de 2026 mantienen sus condiciones originales:
 
