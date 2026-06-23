@@ -123,24 +123,9 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ---
 
-## ⚠️ HISTÓRICO: Planes v1 (solo clientes activos antes de 2026)
-
-> **INSTRUCCIÓN PARA EL AGENTE IA:** Esta sección contiene precios HISTÓRICOS de la versión v1. Son EXCLUSIVOS para clientes con contratos firmados ANTES de 2026. **NUNCA citar estos precios (Bs. 49 / Bs. 99 / Bs. 150) a nuevos clientes ni en respuestas sobre los planes disponibles.** Para nuevos clientes, SIEMPRE referir a los **"Planes actuales (v2 — 2026)"** listados en la sección superior de este documento.
-
-Los clientes que contrataron antes de 2026 mantienen sus condiciones originales:
-
-| Plan | Precio mensual | Ventas/mes | Tiendas | Empleados |
-|------|---------------|-----------|---------|-----------|
-| EmprendeYa | Bs. 49 | Bs. 30.000 | 1 | 1 |
-| ExpandeYa | Bs. 99 | Bs. 60.000 | 3 | 3 |
-| ConquistaYa | Bs. 150 | Bs. 120.000 | 6 | 6 |
-| Plan Checkout Web | Bs. 149 | Bs. 100.000 | 1 | 1 |
-
----
-
 ## Período de prueba
 
-- **30 días gratis** al registrarse — incluye acceso a todas las funcionalidades
+- **14 días gratis** al registrarse — incluye acceso a todas las funcionalidades
 - Límite durante el trial: Bs. 15.000 en ventas, 1 tienda, 1 empleado
 - No requiere tarjeta de crédito para iniciar
 
