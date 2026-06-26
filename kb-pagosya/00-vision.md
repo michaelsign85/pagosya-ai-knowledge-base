@@ -104,28 +104,11 @@ Los planes actuales de PagosYa son:
 - **Plan Checkout Web**
 - **RestauranteYa**
 - **CorporativoYa**
+- **CobraYa**
 
 Para precios, límites de venta, cantidad de tiendas, empleados, productos y funcionalidades detalladas, revisar siempre el documento:
 
 `01-planes-precios.md`
-
----
-
-## Planes anteriores o legacy
-
-Algunos clientes antiguos pueden conservar precios anteriores, como Bs. 49, Bs. 99, Bs. 150 o Bs. 149, siempre que cumplan las condiciones definidas por PagosYa.
-
-Estos valores **no deben ofrecerse a nuevos clientes**.
-
-Para nuevos usuarios, la información oficial debe basarse únicamente en los planes actuales v2.
-
----
-
-## Período de prueba
-
-PagosYa puede ofrecer un período de prueba para que el comercio conozca el sistema antes de contratar un plan.
-
-La información actual del trial, límites y condiciones debe validarse en el documento `01-planes-precios.md`.
 
 ---
 
