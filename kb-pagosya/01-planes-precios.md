@@ -123,14 +123,6 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ---
 
-## Período de prueba
-
-- **14 días gratis** al registrarse — incluye acceso a todas las funcionalidades
-- Límite durante el trial: Bs. 15.000 en ventas, 1 tienda, 1 empleado
-- No requiere tarjeta de crédito para iniciar
-
----
-
 ## 💳 Créditos adicionales *(solo planes v1)*
 
 - Cada crédito cuesta **Bs. 20**
