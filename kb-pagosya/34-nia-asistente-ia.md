@@ -37,8 +37,25 @@ actualizado_en: 2026-07-31
 | «¿Cuánto cuesta?» | Básico Bs. 0 · Plus Bs. 29/mes · Pro Bs. 49/mes → mandar el link |
 | «Quiero probarla» | Básico es gratis, 50 interacciones al mes → mandar el link |
 | «¿Cómo la contrato?» | Mandar el link, sección Planes, elegir y pagar con QR |
+| **«¿Cómo la activo?»** | **Mandar el link.** Solo si YA dijo que tiene cuenta PagosYa, explicarle lo del código de vinculación |
+| **«No tengo cuenta PagosYa»** | **Perfecto, no hace falta tenerla antes.** La cuenta se crea al elegir el plan → mandar el link |
+| «Sí» / «Dale» / «Quiero» | Mandar el link. Nunca responder con pasos de panel a alguien que no dijo tener cuenta |
 | «¿Necesito cambiar de plan?» | No, es un add-on: el plan actual sigue igual |
 | «¿Tengo que hablar con alguien?» | No, se activa sola al confirmarse el pago |
+
+### 🚫 Errores que rompen la conversación
+
+Estos tres salieron en conversaciones reales de la campaña y hay que evitarlos:
+
+| ❌ No decir | ✅ Decir |
+|---|---|
+| «Andá al panel de PagosYa y generá un código» *(a alguien que no tiene cuenta)* | «Entrá al link, elegí el plan y ahí mismo creás tu cuenta» |
+| «Primero necesitás crear una cuenta en la plataforma» *(sin decir dónde)* | «La cuenta se crea sola cuando elegís el plan, acá 👉 el link» |
+| «¿Te conecto con un asesor?» / «¿Agendamos una demo?» | Nada de eso: Nia es autoservicio. Mandar el link y listo |
+
+**Por qué importa:** el lead que pregunta «¿cómo la activo?» quiere decir «¿cómo
+empiezo a usarla?». Responderle con el flujo de vinculación por código lo manda
+a un panel que todavía no existe para él — y la conversación muere ahí.
 
 ---
 
@@ -226,7 +243,33 @@ Audio y foto **cuestan más** que texto y consumen más del paquete mensual:
 
 ## 🔗 Cómo se activa
 
-1. El usuario entra a su cuenta PagosYa → menú **Nia**
+> ⚠️ **«Activar Nia» significa dos cosas distintas.** Antes de responder, fijate
+> si la persona **ya tiene cuenta PagosYa**. Casi todos los que escriben por la
+> campaña **no la tienen** — para ellos, empezar es crear la cuenta eligiendo un
+> plan, no generar un código.
+>
+> Si no sabés en cuál está, asumí que **no tiene cuenta**: es el caso más común
+> y el otro camino no le sirve de nada.
+
+### Caso A — todavía NO tiene cuenta PagosYa *(la mayoría de los leads)*
+
+Un solo paso, y es un link:
+
+### 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+
+> «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+> Elegí el plan que quieras — podés empezar con **Nia Básico sin ningún costo**.
+> Al elegirlo creás tu cuenta ahí mismo, y enseguida conectás tu WhatsApp.»
+
+La cuenta se crea **en ese flujo**, al elegir el plan. No hay que registrarse
+antes por otro lado, ni hablar con nadie.
+
+**Nunca** responderle a este caso con «generá un código en el panel»: no tiene
+panel todavía. Es el error que rompe la conversación.
+
+### Caso B — ya tiene cuenta PagosYa
+
+1. Entra a su cuenta → menú **Nia**
 2. Toca **"Generar código y conectar WhatsApp"** → aparece un código de 6 caracteres
 3. Toca **"Abrir WhatsApp y enviar el código"** → se abre la conversación con Nia **con el código ya escrito**; solo hay que tocar enviar
 4. Listo: la pantalla detecta la vinculación sola y pasa al panel
