@@ -2,7 +2,7 @@
 title: "Nia — Asistente IA por WhatsApp"
 version: 1.0
 audiencia: "merchants, agents, support"
-actualizado_en: 2026-07-28
+actualizado_en: 2026-07-31
 ---
 
 **Nia** es el asistente personal con inteligencia artificial de PagosYa. Funciona **enteramente por WhatsApp**: el usuario escribe, manda un audio o una foto de recibo, y Nia registra gastos, crea recordatorios y genera cobros — conversando, sin abrir la app.
@@ -57,7 +57,12 @@ El usuario cuenta el gasto como se le ocurra. Nia extrae monto, categoría y des
 "gasté 150 en el almuerzo"
 "pagué 320 de luz"
 "recibí 2000 de la venta"
+"cobré 200 de un cliente que me debía"
 ```
+
+Entiende la diferencia entre **dinero que ya entró** y **pedir un cobro**: el
+verbo en pasado («cobré», «recibí», «me pagaron») registra un ingreso; en
+imperativo («cobrá 50 a Pedro») genera un link de pago.
 
 Respuesta:
 
@@ -70,6 +75,20 @@ Respuesta:
 
 **Regla de seguridad:** si el monto no está claro, Nia **no registra** y pregunta. Es preferible pedir de nuevo que guardar un dato equivocado que el usuario verá después en su panel.
 
+**Recuerda el hilo de la conversación.** Si el usuario corrige o completa algo,
+Nia junta las partes en vez de pedirlo todo otra vez:
+
+```
+—  crea un recordatorio para el 12 de julio, llevar la gata a la vacuna
+—  ⚠️ Esa fecha ya pasó. ¿Me decís una fecha futura?
+—  perdón, es para el 12 de agosto
+—  ⏰ Recordatorio creado · llevar la gata a la vacuna · 12/08 09:00
+```
+
+**Varios mensajes seguidos** funcionan: cada uno se procesa por separado, ninguno
+se pierde. Y si mandó audios o fotos acumulados (típico de quien estuvo sin
+internet), Nia los procesa **todos** juntos y responde con la lista.
+
 ### 2. Recordatorios
 
 ```
@@ -78,12 +97,37 @@ Respuesta:
 "¿qué recordatorios tengo?"
 ```
 
-- Puntuales o **recurrentes** (diario, semanal, mensual)
+- Puntuales o **recurrentes**: diario, semanal y mensual
+- **Mensual con día fijo**: «el día 10 de cada mes» cae siempre el 10. Si el mes
+  no tiene ese día (31 en febrero), usa el último — y al mes siguiente **vuelve
+  al día elegido**, no se queda corrido
+- **Cursos**: varias veces por día durante un período.
+  «estoy tomando enalapril, 7 días a las 10, 15 y 22» → crea los 21 recordatorios
+  de una vez, agrupados; se cancelan juntos
 - Se disparan con precisión de **5 minutos**
 - Llegan por plantilla aprobada de WhatsApp, incluso fuera de la ventana de 24h
 - Se editan o cancelan respondiendo al mensaje o desde el panel (título, fecha/hora, recurrencia, notas)
 
-### 3. Cobro por WhatsApp *(solo Nia Pro)*
+### 3. Resúmenes diarios *(Nia Plus y Pro)*
+
+Dos mensajes al día, **activados de fábrica** — el usuario no tiene que descubrir
+ni configurar nada para empezar a recibirlos. La primera vez que entra al panel
+un aviso le dice que están activos y le ofrece cambiarlos o apagarlos.
+
+| Resumen | Por defecto | Trae |
+|---------|-------------|------|
+| **Inicio del día** | 08:00 | Recordatorios de hoy, cobros pendientes y los que llevan más de 24h sin pago |
+| **Cierre del día** | 20:00 | Gastos e ingresos del día, pagos recibidos y lo que quedó pendiente |
+
+- Modo **«solo con novedades»** por defecto: en un día sin nada, no manda nada.
+  El modo «siempre» existe para quien prefiere recibirlo igual
+- Horario y días de la semana configurables, por panel o por WhatsApp
+- **Llegan aunque el usuario lleve días sin escribir**: dentro de la ventana de
+  24h va el resumen completo; fuera, una plantilla aprobada más corta que invita
+  a responder — y al responder llega el detalle
+- No consumen interacciones del plan
+
+### 4. Cobro por WhatsApp *(solo Nia Pro)*
 
 ```
 "cobrale 175 Bs a Ana Quispe por el servicio de julio"
@@ -133,6 +177,9 @@ Audio y foto **cuestan más** que texto y consumen más del paquete mensual:
 | Tipo | Consumo |
 |------|---------|
 | Comando del menú (AYUDA, SALIR, idioma) | **0** |
+| Comandos de resumen (CONFIGURAR, PAUSAR/ACTIVAR RESUMEN, RESUMEN 9:30) | **0** |
+| Responder a algo que Nia mandó sola (recordatorio, resumen) | **0** |
+| Resumen diario recibido | **0** |
 | Mensaje de texto procesado por IA | 1 |
 | Audio | 2 |
 | Foto | 3 |
@@ -179,8 +226,18 @@ Un recordatorio agendado antes de desvincular **no se entrega**: el número pued
 | `SALIR` / `BAJA` / `STOP` | Deja de recibir mensajes |
 | `VOLVER` / `ALTA` / `START` | Reactiva |
 | `PORTUGUES` / `ESPAÑOL` | Cambia el idioma |
+| `CONFIGURAR` | Muestra el estado de los dos resúmenes diarios |
+| `ACTIVAR RESUMEN` / `PAUSAR RESUMEN` | Activa o pausa los dos |
+| `PAUSAR RESUMEN MAÑANA` / `PAUSAR RESUMEN CIERRE` | Pausa solo uno |
+| `RESUMEN 9:30` | Cambia la hora del resumen de la mañana |
 
 > `CANCELAR` **no** apaga el asistente — se reserva para cancelar un recordatorio.
+>
+> Pausar los resúmenes **no** apaga a Nia: se sigue usando normalmente.
+>
+> Ningún comando de esta tabla consume interacciones. Responder a algo que Nia
+> mandó por su cuenta (un recordatorio, un resumen) tampoco: no se cobra por el
+> propio engagement.
 
 ---
 
@@ -189,10 +246,11 @@ Un recordatorio agendado antes de desvincular **no se entrega**: el número pued
 | Pestaña | Contenido |
 |---------|-----------|
 | **Resumen** | Gastos, ingresos, saldo e interacciones del mes + gráfico de 30 días |
-| **Finanzas** | Gastos por categoría (con opción de unificar categorías) + tabla de movimientos, editables y eliminables |
-| **Agenda** | Calendario mensual + próximos recordatorios, editables y cancelables |
+| **Finanzas** | Dos sub-pestañas, **Gastos** e **Ingresos**, cada una con su gráfico por categoría y su tabla — editables y eliminables. Las categorías se renombran desde ahí |
+| **Agenda** | Calendario mensual + próximos recordatorios y una sub-pestaña de **recurrentes** (mensuales, semanales y cursos con su progreso) |
 | **Cobros** | Cobros generados y su estado |
 | **Consumo** | Medidor de interacciones, saldo de créditos y CTA de compra |
+| **Configuración** | Los dos resúmenes diarios: activar, horario, días de la semana y modo |
 
 El panel se actualiza **en tiempo real**: lo que se registra por WhatsApp aparece sin necesidad de refrescar la página. También permite **pausar** el asistente (botón Activo/Pausado) sin desvincular el número.
 
@@ -287,6 +345,30 @@ No. Recibe un link, abre la página, escanea el QR con el app de su banco y list
 **¿Nia lee mis otras conversaciones de WhatsApp?**
 No. Funciona en un número propio y dedicado; solo ve los mensajes enviados a ese número.
 
+**¿Puedo probarla sin pagar?**
+Sí. **Nia Básico viene incluido en todos los planes**, con 50 interacciones al
+mes: registrar gastos e ingresos, recordatorios y resúmenes. Nia Plus y Nia Pro
+suben a 300 y agregan edición y cobro.
+
+**¿Cómo la contrato?**
+Desde el panel, en **Planes** → sección Nia → elegir Plus o Pro → pagar con QR.
+Se activa sola al confirmarse el pago, sin esperar a nadie.
+
+**¿Necesito conectar un banco?**
+Solo si vas a **cobrar por WhatsApp** (Nia Pro), porque ahí se genera un QR de
+pago. Para gastos, ingresos, recordatorios y resúmenes no hace falta ninguna
+integración bancaria.
+
+**¿Me va a llenar de mensajes?**
+No. Los resúmenes son dos al día y por defecto solo llegan **si hay novedades**
+— en un día sin movimientos ni pendientes, no manda nada. Se cambian de horario
+o se pausan escribiendo `PAUSAR RESUMEN`, y eso no apaga el resto del asistente.
+
+**¿Sirve si tengo varias tiendas?**
+El registro financiero de Nia es **personal del titular**, no por tienda: es la
+plata que entra y sale de su bolsillo. No se mezcla con las ventas del comercio,
+que siguen en el POS y en los reportes de siempre.
+
 ---
 
 ## 📌 Estado del módulo
@@ -294,11 +376,19 @@ No. Funciona en un número propio y dedicado; solo ve los mensajes enviados a es
 | | |
 |---|---|
 | Registro financiero (texto, audio, foto) | ✅ En producción |
-| Rajadas de mensajes (varios audios seguidos) | ✅ En producción |
-| Recordatorios con envío automático | ✅ En producción |
+| Gastos **e ingresos**, con pestañas separadas en el panel | ✅ En producción |
+| Memoria de conversación (entiende correcciones y referencias) | ✅ En producción |
+| Rajadas de audios/fotos acumulados | ✅ En producción |
+| Recordatorios puntuales, recurrentes y cursos | ✅ En producción |
+| Mensual anclado al día elegido (día 31 no se corre a 28) | ✅ En producción |
+| Resúmenes diarios de inicio y cierre | ✅ En producción |
+| Resúmenes fuera de la ventana de 24h, por plantilla aprobada | ✅ En producción |
+| Configuración de resúmenes por panel y por WhatsApp | ✅ En producción |
 | Dashboard con realtime y edición de movimientos/recordatorios | ✅ En producción |
+| Vinculación con un toque (link que abre WhatsApp con el código escrito) | ✅ En producción |
+| Desvincular y volver a vincular sin perder el historial | ✅ En producción |
 | Cobro por WhatsApp | ✅ En producción |
 | Confirmación automática de pago | ✅ En producción |
 | Créditos "+interacciones" | ✅ En producción |
-| Contratación del add-on desde el panel | ⏳ Pendiente — hoy se activa manualmente |
+| **Contratación del add-on desde el panel, con pago QR** | ✅ En producción |
 | Número boliviano dedicado | ⏳ Pendiente — opera con número temporal |
