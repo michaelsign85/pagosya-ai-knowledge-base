@@ -178,6 +178,18 @@ Nia **no es un plan nuevo**: es un add-on de inteligencia artificial que se suma
 - 💳 **Cobrar por WhatsApp** (solo Nia Pro): genera un link de pago y avisa cuando entra
 - 🌎 Disponible en español y portugués
 
-**Cómo se activa:** desde el panel PagosYa → Nia → generar código de vinculación → enviarlo por WhatsApp.
+**🎯 A dónde mandar al lead que quiere contratarla:**
+
+### 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+
+> «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+> Ahí está la sección **Planes**: elegí el que quieras.
+> Podés empezar con **Nia Básico sin ningún costo** y subir cuando quieras.»
+
+El link abre directo en los planes. Los tres se contratan solos, con pago QR —
+**no hay que hablar con ventas ni esperar activación**. Básico es gratis y no
+pide tarjeta.
+
+**Cómo se conecta después de contratar:** desde el panel PagosYa → Nia → «Generar código y conectar WhatsApp» → el link abre WhatsApp con el código ya escrito, solo hay que enviarlo.
 
 **Documentación completa:** `34-nia-asistente-ia.md`
