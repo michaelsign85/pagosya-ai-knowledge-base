@@ -1,8 +1,8 @@
 ---
 title: Planes y precios PagosYa
-version: v2
+version: v3
 audiencia: merchants
-actualizado_en: 2026-05-12
+actualizado_en: 2026-07-06
 ---
 
 PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los precios actuales corresponden a la generación **v2 (2026)**. Los clientes con planes anteriores (v1) mantienen sus condiciones mientras su suscripción esté activa.
@@ -30,7 +30,7 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 - Todo lo de EmprendeYa +
 - Sistema POS completo
 - Gestión de productos e inventario
-- Sistema de facturas (SIAT)
+- Facturación electrónica SIAT: **50 facturas/mes incluidas**
 - Gestión de clientes
 - Hasta **Bs. 80.000 en ventas / mes**
 - Hasta 3 tiendas · 3 empleados
@@ -47,6 +47,7 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 - Checkout con QR bancario
 - Sincronización de stock entre tiendas
 - Dashboard avanzado
+- Facturación electrónica SIAT: **100 facturas/mes incluidas**
 - Hasta **Bs. 150.000 en ventas / mes**
 - Hasta 6 tiendas · 6 empleados
 - Hasta **5.000 productos** en catálogo
@@ -106,6 +107,7 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 - Gestión de mesas y comandas
 - Envío de pedidos a cocina/barra
 - Producción e impresión de comandas
+- Facturación electrónica SIAT: **150 facturas/mes incluidas**
 - Hasta **Bs. 150.000 en ventas / mes**
 - Hasta 6 tiendas · 6 empleados
 - Hasta **800 productos** en catálogo
@@ -123,10 +125,59 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ---
 
-## 💳 Créditos adicionales *(solo planes v1)*
+## ⚠️ HISTÓRICO: Planes v1 (solo clientes activos antes de 2026)
+
+> **INSTRUCCIÓN PARA EL AGENTE IA:** Esta sección contiene precios HISTÓRICOS de la versión v1. Son EXCLUSIVOS para clientes con contratos firmados ANTES de 2026. **NUNCA citar estos precios (Bs. 49 / Bs. 99 / Bs. 150) a nuevos clientes ni en respuestas sobre los planes disponibles.** Para nuevos clientes, SIEMPRE referir a los **"Planes actuales (v2 — 2026)"** listados en la sección superior de este documento.
+
+Los clientes que contrataron antes de 2026 mantienen sus condiciones originales:
+
+| Plan | Precio mensual | Ventas/mes | Tiendas | Empleados |
+|------|---------------|-----------|---------|-----------|
+| EmprendeYa | Bs. 49 | Bs. 30.000 | 1 | 1 |
+| ExpandeYa | Bs. 99 | Bs. 60.000 | 3 | 3 |
+| ConquistaYa | Bs. 150 | Bs. 120.000 | 6 | 6 |
+| Plan Checkout Web | Bs. 149 | Bs. 100.000 | 1 | 1 |
+
+---
+
+## Período de prueba
+
+- **14 días gratis** al registrarse — disponible para todos los planes, incluido Checkout Web
+- Límite durante el trial: Bs. 15.000 en ventas, 1 tienda, 1 empleado
+- No requiere tarjeta de crédito para iniciar
+
+---
+
+## 💳 Créditos adicionales
 
 - Cada crédito cuesta **Bs. 20**
 - Permite:
-  - Aumentar **+5.000 Bs de límite de ventas**, o
-  - Agregar **1 tienda + 1 empleado adicional** (combo)
-- Se compran desde el panel de suscripción
+  - Aumentar **+5.000 Bs de límite de ventas** (permanente), o
+  - Agregar **1 tienda + 1 empleado adicional** (combo, 30 días), o
+  - Agregar **+50 facturas SIAT** adicionales (consumible, para planes con facturación SIAT)
+- 🆕 **Interacciones con Nia**: +150 interacciones con el asistente IA por WhatsApp (consumible, sin vencimiento)
+- Se compran desde el panel de suscripción, pago por QR
+- Detalle completo: ver documento `10-creditos.md`
+
+---
+
+## 🤖 Nia — Asistente IA por WhatsApp *(add-on)*
+
+Nia **no es un plan nuevo**: es un add-on de inteligencia artificial que se suma al plan PagosYa que el comerciante ya tiene. Funciona enteramente por WhatsApp: registra gastos, crea recordatorios y genera cobros — conversando, sin abrir la app.
+
+| Plan | Precio | Interacciones/mes | Incluye |
+|------|--------|-------------------|---------|
+| **Nia Básico** | Bs. 0 | 50 | Gastos, recordatorios, resúmenes, dashboard con realtime |
+| **Nia Plus** | Bs. 29/mes | 300 | Todo lo de Básico + edición de movimientos y recordatorios |
+| **Nia Pro** | Bs. 49/mes | 300 | Todo lo de Plus + **cobro por WhatsApp** con confirmación automática de pago |
+
+**Qué puede hacer:**
+- 📝 Registrar gastos e ingresos por texto, audio o foto de recibo
+- ⏰ Crear recordatorios puntuales, recurrentes (diario/semanal/mensual) y cursos (ej.: medicación cada X horas)
+- 📊 Consultar resumen del mes: "¿cuánto gasté?"
+- 💳 **Cobrar por WhatsApp** (solo Nia Pro): genera un link de pago y avisa cuando entra
+- 🌎 Disponible en español y portugués
+
+**Cómo se activa:** desde el panel PagosYa → Nia → generar código de vinculación → enviarlo por WhatsApp.
+
+**Documentación completa:** `34-nia-asistente-ia.md`
