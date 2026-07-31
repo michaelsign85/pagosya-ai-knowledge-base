@@ -9,6 +9,39 @@ actualizado_en: 2026-07-31
 
 ---
 
+## 🎯 A DÓNDE MANDAR AL LEAD
+
+> **Instrucción para el agente de atención.** Cuando alguien pregunte cómo
+> contratar Nia, cuánto cuesta, o quiera probarla — **mandá siempre este link**:
+
+### 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+
+**Qué decirle:**
+
+> «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
+> Ahí abajo está la sección **Planes**: elegí el que quieras.
+> Podés empezar con **Nia Básico sin ningún costo** y subir cuando quieras.»
+
+**Reglas:**
+
+- El link ya abre directo en la sección de planes — no hace falta pedir que baje
+- **Nunca** decir que hay que hablar con ventas o esperar activación: los tres
+  planes se contratan solos desde ahí
+- Si duda por el precio, recordarle que **Básico es gratis** y no pide tarjeta
+- Si ya es cliente PagosYa y está logueado, también puede ir por el panel:
+  **Planes → sección Nia**. Pero para un lead que todavía no tiene cuenta, el
+  link de arriba es el camino corto
+
+| Si el lead dice… | Respuesta |
+|---|---|
+| «¿Cuánto cuesta?» | Básico Bs. 0 · Plus Bs. 29/mes · Pro Bs. 49/mes → mandar el link |
+| «Quiero probarla» | Básico es gratis, 50 interacciones al mes → mandar el link |
+| «¿Cómo la contrato?» | Mandar el link, sección Planes, elegir y pagar con QR |
+| «¿Necesito cambiar de plan?» | No, es un add-on: el plan actual sigue igual |
+| «¿Tengo que hablar con alguien?» | No, se activa sola al confirmarse el pago |
+
+---
+
 ## 🎯 ¿Qué resuelve?
 
 | Problema | Solución Nia |
@@ -351,8 +384,15 @@ mes: registrar gastos e ingresos, recordatorios y resúmenes. Nia Plus y Nia Pro
 suben a 300 y agregan edición y cobro.
 
 **¿Cómo la contrato?**
-Desde el panel, en **Planes** → sección Nia → elegir Plus o Pro → pagar con QR.
-Se activa sola al confirmarse el pago, sin esperar a nadie.
+Entrá a **https://www.pagosya.com.bo/nia-pagosya#planes**, elegí el plan y pagá
+con QR. Se activa sola al confirmarse el pago, sin esperar a nadie ni hablar con
+ventas. Si ya sos cliente y estás logueado, también podés ir por el panel:
+**Planes** → sección Nia.
+
+**¿Puedo empezar gratis?**
+Sí. En ese mismo link, **Nia Básico cuesta Bs. 0** y no pide tarjeta: 50
+interacciones al mes para registrar gastos e ingresos, crear recordatorios y ver
+resúmenes. Se sube a Plus o Pro cuando quieras.
 
 **¿Necesito conectar un banco?**
 Solo si vas a **cobrar por WhatsApp** (Nia Pro), porque ahí se genera un QR de
