@@ -242,6 +242,39 @@ Audio y foto **cuestan más** que texto y consumen más del paquete mensual:
 
 > Los comandos del menú son gratuitos a propósito: es por ahí que el usuario descubre cómo comprar créditos cuando llega al límite.
 
+### ¿Cuándo se renuevan las interacciones?
+
+**El 1 de cada mes, a la medianoche (hora de Bolivia).** Es el mes calendario,
+**no** 30 días desde que contrataste.
+
+Son dos relojes distintos, y conviene entenderlo bien porque juega **a favor**
+del cliente:
+
+| | |
+|---|---|
+| **Cobro** | 30 días corridos desde la compra |
+| **Interacciones** | se renuevan el 1 de cada mes |
+
+Ejemplo: contrata Nia Pro el **20/08** y paga Bs 49. Ese pago cubre hasta el
+**19/09**. Tiene 300 interacciones del 20/08 al 31/08 y, el **1/09**, la cuota
+se renueva: 300 más hasta el 19/09. **600 interacciones por un solo pago.**
+
+Quien contrata a mitad de mes no pierde nada — recibe un segundo lote antes de
+volver a pagar. Y el upgrade **no borra** lo ya consumido en el mes: si gastó
+las 50 del Básico y sube a Plus el día 20, le quedan 250 hasta fin de mes, y
+300 limpias el día 1.
+
+Los créditos son aparte: **no vencen** y se usan solo cuando se agotaron las
+interacciones del plan.
+
+**Cuando alguien llega al límite**, Nia le avisa por WhatsApp y le ofrece la
+salida que corresponda, con el link a `pagosya.com.bo/suscripcion`.
+
+> ⚠️ A quien ya tiene **Nia Plus** no se le ofrece subir a Pro para resolver
+> esto: **Plus y Pro tienen la misma cuota (300)**. Para ellos la única salida
+> real son los créditos. Pro se vende por el cobro por WhatsApp, no por
+> cantidad de interacciones.
+
 **Rajadas de mensajes:** si el usuario manda varios audios seguidos (típico de quien estuvo sin internet y acumuló), Nia los procesa **todos**, no solo el último — cada uno puede ser un gasto distinto.
 
 ---
