@@ -1,8 +1,8 @@
 ---
 title: Gestión de productos e inventario
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-05-22
+actualizado_en: 2026-07-06
 ---
 
 # Gestión de productos e inventario
@@ -56,13 +56,14 @@ Al crear un producto, se puede asignar a una o varias tiendas simultáneamente. 
 
 ### Configuración SIAT (factura electrónica)
 
-Para comercios que emiten facturas electrónicas, se pueden completar los campos SIAT:
+Para comercios con facturación SIAT activa, cada producto necesita 3 campos fiscales:
 - Código de producto SIN
 - Código de actividad económica
 - Unidad de medida SIN
-- Descripción detallada
 
 > El buscador de productos SIAT está integrado: al escribir el nombre del producto, el sistema sugiere las opciones del catálogo oficial del SIN.
+
+**Importante — estos 3 campos son obligatorios cuando la tienda tiene SIAT activo.** El botón "Guardar"/"Actualizar" del producto queda deshabilitado hasta completarlos. Si un producto quedó sin estos datos (por ejemplo, creado antes de activar SIAT), el POS bloqueará la venta a crédito fiscal de ese producto hasta que se complete su ficha en Productos → editar → "Buscar Producto SIAT". Ver documento `31-facturacion-siat-electronica.md` para el flujo completo.
 
 ---
 

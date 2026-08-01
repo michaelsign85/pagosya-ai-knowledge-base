@@ -1,8 +1,8 @@
 ---
 title: Créditos y ampliación de límites
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-05-23
+actualizado_en: 2026-07-06
 ---
 
 # Créditos y ampliación de límites
@@ -13,7 +13,7 @@ Los **créditos PagosYa** permiten ampliar el alcance del plan activo sin necesi
 - 1 crédito = **Bs. 20**
 - Se pueden comprar desde la pantalla de **Suscripción**, pagando por QR en segundos
 - Se aplican con un clic, inmediatamente
-- Dos usos posibles: **aumentar el límite de ventas** (permanente) o **agregar tiendas + empleados** (30 días)
+- Tres usos posibles: **aumentar el límite de ventas** (permanente), **agregar tiendas + empleados** (30 días), o **agregar facturas SIAT** (consumible)
 
 ---
 
@@ -100,7 +100,7 @@ Una vez comprados, los créditos deben **aplicarse** eligiendo para qué se usar
 
 1. En la pantalla de Suscripción, hacer clic en **"Usar Créditos"**.
 2. Se abre el selector **"¿Cómo quieres usar tus créditos?"**
-3. Elegir entre las dos opciones disponibles.
+3. Elegir entre las tres opciones disponibles.
 4. Ingresar la cantidad de créditos a usar.
 5. Confirmar — el cambio se aplica de inmediato.
 
@@ -161,6 +161,29 @@ Total:           3 empleados habilitados por 30 días
 
 ---
 
+### Opción C — Paquete de Facturación SIAT *(CONSUMIBLE)*
+
+| Característica | Detalle |
+|----------------|---------|
+| Efecto | +50 facturas SIAT adicionales por cada crédito usado |
+| Duración | No vence — se consume solo al emitir facturas aceptadas por el SIN |
+| Acumulación | Se suma al saldo extra existente (`siat_invoices_extra_balance`) |
+| Cálculo | `Facturas extra = créditos usados × 50` |
+
+**¿Cuándo se descuenta este saldo?** Solo después de agotar las facturas incluidas gratis en el plan (ver documento `31-facturacion-siat-electronica.md` para el límite de cada plan). Mientras el negocio no supere su cupo mensual, el saldo extra no se toca — queda disponible para cuando lo necesite.
+
+**Ejemplo:** Un negocio con plan ExpandeYa (50 facturas/mes incluidas) ya emitió sus 50 facturas del mes y necesita facturar 20 ventas más. Compra 1 crédito (Bs. 20) y lo usa en "Facturas SIAT":
+```
+Facturas incluidas del plan:  50 (agotadas)
+Crédito usado (1 × 50):      +50 facturas extra
+──────────────────────────────────────────────
+Facturas disponibles:         50 extra (le alcanza para las 20 que faltan y más)
+```
+
+> No afecta el límite de ventas en Bs. ni el número de tiendas/empleados — es exclusivo para facturación SIAT.
+
+---
+
 ## Sección 5 — Historial de créditos
 
 En la pantalla de Suscripción se muestra el **historial completo de movimientos** de créditos.
@@ -172,6 +195,7 @@ En la pantalla de Suscripción se muestra el **historial completo de movimientos
 | **Compra** | Tarjeta | Azul | Créditos adquiridos por pago QR |
 | **Uso - Límite extra** | Gráfico | Verde | Créditos aplicados para aumentar límite de ventas |
 | **Uso - Combo extra** | Tienda+Personas | Morado | Créditos aplicados para combo de expansión |
+| **Uso - Facturas SIAT** | Documento | Ámbar | Créditos aplicados para agregar facturas SIAT extra |
 
 ### Datos de cada movimiento
 
@@ -215,9 +239,9 @@ Los créditos de tipo "Límite de Ventas" no vencen — son permanentes. Los cr�
 
 Los empleados que superen el límite base del plan quedan bloqueados automáticamente al vencer los 30 días. Para reactivarlos, basta con comprar y usar nuevos créditos de combo.
 
-**¿Puedo mezclar créditos de límite y combo?**
+**¿Puedo mezclar créditos de límite, combo y facturas SIAT?**
 
-Sí. Se pueden usar unos créditos para aumentar el límite de ventas y otros para el combo. Cada uso se gestiona de forma independiente.
+Sí. Se pueden usar créditos distintos para cada fin — aumentar el límite de ventas, activar el combo de expansión o agregar facturas SIAT. Cada uso se gestiona de forma independiente.
 
 **¿Cuántos créditos puedo comprar a la vez?**
 

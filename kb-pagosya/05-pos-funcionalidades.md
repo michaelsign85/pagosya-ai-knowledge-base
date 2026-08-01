@@ -1,8 +1,8 @@
 ---
 title: Terminal POS — Funcionalidades completas
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-05-22
+actualizado_en: 2026-07-06
 ---
 
 # Terminal POS — Sistema de punto de venta
@@ -221,17 +221,23 @@ El botón **"Compartir"** convierte el recibo en imagen y permite:
 - Enviarlo por WhatsApp, email u otras apps.
 - Descargarlo como archivo PNG.
 
-### Factura electrónica SIAT (próximamente)
+### Factura electrónica SIAT
 
-> El sistema de **facturación SIAT** está desarrollado y en proceso de homologación por el SIN. Una vez habilitado, el cajero podrá elegir entre emitir **Recibo** o **Factura** al momento del cobro.
+> La **facturación SIAT** ya está en producción para negocios con plan ExpandeYa, ConquistaYa o RestauranteYa (o CobraYa/otro plan con créditos de facturas SIAT). El cajero elige entre emitir **Recibo** o **Factura** al momento del cobro.
 
-Para emitir factura, el sistema solicitará:
+Para emitir factura, el sistema solicita:
 - **NIT** del comprador.
 - **Razón Social** del comprador.
 - Email (opcional, para envío digital).
 - Complemento (opcional).
 
-Para ventas sin NIT específico, se podrá usar el NIT genérico **0 / "S/N"**, que emite una factura de consumidor final.
+Para ventas sin NIT específico, se usa el NIT genérico **0 / "S/N"**, que emite una factura de consumidor final.
+
+**Bloqueos antes de emitir:**
+- Si algún producto del carrito no tiene sus 3 datos fiscales (código de producto SIN, actividad económica, unidad de medida) configurados, el sistema **no permite continuar** la venta a factura — muestra un aviso con el nombre del producto faltante. Se corrige desde Productos → editar → "Buscar Producto SIAT".
+- Si el negocio ya usó todas las facturas incluidas en su plan y no tiene créditos de facturas SIAT disponibles, el sistema bloquea la emisión con un aviso para comprar un paquete de créditos (+50 facturas c/u) desde Suscripción.
+
+Ver documento `31-facturacion-siat-electronica.md` para el paso a paso completo (registro del NIT, obtención del Token Delegado, sincronización de catálogo, límites por plan).
 
 ---
 
@@ -310,4 +316,4 @@ El precio del producto viene del catálogo. No se modifica directamente desde el
 
 **¿La factura SIAT ya está disponible?**
 
-El módulo de facturación SIAT está desarrollado en el sistema y aguarda la homologación oficial del SIN. Una vez habilitado, aparecerá la opción de elegir entre "Recibo" y "Factura" al momento del cobro.
+Sí, ya está en producción. Los planes ExpandeYa, ConquistaYa y RestauranteYa incluyen facturas SIAT gratis por mes (50/100/150 respectivamente); al agotarlas se pueden comprar créditos (+50 facturas cada uno). Requiere que el negocio complete su onboarding SIAT (registro de NIT y Token Delegado) — ver `31-facturacion-siat-electronica.md`.

@@ -1,8 +1,8 @@
 ---
 title: Preguntas frecuentes PagosYa
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-05-23
+actualizado_en: 2026-07-06
 ---
 
 # Preguntas Frecuentes — PagosYa
@@ -40,7 +40,7 @@ No. PagosYa cobra únicamente una mensualidad fija según el plan elegido. No ha
 Pago anual equivale a aproximadamente 2 meses gratis.
 
 **¿Puedo probar PagosYa antes de pagar?**
-Sí. Todos los negocios nuevos reciben **30 días gratis** al registrarse. No se requiere tarjeta de crédito. El período de prueba incluye un límite de Bs. 15,000 en ventas mensuales. El trial es válido una sola vez por persona (se verifica por CI y teléfono).
+Sí. Todos los negocios nuevos reciben **14 días gratis** al registrarse, para cualquiera de los planes, incluido Checkout Web. No se requiere tarjeta de crédito. El período de prueba incluye un límite de Bs. 15,000 en ventas. El trial es válido una sola vez por persona (se verifica por CI y teléfono).
 
 **¿Puedo cambiar de plan?**
 Sí. Puedes subir o bajar de plan en cualquier momento desde la sección **Suscripción** del panel. El cambio es inmediato.
@@ -53,10 +53,10 @@ El sistema bloquea el acceso hasta que se renueve el plan. Los datos se conserva
 ## Período de prueba
 
 **¿Cuántos días dura el período de prueba?**
-30 días calendario desde el momento del registro.
+14 días calendario desde el momento del registro.
 
 **¿Hay límite de ventas en el período de prueba?**
-Sí. El límite es Bs. 15,000 en ventas durante el mes del período de prueba. Al elegir un plan pago, el límite sube según el plan contratado.
+Sí. El límite es Bs. 15,000 en ventas durante el período de prueba. Al elegir un plan pago, el límite sube según el plan contratado.
 
 **¿Puedo usar la integración bancaria durante el trial?**
 Sí. Puedes configurar y probar la integración bancaria durante el período de prueba.
@@ -93,13 +93,13 @@ Las credenciales se almacenan cifradas con AES-256-GCM. La clave original se eli
 Sí. PagosYa está integrado con el Sistema de Facturación Integrado (SFE) del Servicio de Impuestos Nacionales (SIN) de Bolivia. Emite facturas electrónicas en modalidad en línea y fuera de línea (contingencia).
 
 **¿Qué tipos de documentos fiscales emite?**
-- Factura de compra-venta (modalidad estándar)
-- Nota de crédito - débito
-- Factura de exportación
-- Factura con derecho a crédito fiscal
+- Factura de compra-venta (modalidad estándar), en línea o en contingencia (fuera de línea)
 
 **¿Necesito configurar algo para la facturación?**
-Sí. Es necesario registrar el NIT del negocio y configurar el ambiente SIAT desde **Configuración → Facturación**. El equipo de soporte puede asistirte en este proceso.
+Sí. Es necesario registrar el NIT del negocio (PagosYa lo asocia manualmente en el portal del SIN) y luego generar y guardar el **Token Delegado** desde **Configuraciones Avanzadas**. El equipo de soporte asiste en este proceso — ver el documento `31-facturacion-siat-electronica.md` para el paso a paso completo.
+
+**¿Cuántas facturas SIAT incluye mi plan?**
+Depende del plan: EmprendeYa y Plan Checkout Web no incluyen facturación SIAT; ExpandeYa incluye 50/mes; ConquistaYa incluye 100/mes; RestauranteYa incluye 150/mes. Al agotar el cupo del mes, se pueden comprar créditos (Bs. 20 c/u = +50 facturas adicionales) desde Suscripción.
 
 ---
 

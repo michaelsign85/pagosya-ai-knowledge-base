@@ -35,6 +35,7 @@ actualizado_en: 2026-07-31
 | Si el lead dice… | Respuesta |
 |---|---|
 | «¿Cuánto cuesta?» | Básico Bs. 0 · Plus Bs. 29/mes · Pro Bs. 49/mes → mandar el link |
+| «¿Hay descuento por pagar el año?» | Sí: **2 meses gratis**. Plus Bs. 290/año, Pro Bs. 490/año. En el link hay un selector Mensual/Anual |
 | «Quiero probarla» | Básico es gratis, 50 interacciones al mes → mandar el link |
 | «¿Cómo la contrato?» | Mandar el link, sección Planes, elegir y pagar con QR |
 | **«¿Cómo la activo?»** | **Mandar el link.** Solo si YA dijo que tiene cuenta PagosYa, explicarle lo del código de vinculación |
@@ -76,11 +77,15 @@ a un panel que todavía no existe para él — y la conversación muere ahí.
 
 Nia **no es un plan nuevo**: es un **add-on** que se suma a la suscripción que el comerciante ya tiene (EmprendeYa, ExpandeYa, ConquistaYa, CobraYa, etc.). El plan principal no cambia.
 
-| Plan | Precio | Interacciones/mes | Incluye |
-|--------|--------|-------------------|---------|
-| **Nia Básico** | Bs. 0 | 50 | Gastos, recordatorios, resúmenes |
-| **Nia Plus** | Bs. 29/mes | 300 | Todo lo anterior |
-| **Nia Pro** | Bs. 49/mes | 300 | Todo + **cobro por WhatsApp** con confirmación automática |
+| Plan | Mensual | Anual | Interacciones/mes | Incluye |
+|--------|--------|-------|-------------------|---------|
+| **Nia Básico** | Bs. 0 | Bs. 0 | 50 | Gastos, recordatorios, resúmenes |
+| **Nia Plus** | Bs. 29/mes | **Bs. 290/año** | 300 | Todo lo anterior |
+| **Nia Pro** | Bs. 49/mes | **Bs. 490/año** | 300 | Todo + **cobro por WhatsApp** con confirmación automática |
+
+> **El anual da 2 meses gratis**: se pagan 10 y se usan 12. Plus sale a Bs. 24,17
+> por mes y Pro a Bs. 40,83. En el link de planes hay un selector Mensual/Anual
+> arriba de las tarjetas — el precio cambia al tocarlo.
 
 ### Créditos adicionales
 
@@ -431,6 +436,11 @@ Entrá a **https://www.pagosya.com.bo/nia-pagosya#planes**, elegí el plan y pag
 con QR. Se activa sola al confirmarse el pago, sin esperar a nadie ni hablar con
 ventas. Si ya sos cliente y estás logueado, también podés ir por el panel:
 **Planes** → sección Nia.
+
+**¿Conviene pagar el año?**
+El anual da **2 meses gratis**: Plus Bs. 290 en vez de Bs. 348, y Pro Bs. 490 en
+vez de Bs. 588. En el link de planes hay un selector **Mensual / Anual** arriba
+de las tarjetas.
 
 **¿Puedo empezar gratis?**
 Sí. En ese mismo link, **Nia Básico cuesta Bs. 0** y no pide tarjeta: 50

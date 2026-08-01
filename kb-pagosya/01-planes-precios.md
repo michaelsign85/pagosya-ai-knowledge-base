@@ -165,11 +165,15 @@ Los clientes que contrataron antes de 2026 mantienen sus condiciones originales:
 
 Nia **no es un plan nuevo**: es un add-on de inteligencia artificial que se suma al plan PagosYa que el comerciante ya tiene. Funciona enteramente por WhatsApp: registra gastos, crea recordatorios y genera cobros — conversando, sin abrir la app.
 
-| Plan | Precio | Interacciones/mes | Incluye |
-|------|--------|-------------------|---------|
-| **Nia Básico** | Bs. 0 | 50 | Gastos, recordatorios, resúmenes, dashboard con realtime |
-| **Nia Plus** | Bs. 29/mes | 300 | Todo lo de Básico + edición de movimientos y recordatorios |
-| **Nia Pro** | Bs. 49/mes | 300 | Todo lo de Plus + **cobro por WhatsApp** con confirmación automática de pago |
+| Plan | Mensual | Anual | Interacciones/mes | Incluye |
+|------|--------|-------|-------------------|---------|
+| **Nia Básico** | Bs. 0 | Bs. 0 | 50 | Gastos, recordatorios, resúmenes, dashboard con realtime |
+| **Nia Plus** | Bs. 29/mes | **Bs. 290/año** | 300 | Todo lo de Básico + edición de movimientos y recordatorios |
+| **Nia Pro** | Bs. 49/mes | **Bs. 490/año** | 300 | Todo lo de Plus + **cobro por WhatsApp** con confirmación automática de pago |
+
+> **Anual = 2 meses gratis** (se pagan 10, se usan 12). Plus equivale a
+> Bs. 24,17/mes y Pro a Bs. 40,83/mes. El selector Mensual/Anual está arriba de
+> las tarjetas, en el link de planes.
 
 **Qué puede hacer:**
 - 📝 Registrar gastos e ingresos por texto, audio o foto de recibo

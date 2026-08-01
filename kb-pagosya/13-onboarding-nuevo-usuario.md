@@ -13,11 +13,11 @@ Este documento guía a un nuevo merchant desde el registro inicial hasta tener e
 
 ## Sección 1 — Período de prueba gratuito
 
-Al registrarse por primera vez, todos los nuevos comercios reciben **30 días de prueba gratuita**:
+Al registrarse por primera vez, todos los nuevos comercios reciben **14 días de prueba gratuita**, disponible para todos los planes, incluido Checkout Web:
 
 | Característica | Detalle |
 |----------------|---------|
-| **Duración** | 30 días desde el registro |
+| **Duración** | 14 días desde el registro |
 | **Costo** | Gratis — sin tarjeta de crédito, sin compromiso |
 | **Acceso** | Completo a todas las funcionalidades del sistema |
 | **Límite de ventas** | Bs. 15,000/mes durante el período de prueba |
@@ -71,7 +71,7 @@ El formulario incluye verificación **Cloudflare Turnstile** (captcha invisible)
 - Si viene de una oferta de plan con compra directa → redirige al **checkout del plan elegido**
 - Si es registro normal de prueba → redirige al **Dashboard**
 - El sistema crea automáticamente el perfil del propietario con rol `owner`
-- Se envía una notificación de bienvenida: **"🎁 ¡30 días gratis para ti!"**
+- Se envía una notificación de bienvenida: **"🎁 ¡14 días gratis para ti!"**
 
 ---
 
@@ -198,7 +198,7 @@ Cuando llega un pago QR confirmado, aparece un **popup de pago recibido** con el
 
 **¿Necesito tarjeta de crédito para el período de prueba?**
 
-No. El período de prueba de 30 días es completamente gratuito y no requiere datos de pago. Solo email y contraseña.
+No. El período de prueba de 14 días es completamente gratuito y no requiere datos de pago. Solo email y contraseña.
 
 **¿Cuál es el límite de ventas durante la prueba?**
 

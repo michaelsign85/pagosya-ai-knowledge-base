@@ -2,164 +2,294 @@
 title: Visión general de PagosYa
 version: v2
 audiencia: merchants
-actualizado_en: 2026-05-13
+actualizado_en: 2026-05-22
 ---
 
 # Visión general de PagosYa
 
-**PagosYa** es un sistema SaaS boliviano, disponible en versión web y app, diseñado para ayudar a negocios a gestionar sus ventas, controlar su operación diaria y confirmar automáticamente pagos realizados por **QR bancario**.
+**PagosYa** es un sistema SaaS boliviano para comercios que necesitan vender, cobrar, controlar y crecer desde una sola plataforma.
 
-La plataforma permite que el comercio venda, cobre, valide pagos, controle caja, administre productos, empleados, tiendas, clientes, reportes y, según el plan contratado, también pueda usar tienda online, checkout QR, facturación SIAT y modo restaurante.
+La solución combina **POS**, **inventario**, **control de caja**, **empleados**, **tiendas**, **reportes**, **tienda online**, **checkout web**, **módulos comerciales** y **confirmación automática de pagos por QR bancario**.
 
----
-
-## ¿Qué problema resuelve PagosYa?
-
-Muchos negocios en Bolivia reciben pagos por QR, pero todavía dependen de capturas de pantalla, comprobantes manuales o confirmaciones lentas para saber si el dinero realmente llegó.
-
-Esto puede generar:
-
-- Comprobantes falsos o manipulados.
-- Errores de caja.
-- Pérdida de tiempo verificando pagos manualmente.
-- Falta de control sobre empleados, ventas e inventario.
-- Dificultad para vender por internet o WhatsApp de forma ordenada.
-
-**PagosYa automatiza la confirmación del pago QR** y ayuda al negocio a tener mayor control sobre sus ventas y operación.
+A diferencia de una simple pasarela de pago, PagosYa no se enfoca en intermediar el dinero del comercio. Su propuesta principal es ayudar al negocio a operar mejor y confirmar sus cobros de forma automática, reduciendo errores, fraudes y dependencia de comprobantes enviados por captura de pantalla.
 
 ---
 
-## Propuesta principal
+## Qué problema resuelve
 
-PagosYa ayuda a los comercios bolivianos a vender y cobrar con QR de forma más segura, rápida y ordenada.
+Muchos comercios en Bolivia venden todos los días por QR, WhatsApp, tienda física o redes sociales, pero todavía dependen de procesos manuales para confirmar pagos, controlar ventas y organizar su operación.
 
-Su propuesta se basa en tres pilares:
+Esto genera problemas como:
 
-1. **Confirmación automática de pagos QR**
-   - El sistema valida si el pago fue recibido correctamente.
-   - Ayuda a evitar fraudes con comprobantes falsos.
-   - Reduce la dependencia de la revisión manual.
+- dudas sobre si un pago QR realmente llegó;
+- riesgo de comprobantes falsos o capturas manipuladas;
+- pérdida de tiempo revisando cuentas bancarias manualmente;
+- dificultad para controlar empleados, cajas y turnos;
+- inventario desactualizado;
+- ventas registradas fuera del sistema;
+- falta de reportes claros para tomar decisiones;
+- dependencia de múltiples herramientas separadas.
 
-2. **Gestión comercial completa**
-   - Punto de venta.
-   - Control de caja.
-   - Productos e inventario.
-   - Empleados y tiendas.
-   - Clientes y reportes.
-   - Tienda online y checkout, según el plan.
+PagosYa centraliza estos procesos en una sola plataforma.
 
-3. **Sin comisión por venta**
-   - PagosYa no cobra comisión por cada venta.
-   - El comercio paga una mensualidad fija según el plan contratado.
-   - El dinero va a la cuenta del comercio según la integración bancaria o pasarela utilizada.
+---
+
+## Propuesta de valor
+
+PagosYa permite que el comercio:
+
+- cobre por QR bancario con confirmación automática;
+- venda desde un POS moderno;
+- controle inventario, productos, clientes y ventas;
+- gestione empleados, permisos y cajas;
+- atienda pedidos desde tienda física, tienda online o WhatsApp;
+- revise reportes en tiempo real;
+- opere con múltiples tiendas;
+- use módulos especializados según su tipo de negocio;
+- mantenga una estructura de costos clara, sin comisión por venta dentro del modelo PagosYa.
+
+El objetivo es que pequeños y medianos comercios puedan acceder a tecnología similar a la de grandes cadenas, pero de forma simple, accesible y adaptada al mercado boliviano.
 
 ---
 
 ## Modelo de negocio
 
-PagosYa funciona con un modelo de **suscripción mensual o anual**.
+PagosYa trabaja con un modelo de **suscripción mensual o anual**, según el plan elegido por el comercio.
 
-- No se cobra comisión por venta desde PagosYa.
-- Los planes actuales pertenecen a la generación **v2 (2026)**.
-- El plan actual de entrada es **EmprendeYa desde Bs. 79/mes**.
-- También existen planes superiores para negocios que necesitan POS completo, facturación, tienda online, checkout o modo restaurante.
-- Los precios y límites actualizados deben consultarse siempre en el documento `01-planes-precios.md`.
+Principios principales del modelo:
 
-> Importante: No se debe comunicar “planes desde Bs. 49” para nuevos clientes. Ese precio pertenece a planes anteriores v1 y solo aplica a clientes antiguos que mantienen condiciones legacy mientras su suscripción siga activa según las reglas vigentes.
+- **0% de comisión por ventas QR dentro del sistema PagosYa**.
+- El comercio paga una suscripción fija según su plan.
+- El dinero del cliente llega a la cuenta bancaria del comercio o al flujo bancario configurado con el proveedor correspondiente.
+- Los planes pueden incluir límites de ventas, tiendas, empleados, productos y módulos.
+- El comercio puede ampliar su capacidad con créditos o módulos adicionales cuando sea necesario.
+- Los clientes antiguos pueden conservar condiciones legacy según las reglas internas de renovación vigentes.
 
----
-
-## ¿Qué incluye PagosYa?
-
-Dependiendo del plan contratado, PagosYa puede incluir:
-
-- Confirmación automática de pagos QR.
-- Registro de ventas.
-- Caja registradora.
-- Sistema POS completo.
-- Gestión de productos.
-- Control de inventario.
-- Gestión de empleados.
-- Gestión de múltiples tiendas.
-- Reportes de ventas.
-- Gestión de clientes.
-- Facturación SIAT.
-- Tienda online.
-- Checkout QR para sitio web.
-- Dashboard de transacciones.
-- Modo restaurante.
-- Gestión de mesas y comandas.
-- Envío de pedidos a cocina o barra.
-- Producción e impresión de comandas.
+> Los precios, límites y beneficios específicos de cada plan deben consultarse siempre en la documentación actual de planes, ya que pueden cambiar con el tiempo.
 
 ---
 
-## Planes actuales
+## Funcionalidades principales
 
-Los planes actuales de PagosYa son:
+### 1. Confirmación automática de pagos QR
 
-- **EmprendeYa**
-- **ExpandeYa**
-- **ConquistaYa**
-- **Plan Checkout Web**
-- **RestauranteYa**
-- **CorporativoYa**
-- **CobraYa**
+PagosYa permite generar o registrar cobros por QR y confirmar automáticamente si el pago fue recibido correctamente.
 
-Para precios, límites de venta, cantidad de tiendas, empleados, productos y funcionalidades detalladas, revisar siempre el documento:
+Esto ayuda a evitar que el negocio dependa únicamente de capturas de pantalla o comprobantes enviados por el cliente.
 
-`01-planes-precios.md`
+Según la integración bancaria activa, el sistema puede validar pagos mediante APIs, webhooks o flujos autorizados por entidades financieras aliadas.
 
 ---
 
-## Público objetivo
+### 2. POS y ventas
 
-PagosYa está pensado para pequeños, medianos y grandes comercios de Bolivia que venden todos los días y necesitan más control sobre sus pagos, ventas y operación.
+El sistema incluye un punto de venta para registrar ventas de forma rápida y ordenada.
 
-Ejemplos de negocios:
+Permite:
 
-- Restaurantes.
-- Licorerías.
-- Farmacias.
-- Tiendas de barrio.
-- Minimarkets.
-- Tiendas de ropa.
-- Comercios con varias sucursales.
-- Negocios que venden por WhatsApp.
-- Negocios que tienen o desean tener tienda online.
-- Empresas que necesitan checkout QR para su propio sitio web.
+- vender productos o servicios;
+- aplicar métodos de pago;
+- registrar ventas por empleado;
+- controlar caja;
+- emitir comprobantes internos;
+- organizar ventas por tienda;
+- conectar el flujo de ventas con inventario y reportes.
 
 ---
 
-## Diferencial de PagosYa
+### 3. Inventario
 
-PagosYa no es solamente un POS.
+PagosYa permite controlar productos, stock y movimientos de inventario.
 
-Es una plataforma que combina:
+Incluye funciones como:
 
-- Validación automática de pagos QR.
-- Gestión comercial.
-- Control operativo.
-- Herramientas digitales de venta.
-- Integraciones bancarias y pasarelas.
-- Modelo sin comisión por venta desde PagosYa.
-
-El objetivo es que cualquier comercio boliviano pueda acceder a una tecnología moderna, similar a la que usan grandes cadenas, pero de forma más accesible y adaptada al mercado local.
+- registro de productos;
+- control de stock;
+- alertas o revisión de inventario bajo;
+- movimientos de entrada y salida;
+- soporte para lotes y costos variables cuando el comercio lo requiere;
+- conexión entre ventas e inventario para mantener datos actualizados.
 
 ---
 
-## Mensaje recomendado para atención comercial
+### 4. Control de caja y empleados
 
-Cuando un usuario pregunte qué es PagosYa, se puede responder:
+El sistema permite administrar usuarios con diferentes roles y permisos.
 
-“PagosYa es un sistema boliviano para negocios que permite vender, controlar caja, gestionar productos, empleados y tiendas, y además confirmar automáticamente pagos por QR bancario. Trabajamos con planes mensuales o anuales, sin comisión por venta desde PagosYa. El plan actual de entrada es EmprendeYa desde Bs. 79 al mes, y también contamos con planes más completos para POS, facturación, tienda online, checkout y restaurantes.”
+El propietario puede controlar:
+
+- empleados registrados;
+- permisos por tipo de usuario;
+- apertura y cierre de caja;
+- historial de cajas;
+- ventas por empleado;
+- reportes de operación;
+- acceso a módulos específicos.
+
+Esto ayuda a mejorar el control interno del negocio y reducir errores operativos.
 
 ---
 
-## Nota importante para la IA de atención
+### 5. Reportes y métricas
 
-La IA debe evitar mencionar precios antiguos como “desde Bs. 49” para nuevos clientes.
+PagosYa ofrece reportes para entender el desempeño del negocio.
 
-Si el usuario pregunta por precios, debe consultar o responder según el documento actualizado `01-planes-precios.md`.
+El comercio puede revisar información como:
 
-Los precios legacy solo aplican a clientes antiguos y no deben ser ofrecidos como planes comerciales vigentes.
+- ventas del día;
+- ventas del mes;
+- movimientos por caja;
+- desempeño por tienda;
+- actividad de empleados;
+- productos vendidos;
+- uso del plan;
+- límites y consumo del sistema.
+
+La meta es que el dueño pueda tomar decisiones con datos reales, no solo con estimaciones.
+
+---
+
+### 6. Tienda online y checkout web
+
+PagosYa también puede ayudar al comercio a vender fuera de la tienda física.
+
+Incluye o puede incluir, según el plan y configuración:
+
+- tienda online integrada;
+- checkout web;
+- links de cobro;
+- pagos QR en línea;
+- confirmación automática del pago;
+- conexión con el sistema de ventas e inventario.
+
+Esto permite que el comercio venda por redes sociales, WhatsApp, página web o canales digitales sin depender de procesos manuales.
+
+---
+
+### 7. WhatsApp CRM
+
+PagosYa está evolucionando para integrar herramientas comerciales orientadas a WhatsApp.
+
+El objetivo es que el negocio pueda:
+
+- organizar conversaciones con clientes;
+- trabajar con una bandeja compartida;
+- generar cobros QR desde el chat;
+- registrar oportunidades de venta;
+- segmentar clientes;
+- lanzar campañas con apoyo de IA;
+- conectar ventas conversacionales con el sistema principal.
+
+---
+
+### 8. Módulos especializados
+
+PagosYa puede incluir módulos adicionales según el tipo de negocio.
+
+Ejemplos:
+
+- restaurantes;
+- autoatención por tablet o pantalla touch;
+- comandas;
+- impresión en cocina, barra o producción;
+- inventario por insumos;
+- checkout web;
+- WhatsApp CRM;
+- tienda online;
+- reportes avanzados.
+
+Estos módulos permiten adaptar el sistema a comercios con necesidades más específicas.
+
+---
+
+## Integraciones bancarias
+
+PagosYa se conecta con entidades financieras y proveedores autorizados para facilitar la validación de pagos QR.
+
+El sistema puede trabajar con diferentes modelos de integración:
+
+### Modelo con cuenta del comercio
+
+El dinero llega directamente a la cuenta bancaria del comercio, y PagosYa valida el pago mediante la integración disponible.
+
+### Modelo con proveedor o red autorizada
+
+El pago se procesa mediante una entidad o red aliada, y PagosYa recibe la confirmación necesaria para actualizar la venta en el sistema.
+
+### Modelo por configuración bancaria del comercio
+
+El comercio puede configurar sus datos bancarios o credenciales según el banco o proveedor habilitado.
+
+Las integraciones pueden variar por banco, disponibilidad técnica, contrato, ciudad, tipo de comercio o etapa de activación.
+
+---
+
+## Enfoque de seguridad
+
+PagosYa busca operar con una arquitectura segura y ordenada.
+
+Principios generales:
+
+- autenticación de usuarios;
+- control de permisos por rol;
+- separación de datos por comercio;
+- protección de credenciales sensibles;
+- uso de conexiones seguras;
+- validación de eventos bancarios;
+- registro de operaciones importantes;
+- políticas de acceso en base de datos.
+
+La seguridad es clave porque el sistema maneja información comercial, operativa y de validación de pagos.
+
+---
+
+## Para quién es PagosYa
+
+PagosYa está diseñado para negocios que venden todos los días y necesitan más control.
+
+Ejemplos:
+
+- tiendas minoristas;
+- farmacias;
+- licorerías;
+- restaurantes;
+- cafeterías;
+- tiendas de ropa;
+- comercios con varios empleados;
+- negocios que venden por WhatsApp;
+- negocios con tienda física y digital;
+- empresas que quieren reducir errores al confirmar pagos QR.
+
+---
+
+## Qué diferencia a PagosYa
+
+PagosYa se diferencia porque combina en una sola plataforma:
+
+- sistema de gestión comercial;
+- POS;
+- inventario;
+- control de empleados;
+- control de caja;
+- tienda online;
+- checkout web;
+- WhatsApp CRM;
+- reportes;
+- validación automática de pagos QR;
+- modelo sin comisión por venta QR dentro del sistema.
+
+No es solo una herramienta para cobrar. Es una plataforma para operar y controlar el negocio.
+
+---
+
+## Objetivo
+
+El objetivo de PagosYa es ayudar a los comercios de Bolivia a digitalizar su operación diaria, vender con más confianza y controlar mejor su negocio.
+
+La visión es construir una plataforma accesible, escalable y conectada con el sistema financiero local, permitiendo que pequeños y medianos comercios tengan herramientas modernas sin depender de soluciones costosas, fragmentadas o difíciles de implementar.
+
+---
+
+## Resumen corto
+
+**PagosYa es un sistema completo para comercios en Bolivia que une POS, inventario, caja, empleados, reportes, tienda online, WhatsApp CRM y confirmación automática de pagos QR, con un modelo de suscripción fija y sin comisión por venta QR dentro del sistema.**
