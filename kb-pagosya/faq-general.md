@@ -1,13 +1,19 @@
 ---
 title: Preguntas frecuentes PagosYa
-version: v4
+version: v5
 audiencia: merchants
-actualizado_en: 2026-07-06
+actualizado_en: 2026-08-02
 ---
 
 # Preguntas Frecuentes — PagosYa
 
 ---
+
+## Documentación Checkout Web y API sandbox
+
+**¿Dónde encuentro la documentación de Checkout Web?**
+
+La documentación pública para developers está en **https://www.pagosya.com.bo/developers**. Desde esa página se puede revisar el flujo, consultar ejemplos para varios lenguajes y solicitar una API key de sandbox. La tienda de demostración está en **https://www.pagosya.com.bo/developers/demo**. Para información completa, consultar `35-checkout-web-api.md`.
 
 ## Sobre PagosYa
 
