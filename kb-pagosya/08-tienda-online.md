@@ -1,8 +1,8 @@
 ---
 title: Tienda online integrada
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-05-23
+actualizado_en: 2026-08-04
 ---
 
 # Tienda online integrada
@@ -14,11 +14,12 @@ La **Tienda Online** de PagosYa convierte tu negocio físico en una tienda digit
 **Capacidades principales:**
 - Catálogo digital con hasta 5 fotos, 1 video corto, descripciones, variantes y stock en tiempo real
 - **Inventario sincronizado en tiempo real** con la tienda física — una sola carga, dos canales de venta
-- Cobro por QR automatizado con 0% de comisión (BNB / Red Enlace / PIX)
+- Cobro por QR automatizado con 0% de comisión (BANECO / BNB / Red Enlace / PIX)
 - Pago con tarjeta de crédito/débito (si tiene integración Red Enlace 3DS activa)
 - **Contra entrega**: el cliente paga al recibir, con QR en el acto o efectivo
-- Pedidos organizados en panel de gestión con notificaciones por WhatsApp
-- Personalización completa: logo, banners, menú, colores, contacto
+- Pedidos organizados en panel de gestión, con **alerta sonoro de nuevo pedido** en el panel
+- **5 plantillas de diseño** listas para usar, todas adaptadas a celular y tablet
+- Personalización completa: plantilla, colores, tipografía, logo, banners, menú, contacto
 - Entrega física (delivery/retiro) o entrega digital (email/WhatsApp)
 - Enlace propio: `tutienda.pagosya.shop` o dominio personalizado
 - **Hosting, subdominio y certificado SSL gratuitos** — incluidos en todos los planes
@@ -75,11 +76,37 @@ Las tiendas creadas se muestran en **tarjetas** con:
 
 ## Sección 3 — Personalizador de tienda
 
-El **Personalizador** es el panel central de configuración de la tienda online. Se organiza en **6 pestañas** en la barra lateral:
+El **Personalizador** es el panel central de configuración de la tienda online. Se organiza en pestañas en la barra lateral: **Diseño**, **General**, **Banners**, **Menú**, **Contacto**, **Integraciones**, **Entrega** y **Preview**.
 
 ---
 
-### Pestaña 1: General
+### Pestaña 1: Diseño y plantilla
+
+Define el aspecto general de la tienda. Cambiar la plantilla **conserva** productos, banners, menús, contactos y configuración de entrega.
+
+**Plantillas disponibles:**
+
+| Plantilla | Pensada para |
+|---|---|
+| **Clásico** | El diseño original de PagosYa. Ideal para mantener una tienda existente sin cambios. |
+| **Modern Commerce** | Comercios en general. Presentación visual y editorial, enfocada en conversión. |
+| **Restaurante & Delivery** | Restaurantes y cafeterías. Menú en lista, con resumen de pedido siempre visible. |
+| **Infoproductos & Licencias** | Productos digitales: licencias, cursos, streaming y entrega por correo. |
+| **Catálogo Mayorista** | Venta por volumen: catálogo con SKU, compra por caja y resumen comercial. |
+
+**Antes de elegir**, cada plantilla ofrece dos vistas previas:
+- **Ver demostración**: muestra la plantilla con contenido de ejemplo.
+- **Con mis productos**: muestra la plantilla con el catálogo real de la tienda.
+
+En ambas se puede alternar entre **escritorio, tablet y celular** para ver cómo queda en cada dispositivo. Todas las plantillas son responsivas.
+
+**Además, en esta pestaña se configura:**
+- **Colores**: principal, acento, fondo, superficie y texto.
+- **Tipografía**: fuente para títulos y para texto.
+
+---
+
+### Pestaña 2: General
 
 Configuración básica de apariencia y comportamiento:
 
@@ -90,7 +117,7 @@ Configuración básica de apariencia y comportamiento:
 
 ---
 
-### Pestaña 2: Banners
+### Pestaña 3: Banners
 
 Los banners son las imágenes destacadas que aparecen en la parte superior de la tienda online, en formato carrusel.
 
@@ -113,9 +140,23 @@ Los banners son las imágenes destacadas que aparecen en la parte superior de la
 
 > El carrusel rota automáticamente cada 5 segundos si hay más de un banner activo.
 
+**Tamaño de imagen recomendado (varía según la plantilla):**
+
+| Plantilla | Medida | Proporción |
+|---|---|---|
+| Clásico | 1200 × 400 px | 3:1 |
+| Modern Commerce | 1600 × 800 px | 2:1 |
+| Restaurante & Delivery | 1600 × 900 px | 16:9 |
+| Infoproductos & Licencias | 1600 × 900 px | 16:9 |
+| Catálogo Mayorista | 1600 × 900 px | 16:9 |
+
+La pestaña Banners muestra siempre la medida correcta de la plantilla activa. Como cada portada recorta la imagen de forma distinta, conviene dejar el texto y los elementos importantes hacia el centro.
+
+> **Banner solo con imagen**: si se dejan vacíos el título, el subtítulo y la descripción, la portada muestra únicamente la imagen, sin textos superpuestos. Es la opción indicada cuando la imagen ya trae su propio texto.
+
 ---
 
-### Pestaña 3: Menú
+### Pestaña 4: Menú
 
 Configura la barra de navegación de la tienda online.
 
@@ -134,7 +175,7 @@ Configura la barra de navegación de la tienda online.
 
 ---
 
-### Pestaña 4: Contacto
+### Pestaña 5: Contacto
 
 Configura los datos de contacto que aparecen en el pie de la tienda online:
 
@@ -149,7 +190,7 @@ Los íconos de redes sociales aparecen automáticamente al cargar el campo corre
 
 ---
 
-### Pestaña 5: Integraciones
+### Pestaña 6: Integraciones
 
 Conecta la tienda con herramientas de analítica y remarketing:
 
@@ -163,7 +204,7 @@ Ingresar el ID correspondiente de cada plataforma. Los eventos de vista de produ
 
 ---
 
-### Pestaña 6: Entrega
+### Pestaña 7: Entrega
 
 Configura el modo y opciones de entrega disponibles para los clientes:
 
@@ -258,15 +299,15 @@ El cliente completa:
 
 PagosYa integra directamente con los principales sistemas de cobro de Bolivia y Brasil. El checkout es **completamente automatizado** — no hay transferencias manuales ni confirmaciones por WhatsApp:
 
-#### QR Bolivia — BNB / Red Enlace *(recomendado)*
+#### QR Bolivia — BANECO / BNB / Red Enlace *(recomendado)*
 
-1. El cliente selecciona "QR Bolivia" y hace clic en "Pagar".
-2. El sistema genera un **QR de cobro en tiempo real** a través de la integración BNB o Red Enlace.
+1. El cliente selecciona "QR Bolivia" y hace clic en "Generar Código QR".
+2. El sistema genera un **QR de cobro en tiempo real** usando la integración bancaria que el comercio tenga configurada (**BANECO**, **BNB** o **Red Enlace**). El comercio no elige en el checkout: PagosYa enruta automáticamente según su integración activa.
 3. El cliente escanea el QR con su app bancaria (cualquier banco boliviano).
 4. El pago se confirma **automáticamente en segundos** — sin intervención manual.
-5. El pedido pasa a estado "Pagado" y el merchant recibe una notificación por WhatsApp.
+5. El pedido pasa a estado "Pagado" y el comercio recibe el **alerta de nuevo pedido** en su panel.
 
-> Esta integración usa la red interbancaria boliviana. Cualquier banco (BNB, Banco Mercantil Santa Cruz, Banco Unión, Bisa, etc.) puede escanear el QR sin comisión adicional.
+> Esta integración usa la red interbancaria boliviana. Cualquier banco (BNB, BANECO, Banco Mercantil Santa Cruz, Banco Unión, Bisa, etc.) puede escanear el QR sin comisión adicional.
 
 #### QR PIX — Brasil
 
@@ -296,7 +337,23 @@ Disponible si el merchant activó la opción en la **Pestaña General** del Pers
 
 Tras el pago confirmado:
 - Se muestra una pantalla de **confirmación con el número de pedido**.
-- El merchant recibe una **notificación por WhatsApp** con los detalles del pedido (si tiene WhatsApp configurado en la pestaña Contacto).
+- El carrito se vacía automáticamente.
+- El cliente puede pulsar **"Contactar por WhatsApp"** para enviarle al comercio un mensaje ya redactado con los productos, el total, la forma de entrega y el estado del pago. Es el cliente quien decide enviarlo — no es un envío automático.
+- En el panel del comercio se abre un **alerta de nuevo pedido** (ver abajo).
+
+> En los pagos con QR el mensaje de WhatsApp incluye los productos y el total, pero no el número de pedido: la venta se numera después de confirmarse el pago. El número sí aparece en la pantalla de confirmación, en el alerta de nuevo pedido y en la lista de pedidos.
+
+### Alerta de nuevo pedido (panel del comercio)
+
+Cuando entra un pedido de la tienda online (pagado por QR o contra entrega), el panel muestra un **modal de alerta con sonido**, similar al de las apps de delivery:
+
+- Suena un aviso que **se repite cada 2,5 segundos** hasta que se cierre el modal (se descarta solo a los 90 segundos).
+- Muestra número de pedido, cliente y teléfono, productos, forma de entrega, estado del pago y total.
+- El botón **"Ver pedido"** abre ese pedido directamente en la lista de pedidos.
+
+**Requisitos para que suene:**
+- Hay que tener el panel de PagosYa **abierto y con sesión iniciada** como dueño o empleado del comercio.
+- El navegador debe permitir el audio de la página. Algunos navegadores bloquean el sonido hasta que se hace clic en algún lugar de la pestaña; si el modal aparece pero no suena, basta con interactuar una vez con la página.
 
 ---
 
