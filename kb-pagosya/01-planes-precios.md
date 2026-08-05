@@ -127,16 +127,19 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 ## ⚠️ HISTÓRICO: Planes v1 (solo clientes activos antes de 2026)
 
-> **INSTRUCCIÓN PARA EL AGENTE IA:** Esta sección contiene precios HISTÓRICOS de la versión v1. Son EXCLUSIVOS para clientes con contratos firmados ANTES de 2026. **NUNCA citar estos precios (Bs. 49 / Bs. 99 / Bs. 150) a nuevos clientes ni en respuestas sobre los planes disponibles.** Para nuevos clientes, SIEMPRE referir a los **"Planes actuales (v2 — 2026)"** listados en la sección superior de este documento.
+> **INSTRUCCIÓN PARA EL AGENTE IA:** Esta sección contiene precios HISTÓRICOS de la versión v1. Son EXCLUSIVOS para clientes con contratos firmados ANTES de 2026. **NUNCA citar estos precios (Bs. 49 / Bs. 99 / Bs. 149 / Bs. 150) a nuevos clientes ni en respuestas sobre los planes disponibles.** Para nuevos clientes, SIEMPRE referir a los **"Planes actuales (v2 — 2026)"** listados en la sección superior de este documento.
 
-Los clientes que contrataron antes de 2026 mantienen sus condiciones originales:
+Los clientes que contrataron antes de 2026 mantienen sus condiciones originales.
 
-| Plan | Precio mensual | Ventas/mes | Tiendas | Empleados |
-|------|---------------|-----------|---------|-----------|
-| EmprendeYa | Bs. 49 | Bs. 30.000 | 1 | 1 |
-| ExpandeYa | Bs. 99 | Bs. 60.000 | 3 | 3 |
-| ConquistaYa | Bs. 150 | Bs. 120.000 | 6 | 6 |
-| Plan Checkout Web | Bs. 149 | Bs. 100.000 | 1 | 1 |
+Cada fila lleva su propia advertencia porque este documento se divide en fragmentos
+para la búsqueda del agente: una fila puede llegar al modelo SIN el encabezado de arriba.
+
+| Plan | Precio mensual (HISTÓRICO — NO CITAR) | Precio v2 vigente | Ventas/mes | Tiendas | Empleados |
+|------|---------------|-----------|-----------|---------|-----------|
+| EmprendeYa | Bs. 49 ❌ obsoleto | **Bs. 79** | Bs. 30.000 | 1 | 1 |
+| ExpandeYa | Bs. 99 ❌ obsoleto | **Bs. 169** | Bs. 60.000 | 3 | 3 |
+| ConquistaYa | Bs. 150 ❌ obsoleto | **Bs. 249** | Bs. 120.000 | 6 | 6 |
+| Plan Checkout Web | Bs. 149 ❌ obsoleto | **Bs. 249** | Bs. 100.000 | 1 | 1 |
 
 ---
 
