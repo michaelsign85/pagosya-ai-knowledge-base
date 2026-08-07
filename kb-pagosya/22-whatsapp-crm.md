@@ -1,5 +1,6 @@
 # WhatsApp CRM — Documentação Completa de Funcionalidades
-> **Uso:** Material de referência para criação de Landing Page
+> **Uso:** Material de referência para Landing Page e para o assistente responder dúvidas de lojistas
+> **Atualizado:** agosto/2026
 
 ---
 
@@ -12,514 +13,551 @@ O **WhatsApp CRM** é uma plataforma completa de gestão de relacionamento com c
 - Equipes com múltiplos atendentes em um mesmo número
 - Empreendedores que querem automatizar respostas e promoções
 - Empresas que precisam rastrear pipeline de vendas via mensagens
-
-**Resultado esperado:**
-- Atender mais clientes com menos esforço
-- Nunca perder uma mensagem sem resposta
-- Enviar campanhas em massa sem risco de ban
-- Automatizar respostas 24/7 com ou sem IA
+- Clínicas, salões e oficinas que trabalham com hora marcada
 
 ---
 
-## 📦 MÓDULOS DO SISTEMA
+# ⚠️ ANTES DE TUDO: OS DOIS TIPOS DE CONEXÃO
 
-### 1. 💬 Chat em Tempo Real — Bandeja Compartilhada
+**Esta é a informação mais importante do documento.** Várias funcionalidades se comportam de forma diferente conforme o tipo de conexão do lojista. Ao responder qualquer dúvida sobre limites, envio em massa ou automação, **pergunte primeiro qual conexão ele usa**.
 
-**Para que serve:**  
-Central de atendimento onde toda a equipe vê e responde mensagens de um único número WhatsApp.
+| | 🟢 **API Oficial (Meta Cloud API)** | 🟡 **Evolution (não oficial)** |
+|---|---|---|
+| **O que é** | Conexão oficial do WhatsApp Business, via Meta | Conexão por leitura de QR Code, como o WhatsApp Web |
+| **Como conecta** | Vinculação guiada com a Meta (Embedded Signup) | QR Code ou código de pareamento |
+| **Risco de bloqueio** | Nenhum por volume | **Real** — o WhatsApp pode banir o número |
+| **Custo** | Paga por conversa iniciada (tabela da Meta) | Sem custo por mensagem |
+| **Mensagem para contato novo** | Só com **plantilla aprovada** | Texto livre, sem restrição |
+| **Velocidade de envio em massa** | ~1 segundo entre mensagens | 8 a 45 segundos entre mensagens |
+| **Verificação/selo** | Possível conta verificada | Não |
 
-**Como funciona:**  
-- Todos os contatos aparecem numa lista única, com preview da última mensagem
-- Badge de mensagens não lidas em cada conversa
-- Ao clicar em um contato, abre o histórico completo da conversa
-- Qualquer atendente pode responder — fica registrado quem respondeu
-- Suporta texto, imagens, vídeos, áudios, documentos, stickers e localização
-- URLs de mídia do WhatsApp expiram automaticamente → o sistema detecta e recarrega
+**Resumo prático:** a API oficial é mais rápida, mais segura e permite escala — mas exige plantillas aprovadas para falar com quem não escreveu antes. A Evolution é livre para escrever para qualquer um, mas é lenta de propósito e tem risco de banimento.
 
-**Diferenciais:**
-- ✅ Atribuição de contatos a atendentes específicos
-- ✅ Status de leitura visível (✓ enviado · ✓✓ entregue · ✓✓ lido)
-- ✅ Busca de contatos por nome, telefone ou e-mail (com debounce)
-- ✅ Suporte a grupos do WhatsApp
-- ✅ Histórico persistido em banco de dados — nunca se perde
+O PagosYa é **Meta Tech Provider oficial**, o que permite conectar o número do lojista à API oficial direto pelo sistema, sem burocracia.
 
 ---
 
-### 2. 🏷️ Etiquetas e Filtros de Contatos
+## 📋 A REGRA DA JANELA DE 24 HORAS (só API Oficial)
 
-**Para que serve:**  
-Organizar contatos por categorias visuais (leads quentes, VIPs, suporte, pagamento pendente, etc.) para localizar e filtrar rapidamente.
+Esta regra explica a maioria das dúvidas dos lojistas na API oficial:
 
-**Como funciona:**  
-- Criar etiqueta com nome e cor (10 cores disponíveis)
-- Aplicar uma ou várias etiquetas a cada contato
-- Filtrar a lista de conversas por etiqueta
-- Ver distribuição de etiquetas no dashboard de métricas
+- Quando um cliente **escreve para você**, abre-se uma **janela de 24 horas**
+- Dentro dessa janela: você responde com **texto livre**, o que quiser, sem custo adicional
+- Passadas 24 horas sem ele escrever: só chega **plantilla aprovada pela Meta**
 
-**Diferenciais:**
-- ✅ 10 cores pré-definidas e customizáveis
-- ✅ Múltiplas etiquetas por contato
-- ✅ Filtro instantâneo na bandeja
-- ✅ Dashboard de distribuição por etiqueta nas métricas
+**Por que isso existe:** a Meta protege o usuário de receber mensagem de empresa que ele não contatou.
+
+**O que isso significa na prática:**
+- Responder cliente = sempre livre
+- Campanha para lista antiga = precisa de plantilla
+- Lembrete de consulta para amanhã = precisa de plantilla
 
 ---
 
-### 3. 🗂️ Pipeline Kanban de Vendas
+## 📊 LIMITE DE ENVIOS (só API Oficial)
 
-**Para que serve:**  
-Visualizar em que etapa do funil de vendas cada contato está — do primeiro contato até o fechamento.
+A Meta limita **quantos clientes NOVOS** você pode contatar a cada 24 horas. É o "nível" da conta:
 
-**Como funciona:**  
-- Colunas padrão: Lead → Negociação → Proposta → Ganho / Perdido
-- Cada card representa um contato com resumo de dados CRM
-- Arraste e solte o card para mover entre etapas
-- Acesso ao histórico de conversas direto do card
-- Visão de valor total de deals ativos no pipeline
+| Nível | Clientes novos / 24h |
+|---|---|
+| Inicial | 250 |
+| Negócio verificado | **1.000** |
+| Seguintes | 10.000 → 100.000 → ilimitado |
 
-**Diferenciais:**
-- ✅ Drag & drop intuitivo
-- ✅ Valor monetário por deal trackado
-- ✅ Integração direta com o chat (abrir conversa do kanban)
-- ✅ Visível no dashboard de métricas (total deals + valor)
+**Três coisas que o lojista precisa entender:**
 
----
+1. **Responder não conta.** Só conta conversa que **você** inicia.
+2. **Falar 5 vezes com a mesma pessoa conta como 1.** O limite é de pessoas, não de mensagens.
+3. **Não é corte à meia-noite.** A cota se libera sozinha, 24h após cada envio.
 
-### 4. 👤 CRM de Contatos
+**Estourar o limite NÃO bloqueia a conta.** A Meta apenas recusa a mensagem, sem cobrar. O que realmente derruba a conta é outra coisa — ver abaixo.
 
-**Para que serve:**  
-Armazenar e visualizar dados completos de cada cliente além do telefone: empresa, cargo, e-mail, cidade, país, produtos de interesse, etc.
-
-**Como funciona:**  
-- Painel lateral no chat com todos os dados CRM do contato
-- Campos: nome, empresa, e-mail, cargo, cidade, país, telefone, produtos, notas
-- Dados usados automaticamente para substituir variáveis em templates e respostas rápidas
-- Histórico de atribuições a atendentes
-
-**Diferenciais:**
-- ✅ Dados integrados ao envio de templates (sem copiar/colar)
-- ✅ Histórico de deals associados ao contato
-- ✅ Atualização automática ao importar CSV
+**Observação:** desde outubro/2025 o limite é do **portfólio**, não do número. Dois números da mesma empresa dividem a mesma cota.
 
 ---
 
-### 5. 📤 Envio em Massa (Bulk Send) — Anti-Ban
+## 🚦 QUALIDADE DO NÚMERO — o que de fato derruba a conta
 
-**Para que serve:**  
-Enviar uma mensagem para centenas de contatos de forma segura, simulando comportamento humano para não ser banido pelo WhatsApp.
+O CRM mostra a qualidade do número ao lado do status de conexão, e avisa quando ela cai.
 
-**Como funciona:**  
-**Passo 1 — Selecionar destinatários:**
-- Modo **Individual**: selecione contatos com checkbox
-- Modo **Grupos**: expanda grupos e selecione membros
-- Modo **Importar**: faça upload de CSV/TXT com lista de números
+| Estado | Significado | O que fazer |
+|---|---|---|
+| 🟢 **Buena** | Clientes recebem bem suas mensagens | Manter o ritmo |
+| 🟡 **En riesgo** | Alguns bloquearam ou denunciaram | Pausar campanhas, escrever só para quem espera contato |
+| 🔴 **Crítica** | Meta marcou o número | Parar envios em massa **imediatamente** |
 
-**Passo 2 — Escolher mensagem:**
-- Buscar nas Respostas Rápidas salvas
-- Preview com substituição de variáveis (`{{nombre}}`, `{{empresa}}`, etc.)
+A Meta calcula isso pelo comportamento de **quem recebe**: bloqueios e denúncias derrubam; respostas e cliques sustentam.
 
-**Passo 3 — Confirmar e enviar:**
-- Valida números no WhatsApp antes de enviar
-- Acompanha progresso em tempo real
-- Pausa ou cancela a qualquer momento
+**Se cair para crítica e não melhorar em 7 dias, o limite diário desce um nível.** Ou seja: o risco não é volume, é mandar mensagem para quem não quer receber.
 
-**Proteção Anti-Ban (distribuição assimétrica):**
-| Cenário | Probabilidade | Delay |
-|---------|--------------|-------|
-| Ritmo normal (lendo rápido) | 60% das msgs | 8 – 20 segundos |
-| Pausa média (lendo com atenção) | 30% das msgs | 20 – 35 segundos |
-| Micro-pausa (distraído) | 10% das msgs | 35 – 45 segundos |
+---
+
+# 📦 MÓDULOS DO SISTEMA
+
+## 1. 💬 Chat em Tempo Real — Bandeja Compartilhada
+*Funciona igual nos dois provedores*
+
+Central de atendimento onde toda a equipe vê e responde mensagens de um único número.
+
+- Lista única de contatos com preview da última mensagem e badge de não lidas
+- Histórico completo ao clicar no contato
+- Registro de qual atendente respondeu
+- Texto, imagens, vídeos, áudios, documentos, stickers e localização
+- Atribuição de contatos a atendentes específicos
+- Status de leitura (✓ enviado · ✓✓ entregue · ✓✓ lido)
+- Suporte a grupos
+- Histórico persistido — nunca se perde
+
+---
+
+## 2. 🏷️ Etiquetas e Filtros
+*Igual nos dois provedores*
+
+Organizar contatos por categorias visuais (leads quentes, VIPs, pagamento pendente).
+
+- Etiquetas com nome e cor (10 cores)
+- Múltiplas etiquetas por contato
+- Filtro da lista de conversas por etiqueta
+- Distribuição visível nas métricas
+
+---
+
+## 3. 🗂️ Pipeline Kanban de Vendas
+*Igual nos dois provedores*
+
+Acompanhar leads por etapa comercial, arrastando cartões.
+
+- Etapas customizáveis (padrão: Prospectos → Contactado → Propuesta → Negociación → Ganado)
+- Arrastar e soltar entre etapas
+- Valor monetário e prioridade por negócio
+- Um negócio por contato
+- Movimentação automática por palavra-chave do cliente
+
+---
+
+## 4. 👤 CRM de Contatos
+*Igual nos dois provedores*
+
+Ficha completa: empresa, e-mail, cargo, notas, histórico de compras.
+
+---
+
+## 5. 📤 Envio em Massa
+**⚠️ Este módulo funciona de forma MUITO diferente conforme a conexão**
+
+### 🟢 Na API Oficial (Meta)
+
+**Duas formas de enviar:**
+
+| Formato | Chega a quem | Quando usar |
+|---|---|---|
+| **Plantilla aprovada** | **Todos os contatos** | Campanhas, promoções, avisos |
+| **Mensagem rápida** (texto livre) | Só quem escreveu nas últimas 24h | Continuar conversas em andamento |
+
+**O sistema protege o lojista automaticamente:** ao escolher "mensagem rápida", os contatos fora da janela de 24h aparecem **bloqueados na lista, com o motivo à mostra** — não somem, para o lojista entender que precisa de plantilla.
+
+**Ritmo:** ~1 segundo entre envios (o limite da Meta é 80 mensagens por segundo). Uma campanha de 200 contatos leva cerca de **3 minutos**.
+
+**Painel de capacidade** mostra: quantos clientes novos já foram contatados nas 24h, quanto resta, e a qualidade do número.
+
+### 🟡 Na Evolution
+
+**Modo anti-ban, com ritmo humano simulado:**
+
+| Cenário | Frequência | Delay |
+|---|---|---|
+| Ritmo normal | 60% das msgs | 8 – 20 segundos |
+| Pausa média | 30% das msgs | 20 – 35 segundos |
+| Micro-pausa | 10% das msgs | 35 – 45 segundos |
 | Pausa de lote | A cada 10 msgs | 3 minutos |
 
-**Limites e capacidades:**
-- 🛡️ **200 mensagens/dia** — limite seguro para contas estabelecidas
-- ⏱️ **~20 segundos** de média por envio (comportamento humano simulado)
-- 📦 **Exemplo:** 100 contatos = ~35-40 minutos de envio seguro
-- 💾 **Jobs sobrevivem ao recarregamento** da página — salvos no navegador
-- 🔁 **Variáveis dinâmicas** substituídas por dados reais de cada contato
+- **200 mensagens/dia** — limite de segurança
+- 200 contatos levam cerca de **2 horas**
+- Só texto livre (não existe plantilla)
+
+**Por que a diferença:** na Evolution o ritmo lento evita banimento. Na API oficial isso não protege de nada — só faria a campanha demorar horas sem motivo.
+
+### Comum aos dois
+- Seleção individual, por grupos ou importação de CSV/TXT
+- Validação de números antes do envio
+- Progresso em tempo real, com pausa e cancelamento
+- Variáveis dinâmicas (`{{nombre}}`, `{{telefono}}`)
+- Relatório de falhas com **motivo explicado em linguagem clara**
 
 ---
 
-### 6. ⚡ Respostas Rápidas
+## 6. ⚡ Respostas Rápidas
+*Igual nos dois provedores*
 
-**Para que serve:**  
-Criar uma biblioteca de mensagens predefinidas com atalhos (ex: `/ola`, `/preco`, `/horario`) para responder clientes em segundos.
+Biblioteca de mensagens predefinidas com atalhos (`/ola`, `/preco`).
 
-**Como funciona:**  
-- Criar resposta com nome, atalho (`/comando`) e categoria
-- Adicionar conteúdo: texto, imagem, vídeo, áudio, documento ou sticker
-- Usar variáveis para personalizar (`{{nombre}}`, `{{empresa}}`, etc.)
-- Usar digitando `/` no chat ou selecionando ao criar envio em massa
+- Texto, imagem, vídeo, áudio, documento ou sticker
+- Upload até **16 MB**
+- **12 variáveis** + customizadas
+- Uso digitando `/` no chat
+- 6 categorias organizadoras
+- Duplicar, ativar/desativar, buscar
 
-**Funcionalidades:**
-- ✅ 6 categorias organizadoras (texto, multimídia, docs, pagamentos, interativo, todos)
-- ✅ Suporte a 10 tipos de conteúdo (text, image, video, audio, document, sticker, contact, location, buttons, list)
-- ✅ Upload de arquivos até **16MB**
-- ✅ **12 variáveis built-in** + variáveis customizadas
-- ✅ Duplicar resposta existente para criar variações
-- ✅ Ativar/desativar sem deletar
-- ✅ Busca instantânea por nome ou conteúdo
+**Variáveis:** `{{nombre}}` · `{{telefono}}` · `{{empresa}}` · `{{email}}` · `{{ciudad}}` · `{{pais}}` · `{{cargo}}` · `{{producto}}` · `{{agente}}` · `{{fecha}}` · `{{hora}}` · `{{tienda}}`
 
-**Variáveis disponíveis:**  
-`{{nombre}}` · `{{telefono}}` · `{{empresa}}` · `{{email}}` · `{{ciudad}}` · `{{pais}}` · `{{cargo}}` · `{{producto}}` · `{{agente}}` · `{{fecha}}` · `{{hora}}` · `{{tienda}}`
+⚠️ **Na API oficial**, respostas rápidas só chegam a quem está na janela de 24h.
 
 ---
 
-### 7. 📋 Templates com Variáveis CRM
+## 7. 📋 Plantillas da Meta *(só API Oficial)*
 
-**Para que serve:**  
-Criar mensagens profissionais que preenchem automaticamente dados do cliente (empresa, cargo, produto) ao enviar.
+**Não confundir com Respostas Rápidas.** São coisas diferentes:
 
-**Como funciona:**  
-- Criar template com nome, categoria e conteúdo com variáveis
-- Ao usar: selecionar contato → sistema busca dados CRM → substitui variáveis → envia
-- Contador de uso registra quantas vezes cada template foi enviado
-
-**Categorias:**  
-Geral · Vendas · Suporte · Marketing · Follow-up · Saudação · Notificação
-
-**Funcionalidades:**
-- ✅ **12 variáveis built-in** + ilimitadas customizadas
-- ✅ Variáveis custom em formato `snake_case` auto-formatado
-- ✅ Marcar favoritos para destaque
-- ✅ Suporte a imagem, vídeo e documento com legenda
-- ✅ Rastreamento de uso por template
-- ✅ Envio direto ao contato a partir do template
-
----
-
-### 8. 📅 Agendamento de Mensagens
-
-**Para que serve:**  
-Programar mensagens para serem enviadas em data e hora específica — inclusive com recorrência automática.
-
-**Como funciona:**  
-- Escolher contato ou grupo
-- Definir data e hora do envio
-- Configurar recorrência (opcional): Diária, Semanal ou Mensal
-- O sistema verifica a cada 60 segundos e envia no momento certo
-
-**Funcionalidades:**
-- ✅ **3 tipos de recorrência**: diário, semanal, mensal
-- ✅ Data final de parada da recorrência
-- ✅ Anotações internas por agendamento
-- ✅ Gerenciamento por status: Pendente · Enviado · Falhou · Cancelado
-- ✅ Edição de mensagens pendentes
-- ✅ Verificação automática a cada **60 segundos**
-- ✅ Suporte a texto, imagem, vídeo, áudio e documento
-
-**Casos de uso:**
-- Follow-up 3 dias após proposta enviada
-- Felicitação de aniversário agendada
-- Lembrete semanal de pagamento
-- Promoção de fim de semana toda sexta-feira
-
----
-
-### 9. 🤖 Chatbot com IA — Respostas 24/7
-
-**Para que serve:**  
-Automatizar respostas a clientes sem precisar de atendente, usando regras predefinidas ou inteligência artificial para responder qualquer pergunta.
+| | Resposta Rápida | Plantilla Meta |
+|---|---|---|
+| Aprovação | Nenhuma, usa na hora | **Precisa de aprovação da Meta** |
+| Alcance | Só janela de 24h | **Qualquer contato, sempre** |
+| Variáveis | `{{nombre}}`, `{{empresa}}` | `{{1}}`, `{{2}}`, `{{3}}` |
+| Onde criar | Menu Respostas Rápidas | Menu Plantillas |
 
 **Como funciona:**
+- Criar com nome, categoria (Marketing/Utilidade) e corpo
+- Enviar para aprovação da Meta — costuma levar de minutos a poucas horas
+- Aprovada, fica disponível no envio em massa e no agendamento
 
-**Tab Configuração:**
-- Ativar/desativar chatbot
-- Definir horário de funcionamento
-- Mensagem especial fora do horário
+**Regras da Meta que o sistema valida antes de enviar:**
+- Corpo **não pode começar nem terminar com variável**
+- Cada variável precisa de um valor de exemplo
+- Nome só com minúsculas, números e sublinhado
 
-**Tab Regras:**
-Criar regras por tipo de gatilho:
+**Cabeçalho com imagem:** ao salvar uma promoção criada com IA como plantilla, a imagem gerada vira o cabeçalho automaticamente.
+
+---
+
+## 8. 📅 Agendamento de Mensagens
+
+Programar mensagens para data e hora específicas.
+
+**✅ Funciona com o navegador fechado.** O envio roda no servidor, verificado a cada 5 minutos — não depende do lojista estar com o sistema aberto.
+
+**Três formas de escolher o destinatário:**
+1. **Um contato** — com busca por nome ou número (funciona com milhares de contatos)
+2. **Etapa do pipeline** — envia para todos que estiverem naquela etapa **no momento do envio**; quem entrar depois também recebe
+3. Digitar um número manualmente
+
+**Formatos:**
+- Texto, imagem, vídeo, áudio, documento
+- 🟢 **Plantilla aprovada** (só API oficial) — o único formato que garante entrega
+
+⚠️ **Aviso importante na API oficial:** como o envio acontece no futuro, a janela de 24h provavelmente estará fechada. O sistema avisa isso no formulário e recomenda plantilla.
+
+**Recorrência:** diária, semanal ou mensal, com data final opcional.
+
+**Estados:** Pendente · Enviado · Falhou · Cancelado — com motivo da falha em linguagem clara.
+
+**Relatório de envio para etapa:** quantos receberam, quantos falharam e por quê.
+
+---
+
+## 9. 🤖 Chatbot com IA — Respostas 24/7
+
+Automatizar respostas usando regras ou inteligência artificial.
+
+### Configuração guiada (para quem está começando)
+1. **Vincular a chave de IA** (obrigatório antes de tudo)
+2. **Ensinar o negócio ao bot** — três formas:
+   - Subir um **PDF** (catálogo, cardápio, tabela de preços)
+   - Informar o **endereço de um site**
+   - **Escrever à mão** sobre o negócio (para quem não tem material pronto)
+3. **Quiz de personalidade** — nome do bot, tom de voz, objetivos, o que nunca dizer, quando chamar um humano
+
+O sistema compila tudo num "manual" que o bot consulta a cada resposta.
+
+### Regras por palavra-chave
 
 | Tipo | Funcionamento |
-|------|--------------|
-| **Keyword** | Dispara quando a mensagem *contém* a palavra-chave |
-| **Contains** | Dispara para qualquer substring do trigger |
-| **Exact** | Dispara apenas se a mensagem for *exatamente* igual |
-| **Regex** | Padrão avançado para cases complexos (ex: CPF, datas) |
-| **Menu** | Responde com lista de opções clicáveis |
-
-**Tab IA (Inteligência Artificial):**
-- Integração com **Google Gemini** e **OpenAI (ChatGPT)**
-- Sistema de fallback: se nenhuma regra bate → IA responde
-- System prompt customizável ("Você é um assistente de suporte da [empresa]...")
-- Controle de criatividade (temperatura da IA)
-- Teste de conexão direto na tela
-
-**Funcionalidades:**
-- ✅ Regras ilimitadas com sistema de prioridade
-- ✅ Ativar/desativar cada regra individualmente
-- ✅ Contador de acionamentos por regra
-- ✅ Histórico de respostas automáticas com logs
-- ✅ Memória de contexto da conversa
-- ✅ Providers: Gemini (`gemini-2.0-flash`) e OpenAI (`gpt-4o-mini`)
-- ✅ Modelos customizados suportados
-- ✅ Funciona dentro e fora do horário comercial
-
----
-
-### 10. 🎨 Campanhas com IA — Criação de Promoções
-
-**Para que serve:**  
-Gerar imagens e texto de promoção automaticamente com IA para enviar em campanhas em massa.
-
-**Como funciona:**
-
-**Passo 1 — Imagem:**
-- Opção A: Descreva a imagem desejada em texto → IA gera
-- Opção B: Faça upload da foto do produto → IA cria versão promocional
-- Visualize e regenere quantas vezes quiser
-
-**Passo 2 — Texto (Copy):**
-- Descreva o que quer promover
-- IA gera copy de conversão persuasivo
-- Edite manualmente se necessário
-
-**Passo 3 — Salvar e Usar:**
-- Pré-visualize imagem + texto juntos
-- Defina nome e atalho (`/promo_pizza`)
-- Salva automaticamente como Resposta Rápida
-- Pronto para usar em Envio em Massa
-
-**Funcionalidades:**
-- ✅ **Google Gemini** e **OpenAI** como providers
-- ✅ Imagem gerada em PNG (alta qualidade)
-- ✅ Copy otimizado para conversão e vendas
-- ✅ Suporte a imagem de referência (foto do produto)
-- ✅ Regeneração ilimitada até aprovar
-- ✅ Integração direta com Respostas Rápidas e Envio em Massa
-
-**Fluxo completo de campanha:**  
-`Criar promo com IA` → `Salvar como Resposta Rápida` → `Enviar para 100+ contatos via Bulk Send`
-
----
-
-### 11. 📥 Importação de Contatos
-
-**Para que serve:**  
-Carregar uma lista de clientes de um arquivo CSV ou TXT para o CRM em segundos, sem precisar cadastrar um por um.
-
-**Como funciona:**  
-- Arraste ou clique para fazer upload do arquivo (`.csv`, `.txt`, `.tsv`)
-- O sistema detecta automaticamente o separador (`,` `;` `tab` `|`)
-- Detecta automaticamente os cabeçalhos de coluna
-- Valida e limpa os números de telefone
-- Preview de até 50 registros antes de importar
-- Clicar em "Importar" — duplicados são atualizados, não duplicados
-
-**Campos suportados:**  
-Telefone (obrigatório) · Nome · E-mail · Empresa · Notas
-
-**Funcionalidades:**
-- ✅ Detecção automática de separadores e cabeçalhos
-- ✅ Limpeza de prefixos (`tel:`, `whatsapp:`, `cel:`, `+55`, etc.)
-- ✅ Validação de comprimento (7-16 dígitos)
-- ✅ Deduplicação inteligente (atualiza sem duplicar)
-- ✅ Log de erros com indicação da linha problemática
-- ✅ Preview de 50 registros antes de confirmar
-- ✅ Template de exemplo exibido na tela
-
----
-
-### 12. 📊 Métricas e Relatórios
-
-**Para que serve:**  
-Dashboard completo com indicadores de desempenho em tempo real para acompanhar o atendimento e o chatbot.
-
-**Como funciona:**  
-Escolha o período (Hoje / 7 dias / 30 dias) e o dashboard carrega automaticamente:
-
-**KPIs Principais:**
-| Indicador | O que mostra |
-|-----------|-------------|
-| **Total Contatos** | Número total de contatos e grupos salvos |
-| **Enviados Hoje** | Mensagens enviadas pela equipe no dia |
-| **Recebidos Hoje** | Mensagens recebidas no dia |
-| **Não Lidas** | Total de conversas aguardando resposta |
-| **Chatbot (30d)** | Quantas respostas automáticas foram dadas |
-| **Taxa de Leitura** | % de mensagens lidas pelo destinatário |
-
-**Gráficos e Visualizações:**
-- 📈 **Mensagens por dia** (últimos 7 dias): enviados vs. recebidos — tendência de volume
-- 🥧 **Tipos de mensagem**: distribuição entre texto, imagem, vídeo, áudio, documento, sticker
-- 🏆 **Ranking de atendentes** (com medalhas 🥇🥈🥉)
-- 🎯 **Top regras de chatbot**: quais triggers mais acionados
-- 🏷️ **Distribuição de etiquetas**: quantos contatos em cada tag
-- 💼 **Pipeline de vendas**: valor total + quantidade de deals ativos
-- 🤖 **Chatbot por tipo**: breakdown por welcome, keyword, default, fora de horário
-
-**Funcionalidades:**
-- ✅ **3 períodos**: Hoje, 7 dias, 30 dias
-- ✅ 6 KPI cards com ícones e tendências
-- ✅ Relatório de desempenho da equipe
-- ✅ Análise do chatbot por tipo de resposta
-- ✅ Visão do pipeline com valor monetário
-
----
-
-### 13. 🔍 Histórico e Exportação
-
-**Para que serve:**  
-Buscar mensagens antigas e exportar conversas em CSV ou TXT para auditoria, análise ou arquivo.
-
-**Como funciona:**
-
-**Tab Exportar:**
-- Filtros: data início/fim, contato específico, tipo de mensagem, direção (enviado/recebido), palavra-chave
-- Escolher formato: CSV (Excel) ou TXT (legível)
-- Download automático com nome padrão: `whatsapp_mensajes_[data_inicio]_[data_fim]`
-
-**Tab Buscar:**
-- Busca global em todos os contatos simultaneamente
-- Mostra previews dos resultados com contexto
-- Limite de 200 resultados por busca
-
-**Tab Estatísticas:**
-- Totais de mensagens por período
-- Distribuição por tipo de mensagem
-- Análise do período analisado
-
-**Funcionalidades:**
-- ✅ **5 filtros combináveis** (data, contato, tipo, direção, keyword)
-- ✅ **Busca global** em todas as conversas (200 resultados)
-- ✅ **2 formatos de exportação** (CSV para BI, TXT para leitura)
-- ✅ Nome de arquivo gerado automaticamente com datas
-- ✅ Auditoria completa de quem enviou o quê e quando
-
----
-
-### 14. ⭐ Pesquisa de Satisfação (CSAT)
-
-**Para que serve:**  
-Medir automaticamente o nível de satisfação dos clientes após atendimentos com nota de 1 a 5 estrelas e Score NPS.
-
-**Como funciona:**  
-- Configurar mensagem de pesquisa e mensagem de agradecimento
-- Ativar envio automático: sistema envia pesquisa N minutos após conversa
-- Ou enviar manualmente para contatos selecionados
-- Cliente responde com número de 1 a 5
-- Dashboard analisa: média, distribuição e NPS
-
-**Configurações:**
-- Delay antes de enviar (ex: 5 minutos após atendimento)
-- Cooldown entre pesquisas (ex: 7 dias — não reenvia em menos tempo)
-- Mensagem customizável em qualquer idioma
-
-**Analytics:**
-| Métrica | O que mostra |
-|---------|-------------|
-| **Média de Rating** | Nota média de 1 a 5 com emoji ⭐ |
-| **Total de Respostas** | Quantos clientes responderam |
-| **NPS Score** | Net Promoter Score de -100 a +100 |
-| **Distribuição** | Gráfico de barras: quantos deram 1★, 2★, 3★, 4★, 5★ |
-
-**Cálculo NPS:**  
-`NPS = (% Promotores ≥ 4★) − (% Detratores < 3★) × 100`
-
-**Funcionalidades:**
-- ✅ Auto-envio com delay configurável
-- ✅ Cooldown anti-spam (padrão 7 dias)
-- ✅ NPS Score em tempo real
-- ✅ Visualização por cor: 🟢 excelente · 🟡 médio · 🔴 crítico
-- ✅ Envio manual por contato quando necessário
-- ✅ Histórico de todas as respostas com timestamps
-
----
-
-## 🔗 INTEGRAÇÕES E TECNOLOGIA
-
-### WhatsApp
-- **API:** Evolution API v2.x (protocolo completo)
-- **Conexão:** Via QR Code ou código de pareamento
-- **Webhooks:** Recebimento em tempo real de mensagens, status, reações
-- **Validação:** Verifica se número está no WhatsApp antes de enviar
-- **Grupos:** Suporte completo — participantes, envio em massa para grupos
+|---|---|
+| **Keyword** | Dispara quando a mensagem contém a palavra |
+| **Contains** | Qualquer parte do texto |
+| **Exact** | Mensagem exatamente igual |
+| **Regex** | Padrão avançado |
+| **Menu** | Responde com lista de opções |
 
 ### Inteligência Artificial
-- **Google Gemini:** `gemini-2.0-flash`, `gemini-1.5-pro`, `gemini-1.5-flash`
-- **OpenAI:** `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo`
-- **Configuração única** compartilhada entre Chatbot, Promoções e Campanhas
+
+**Três provedores:** Google Gemini · OpenAI (ChatGPT) · **Claude (Anthropic)**
+
+- Modo fallback: a IA só responde quando nenhuma regra bate (recomendado)
+- Memória da conversa configurável
+- Movimentação automática no pipeline por palavra-chave
+- Registro de todas as respostas automáticas
+- Horário de funcionamento com mensagem fora de hora
+
+**⚠️ Diferença entre provedores:**
+- 🟢 **API Oficial** — todos os três provedores, incluindo Claude
+- 🟡 **Evolution** — Gemini e OpenAI (Claude ainda não disponível)
+
+### Sobre a chave de IA
+Cada lojista usa **sua própria chave** — o PagosYa não cobra por mensagem de IA nem revende tokens. As chaves ficam guardadas no servidor e **nunca passam pelo navegador**.
+
+---
+
+## 10. 🎨 Promoções com IA
+*Igual nos dois provedores*
+
+Gerar imagem e texto de promoção automaticamente.
+
+**Passo 1 — Imagem:** descrever o que quer, ou subir a foto do produto para a IA criar a versão promocional.
+
+**Modelos de imagem disponíveis (família Nano Banana, do Gemini):**
+
+| Modelo | Uso |
+|---|---|
+| Nano Banana 2 | Equilíbrio (padrão) |
+| Nano Banana 2 Lite | Mais rápido e barato — bom para volume |
+| Nano Banana Pro | Máxima qualidade — peças caprichadas |
+
+Também suporta GPT Image 1 e DALL·E 3 (OpenAI).
+
+**Passo 2 — Texto:** a IA gera copy de conversão, editável.
+
+**Passo 3 — Onde salvar:** o lojista escolhe um ou os dois:
+- **Resposta Rápida** — disponível na hora
+- 🟢 **Plantilla de WhatsApp** (só API oficial) — passa por aprovação da Meta, depois alcança qualquer contato
+
+⚠️ **Claude não gera imagens.** Quem usa Claude precisa configurar um provedor de imagem separado (Gemini ou OpenAI). O sistema avisa isso na tela.
+
+---
+
+## 11. 📆 Agenda de Citas *(módulo novo)*
+*Funciona nos dois provedores; os avisos automáticos dependem da conexão*
+
+Sistema de hora marcada para **clínicas, consultórios, salões, barbearias e oficinas**.
+
+### Como funciona
+
+**1. Cadastrar profissionais** — cada um recebe um **link próprio de agenda**
+
+**2. Definir horário de trabalho** por dia da semana
+   - Intervalo de almoço = dois blocos no mesmo dia (ex: 08:00–12:00 e 14:00–18:00)
+
+**3. Cadastrar serviços** com duração e preço
+   - **Tempo de preparo** opcional (limpeza entre atendimentos) — bloqueia a agenda mas não aparece para o cliente
+
+**4. O cliente agenda sozinho pelo link**
+   - Abre sem login, vê os horários **realmente livres** e escolhe
+   - O mesmo link serve para enviar por WhatsApp, colar na bio do Instagram ou no Google Meu Negócio
+
+### Por que o link (e não o bot perguntando tudo)
+
+O bot pergunta com qual profissional e **envia o link**. O cliente escolhe o horário na tela.
+
+**Motivo:** o horário vem direto do banco de dados. O bot nunca fala uma data — então **não tem como inventar disponibilidade**, que é o pior erro possível numa agenda de clínica.
+
+### Proteções
+
+- **Dois clientes nunca pegam o mesmo horário**, mesmo clicando ao mesmo tempo — garantido pelo banco de dados
+- Antecedência mínima (não dá para agendar para daqui a 10 minutos)
+- Limite de dias à frente
+- Bloqueio de férias e feriados
+- Arquivar profissional **preserva o histórico** de atendimentos
+
+### Confirmação — dois modos
+- **Automático** (padrão): o cliente escolhe e está agendado — bom para salão, barbearia, oficina
+- **Com aprovação**: a solicitação fica pendente até alguém aprovar — bom para clínica que faz triagem
+
+Nos dois casos **o horário fica bloqueado** enquanto aguarda.
+
+### Avisos automáticos
+- **Lembrete ao cliente** antes da consulta (tempo configurável)
+- **Aviso ao profissional** quando entra uma cita nova
+- Remarcar **atualiza** o lembrete; cancelar **cancela** o lembrete
+
+⚠️ **Na API oficial**, o lembrete precisa de uma plantilla aprovada — porque 24h antes da consulta a janela quase sempre está fechada.
+
+---
+
+## 12. 📥 Importação de Contatos
+*Igual nos dois provedores*
+
+Carregar lista de CSV ou TXT.
+
+- Detecção automática de separador (`,` `;` `tab` `|`) e cabeçalhos
+- Limpeza de prefixos (`tel:`, `whatsapp:`, `+55`)
+- Validação de 7 a 16 dígitos
+- Deduplicação (atualiza sem duplicar)
+- Preview de 50 registros antes de confirmar
+- Log de erros com a linha problemática
+
+**Campos:** Telefone (obrigatório) · Nome · E-mail · Empresa · Notas
+
+---
+
+## 13. 📊 Métricas e Dashboard
+*Igual nos dois provedores*
+
+**KPIs:** Contatos · Enviados · Recebidos · Não lidas · Respostas do chatbot (30d) · Taxa de leitura
+
+**Períodos:** Hoje · 7 dias · 30 dias — **os cartões e a taxa de leitura seguem o período escolhido**
+
+**Gráficos:**
+- Mensagens por dia (7 dias): enviados vs. recebidos
+- Tipos de mensagem
+- Ranking de atendentes 🥇🥈🥉
+- Regras de chatbot mais acionadas
+- Distribuição de etiquetas
+- Pipeline: valor total e quantidade
+- Chatbot por tipo de resposta
+
+Os números refletem a **base completa**, sem corte por volume.
+
+---
+
+## 14. 🔍 Histórico e Exportação
+*Igual nos dois provedores*
+
+Busca global em mensagens antigas, exportação em CSV ou TXT.
+
+---
+
+## 15. ⭐ Pesquisa de Satisfação (CSAT)
+*Igual nos dois provedores*
+
+Avaliação de 1 a 5 estrelas enviada após o atendimento, com NPS calculado e período de carência configurável (padrão 7 dias).
+
+---
+
+# 🔗 TECNOLOGIA E SEGURANÇA
+
+### Conexão WhatsApp
+- **API Oficial:** WhatsApp Cloud API — PagosYa é **Meta Tech Provider** aprovado, com vinculação guiada
+- **Evolution API v2.x:** conexão por QR Code ou código de pareamento
+- Webhooks em tempo real para mensagens, status e reações
+- Validação de números antes do envio
+- Multi-instância: uma empresa pode ter mais de um número
+
+### Inteligência Artificial
+- **Google Gemini** · **OpenAI** · **Claude (Anthropic)**
+- Imagens: família **Nano Banana** (Gemini) e GPT Image / DALL·E (OpenAI)
+- **Modelo de chave própria:** cada lojista usa sua conta de IA. O PagosYa não revende tokens.
+- **As chaves nunca chegam ao navegador** — ficam no servidor, usadas apenas por funções protegidas
 
 ### Banco de Dados
-- **Supabase (PostgreSQL):** Contatos, mensagens, chatbot, templates, respostas rápidas, agendamentos, CSAT
-- **Supabase Realtime:** Atualizações instantâneas sem recarregar a página
-- **Row Level Security:** Isolamento total por empresa — dados de uma empresa nunca vazam para outra
-- **Storage:** Arquivos de mídia armazenados em buckets com cache de 3600 segundos
+- **Supabase (PostgreSQL)** com atualizações instantâneas
+- **Row Level Security:** isolamento total por empresa
+- Storage para mídias
 
 ### Segurança
-- 🔒 Autenticação via token em todas as Edge Functions
-- 🔒 RLS policies em nível de tabela
-- 🔒 Isolamento por `tienda_id` e `user_id`
-- 🔒 Chaves de API armazenadas de forma segura, nunca expostas no cliente
+- 🔒 Autenticação em todas as funções de servidor
+- 🔒 Isolamento por empresa e usuário
+- 🔒 Chaves de API guardadas no servidor, nunca expostas
+- 🔒 Agendamentos e envios processados no servidor
 
 ---
 
-## 📱 PLANOS E PERMISSÕES
+# 📱 PLANOS E PERMISSÕES
 
-O sistema suporta **controle de permissões por módulo** — cada plano pode habilitar/desabilitar funcionalidades específicas:
+> ⚠️ **Seção pendente de revisão** — valores e limites por plano serão atualizados.
 
-- `whatsapp_crm_license` — Acesso ao CRM completo
-- Permissões por menu por tipo de funcionário
-- Multi-instância: uma empresa pode ter múltiplos números WhatsApp
+- Controle de permissões por módulo e por tipo de funcionário
+- Multi-instância disponível
+- Agenda de Citas disponível para todos os planos com WhatsApp CRM
 
 ---
 
-## 🏆 RESUMO DE CAPACIDADES
+# 🏆 RESUMO DE CAPACIDADES
+
+### Envio em massa — a diferença que mais importa
+
+| | 🟢 API Oficial | 🟡 Evolution |
+|---|---|---|
+| Intervalo entre mensagens | ~1 segundo | 8 a 45 segundos |
+| 200 contatos levam | ~3 minutos | ~2 horas |
+| Limite | Clientes novos/24h do nível (250 a ilimitado) | 200 mensagens/dia |
+| Contato fora da janela 24h | Só plantilla | Texto livre |
+| Risco de banimento por volume | Nenhum | Real |
+
+### Demais capacidades
 
 | Funcionalidade | Capacidade |
-|----------------|-----------|
-| Mensagens em massa/dia | **200 mensagens** |
-| Delay anti-ban | **8 a 45 segundos** (distribuição humana) |
-| Pausa de lote | **3 minutos a cada 10 msgs** |
-| Arquivo upload (Respostas) | **16 MB** |
-| Variáveis predefinidas | **12 variáveis** |
-| Categorias templates | **7 categorias** |
-| Recorrência (Agendamento) | **3 tipos** (diário, semanal, mensal) |
-| Tipos de trigger chatbot | **5 tipos** |
-| Providers de IA | **2** (Google Gemini + OpenAI) |
-| Busca histórico | **200 resultados** |
-| CSAT rating scale | **1 a 5 estrelas** |
-| NPS range | **-100 a +100** |
-| Cooldown CSAT | **7 dias** (padrão) |
-| Cores de etiqueta | **10 cores** |
-| Campos importação | **5 campos** |
-| Separadores detectados | **4 tipos** (`,` `;` `tab` `|`) |
-| Formatos exportação | **2** (CSV + TXT) |
+|---|---|
+| Upload de arquivo | **16 MB** |
+| Variáveis predefinidas | **12** |
+| Recorrência de agendamento | **3 tipos** |
+| Tipos de gatilho do chatbot | **5** |
+| Provedores de IA | **3** (Gemini, OpenAI, Claude) |
+| Modelos de imagem | **5** (3 Nano Banana + 2 OpenAI) |
+| Destino do agendamento | **3** (contato, etapa do pipeline, número avulso) |
+| Busca no histórico | **200 resultados** |
+| CSAT | **1 a 5 estrelas**, NPS de -100 a +100 |
+| Cores de etiqueta | **10** |
+| Formatos de exportação | **2** (CSV, TXT) |
 | Períodos de métricas | **3** (Hoje, 7d, 30d) |
 
 ---
 
-## 💡 CASOS DE USO REAIS
-
-### 🛍️ Loja de Varejo / E-commerce
-1. **Importar** lista de clientes que compraram no último mês (CSV)
-2. **Criar campanha** com IA: foto do produto → imagem promocional → copy de conversão
-3. **Enviar em massa** para 200 clientes com delay anti-ban
-4. **Chatbot** responde dúvidas de horário, rastreamento, preços automaticamente
-5. **Métricas** mostram taxa de resposta e engajamento
+# 💡 CASOS DE USO REAIS
 
 ### 🏥 Clínica / Consultório
-1. **Agendar** lembretes de consulta (1 dia antes, recorrente)
-2. **CSAT** automático 10 minutos após atendimento
-3. **Templates**: "Dr. {{agente}} confirmou seu horário para {{fecha}} às {{hora}}"
-4. **Chatbot**: horário de atendimento, endereço, convênios aceitos
-5. **Kanban**: pacientes por status (agendado, confirmado, realizado)
+1. **Agenda:** cadastrar médicos, horários e serviços
+2. Enviar o **link da agenda** por WhatsApp ou colar no Instagram
+3. Paciente escolhe o horário sozinho — sem ligação, sem ida e volta
+4. **Lembrete automático** 24h antes (plantilla aprovada)
+5. **Aviso ao médico** a cada nova consulta
+6. **Chatbot** responde endereço, convênios e horários
+7. **CSAT** após o atendimento
 
-### 💼 Equipe Comercial / Vendas
-1. **Kanban** para pipeline: Lead → Proposta → Negociação → Fechado
-2. **Templates** de follow-up personalizados por cargo e empresa
-3. **Agendamento**: follow-up em 3, 7 e 14 dias automático
-4. **Métricas** de conversão por atendente (ranking)
-5. **Bulk Send**: prospecção em massa com copy gerado por IA
+### 💇 Salão / Barbearia
+1. Cada profissional com **seu link de agenda**
+2. Link na bio do Instagram — cliente agenda a qualquer hora
+3. **Tempo de preparo** entre atendimentos, invisível para o cliente
+4. **Promoções com IA** para dias parados
+5. Envio para a etapa "Clientes recorrentes" do pipeline
 
-### 🤝 Suporte ao Cliente
-1. **Chatbot** com regras para FAQs (horário, preço, segunda via, etc.)
-2. **IA generativa** para perguntas que não têm regra predefinida
-3. **Equipe** atende apenas casos complexos (o chatbot filtra)
-4. **Respostas Rápidas** para resoluções frequentes (em segundos)
-5. **Histórico** + **Exportação** para auditoria e treinamento
+### 🛍️ Varejo / E-commerce
+1. **Importar** lista de clientes (CSV)
+2. **Promoção com IA:** foto do produto → imagem → copy
+3. Salvar como **plantilla** e enviar para todos
+4. **Chatbot** responde rastreamento, horário e preços
+5. **Métricas** de engajamento
+
+### 💼 Equipe Comercial
+1. **Kanban:** Lead → Proposta → Negociação → Fechado
+2. **Agendar** follow-up para uma etapa inteira do pipeline
+3. **Ranking** de atendentes
+4. Prospecção com plantilla aprovada
+
+### 🤝 Suporte
+1. **Chatbot** com regras para as dúvidas frequentes
+2. **IA** para o que não tem regra
+3. Equipe atende só os casos complexos
+4. **Histórico** e exportação para auditoria
 
 ---
 
-*Documentação gerada em: 2025*  
-*Sistema: Pagosya WhatsApp CRM*  
-*Versão: Production*
+# ❓ PERGUNTAS FREQUENTES
+
+**"Por que minha mensagem não chegou?"**
+Na API oficial, texto livre só chega a quem escreveu nas últimas 24h. Use uma plantilla aprovada.
+
+**"Estourei o limite. Minha conta foi bloqueada?"**
+Não. A Meta só recusa a mensagem, sem cobrar. A cota se libera sozinha ao longo das horas.
+
+**"O que pode bloquear minha conta então?"**
+A qualidade do número. Se muitos clientes bloquearem ou denunciarem, a Meta reduz seu limite. Envie só para quem espera seu contato.
+
+**"Recebi o erro 131049."**
+A pessoa já recebeu muitas promoções naquele dia — de **qualquer** empresa, não só a sua. Não há nada errado com sua conta e você não foi cobrado.
+
+**"Posso agendar mensagem e fechar o navegador?"**
+Sim. O envio roda no servidor.
+
+**"Preciso pagar IA à parte?"**
+A chave de IA é sua. O PagosYa não cobra por mensagem de IA.
+
+**"O bot pode marcar consultas?"**
+Ele envia o link da agenda, e o cliente escolhe o horário. Isso garante que o horário oferecido é real.
+
+**"Qual conexão devo usar?"**
+API oficial para escala, segurança e campanhas. Evolution se você precisa escrever livremente para contatos que nunca falaram com você e aceita o risco.
+
+---
+
+*Atualizado em: agosto/2026*
+*Sistema: PagosYa WhatsApp CRM*
+*PagosYa é Meta Tech Provider oficial*
