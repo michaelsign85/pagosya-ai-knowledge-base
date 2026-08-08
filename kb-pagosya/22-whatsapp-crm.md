@@ -35,6 +35,73 @@ O **WhatsApp CRM** é uma plataforma completa de gestão de relacionamento com c
 
 O PagosYa é **Meta Tech Provider oficial**, o que permite conectar o número do lojista à API oficial direto pelo sistema, sem burocracia.
 
+> ⚠️ **A Evolution não é mais oferecida a contas novas.** Quem já está nela continua funcionando normalmente e pode reconectar quando precisar, mas na tela de conexão só aparece a API oficial. **Não ofereça Evolution a um cliente novo.** Se ele insistir por causa do texto livre, explique a janela de 24 horas e as plantillas — é a mesma necessidade resolvida do jeito que não corre risco de banimento.
+
+---
+
+# 🛑 REQUISITOS QUE PRECISAM SER DITOS **ANTES** DE VENDER
+
+> **Leia esta seção antes de fechar qualquer venda de WhatsApp CRM.**
+> Estes quatro pontos são a causa nº 1 de cliente frustrado na segunda semana. Todos são fáceis de resolver **antes** de pagar, e todos viram reclamação se descobertos depois.
+
+## 1. 📱 O número não pode estar em uso no WhatsApp comum
+
+Para conectar na API oficial, o número **não pode ter WhatsApp ou WhatsApp Business instalado**. Se tiver, é preciso **apagar a conta pelo próprio aplicativo** antes de conectar (Configurações → Conta → Apagar minha conta).
+
+- É o motivo nº 1 de onboarding que trava no meio
+- Apagar a conta **apaga as conversas antigas daquele número** — avise antes
+- Muitos lojistas preferem um **chip novo** só para o atendimento
+
+**Pergunte sempre:** *"Esse número tem WhatsApp instalado hoje?"*
+
+## 2. 💳 A Meta cobra à parte e pede cartão de crédito
+
+Isto **não** está incluído na mensalidade do PagosYa. São duas contas diferentes.
+
+| O que o lojista faz | Quem cobra | Custo |
+|---|---|---|
+| Mensalidade do CRM | **PagosYa** | Bs 249 / 449 / 699 |
+| **Responder** cliente dentro de 24h | ninguém | **grátis** |
+| **Enviar plantilla** (promoção, lembrete, aviso) | **Meta** | por mensagem, tabela da Meta |
+| Tokens de IA | **provedor de IA** (Gemini/OpenAI/Claude) | conforme uso |
+
+- O lojista precisa **cadastrar um cartão na conta de Meta Business dele**
+- Sem cartão, as plantillas **param de sair** quando o crédito inicial gratuito acaba
+- A cobrança da Meta vai direto para o cartão dele — o PagosYa não intermedeia, não repassa e não vê essa fatura
+- **Responder cliente nunca custa.** Só custa iniciar conversa
+
+**Frase pronta:** *"A mensalidade do PagosYa é o sistema. Responder seus clientes é grátis. Quando você quiser mandar promoção para quem não te escreveu, a Meta cobra por mensagem e debita do cartão que você cadastrar com eles."*
+
+## 3. 📋 Plantillas precisam de aprovação da Meta
+
+Para escrever a quem **não** falou nas últimas 24 horas, só com plantilla aprovada.
+
+- A aprovação leva de **minutos a algumas horas**
+- A Meta **pode recusar** — texto que parece propaganda enganosa, promessa exagerada ou erro de formatação
+- O lojista cria a plantilla dentro do próprio CRM e acompanha o status ali
+- **Não dá para improvisar:** quem só descobre isso na hora da campanha perde o dia
+
+**Pergunte:** *"Você vai mandar promoção para lista antiga? Então vamos deixar as plantillas aprovadas já na primeira semana."*
+
+## 4. 🤖 A IA usa a chave do próprio lojista
+
+- O PagosYa **não vende tokens** e não os inclui na mensalidade
+- O lojista escolhe o provedor (Gemini, OpenAI ou Claude) e cria a chave
+- O consumo é faturado pelo provedor, direto para ele
+- Chatbot e IA estão **nos três planos** — não é diferencial de plano caro
+
+**Frase pronta:** *"A inteligência artificial vem em todos os planos. Você usa sua própria chave, e paga o consumo direto ao provedor — a gente não cobra por isso."*
+
+---
+
+## ✅ Checklist de qualificação (antes de fechar)
+
+- [ ] Tem número disponível **sem WhatsApp instalado**?
+- [ ] Aceita cadastrar **cartão na Meta** para as plantillas?
+- [ ] Entendeu que **responder é grátis** e só iniciar conversa custa?
+- [ ] Vai usar IA? Sabe que precisa de **chave própria**?
+- [ ] Quantas pessoas vão atender? *(define o plano: 3, 5 ou 10 agentes)*
+
 ---
 
 ## 📋 A REGRA DA JANELA DE 24 HORAS (só API Oficial)
@@ -450,13 +517,59 @@ Avaliação de 1 a 5 estrelas enviada após o atendimento, com NPS calculado e p
 
 ---
 
-# 📱 PLANOS E PERMISSÕES
+# 📱 PLANOS
 
-> ⚠️ **Seção pendente de revisão** — valores e limites por plano serão atualizados.
+São **três níveis**. Todos incluem 1 número de WhatsApp.
 
-- Controle de permissões por módulo e por tipo de funcionário
-- Multi-instância disponível
-- Agenda de Citas disponível para todos os planos com WhatsApp CRM
+| | **CRM** | **Ventas** ⭐ | **Commerce** |
+|---|---|---|---|
+| **Mensal** | Bs 249 | Bs 449 | Bs 699 |
+| **Anual** | Bs 2.490 | Bs 4.490 | Bs 6.990 |
+| **Agentes** | 3 | 5 | 10 |
+
+O anual equivale a **10 meses** — dois meses grátis.
+
+## O que cada um entrega
+
+### 🟩 Nos três (inclusive o mais barato)
+- Bandeja compartilhada, histórico e atribuição de conversas
+- Contatos, etiquetas, filtros e respostas rápidas
+- Plantillas oficiais da Meta · importação CSV · mensagens programadas
+- **Chatbot completo** — palavra-chave, menus, horários, fora de horário, handoff
+- **Inteligência artificial** com a chave do lojista
+- **Agenda de citas completa**, incluindo o bot enviando o link sozinho
+- **Link de cobro no chat** com aviso de pagamento
+- Métricas básicas de atendimento
+
+### 🟦 A partir do Ventas
+- **Pipeline Kanban** de oportunidades
+- **Mensagens em bloco** (campanhas com plantilla)
+- Segmentação por etiqueta e por etapa
+- **CSAT**, ranking de atendentes e métricas de equipe
+
+### 🟪 Só no Commerce
+- **Tienda Online** e catálogo público
+- **Produtos, categorias e inventário**
+- Checkout com pagamento automático
+- **Botão de compartilhar a tienda** dentro da conversa
+- Relatórios de vendas por produto e categoria
+
+## ➕ Agente adicional — Bs 20 por 30 dias
+
+Precisa de mais um atendente sem trocar de plano? **Um crédito de Bs 20 adiciona 1 agente por 30 dias.** É o mesmo crédito de expansão que já existe no PagosYa, comprado pelo menu de créditos.
+
+Quando o crédito expira, o agente extra é bloqueado — **as conversas já atribuídas a ele não se perdem**.
+
+## ⚠️ Pontos de atenção do atendente
+
+**O plano de WhatsApp SOMA ao plano PagosYa, não substitui.**
+Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsApp CRM. A Tienda Online que ele já tem continua funcionando — o nível de WhatsApp só acrescenta.
+
+**Por isso, cuidado ao oferecer o Commerce.** Se o lojista **já tem Tienda Online pelo plano dele**, o Commerce não acrescenta loja nenhuma — nesse caso o certo é o **Ventas**. O Commerce é para quem **não** tem plano com loja e quer tudo junto.
+
+**O limite de agentes é de quem atende, não de quem está cadastrado.** Um funcionário cadastrado que nunca recebeu conversa não ocupa vaga.
+
+**Segundo número de WhatsApp ainda não está disponível.** Está no roteiro. Não prometa.
 
 ---
 
@@ -548,13 +661,34 @@ A pessoa já recebeu muitas promoções naquele dia — de **qualquer** empresa,
 Sim. O envio roda no servidor.
 
 **"Preciso pagar IA à parte?"**
-A chave de IA é sua. O PagosYa não cobra por mensagem de IA.
+A chave de IA é sua. O PagosYa não cobra por mensagem de IA. Chatbot e IA vêm nos três planos.
+
+**"Quanto custa mandar mensagem? A mensalidade cobre tudo?"**
+Não. São duas contas. A mensalidade do PagosYa é o sistema. **Responder um cliente dentro de 24h é grátis.** Enviar plantilla (promoção, lembrete, aviso) é cobrado pela **Meta**, por mensagem, direto no cartão que você cadastrar com eles.
+
+**"Preciso mesmo de cartão de crédito?"**
+Sim, na sua conta de Meta Business. Sem cartão, as plantillas param de sair quando o crédito inicial gratuito acabar. Responder cliente continua funcionando.
+
+**"Meu número já tem WhatsApp. Posso usar?"**
+Só depois de apagar a conta pelo aplicativo (Configurações → Conta → Apagar minha conta). Isso apaga as conversas antigas daquele número, então muita gente prefere usar um chip novo só para o atendimento.
+
+**"Por que preciso de plantilla? Não posso escrever o que eu quero?"**
+Pode — para quem te escreveu nas últimas 24 horas. Fora disso a Meta só entrega plantilla aprovada, para proteger o usuário de empresa que ele não contatou. A aprovação leva de minutos a algumas horas.
+
+**"Posso ter dois números de WhatsApp?"**
+Ainda não. Está no roteiro, mas hoje é um número por conta.
+
+**"Já tenho o plano ConquistaYa. Vou perder minha Tienda Online se contratar o WhatsApp?"**
+Não. O plano de WhatsApp **soma** ao que você já tem, nunca tira. Nesse caso o indicado é o **Ventas** — o Commerce só faz sentido para quem ainda não tem loja.
+
+**"Preciso de mais um atendente, mas não quero trocar de plano."**
+Um crédito de **Bs 20 adiciona 1 agente por 30 dias**. Quando expira, o agente extra é bloqueado, mas as conversas dele não se perdem.
 
 **"O bot pode marcar consultas?"**
 Ele envia o link da agenda, e o cliente escolhe o horário. Isso garante que o horário oferecido é real.
 
 **"Qual conexão devo usar?"**
-API oficial para escala, segurança e campanhas. Evolution se você precisa escrever livremente para contatos que nunca falaram com você e aceita o risco.
+API oficial — é a única oferecida para contas novas. Quem já está na Evolution continua funcionando e pode reconectar, mas não indicamos mais essa via: o risco de banimento do número é real e a Meta oficial resolve a mesma necessidade com plantillas.
 
 ---
 
