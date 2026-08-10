@@ -27,11 +27,32 @@ CobraYa Condominios es el **plan especializado de PagosYa para administración d
 
 ## 📦 Plan y precio
 
-| Plan | Clientes (unidades) | Tiendas | Empleados | Precio |
-|------|---------------------|---------|-----------|--------|
-| **CobraYa Condominios** | Hasta 300 | 1 | Hasta 5 | A definir comercialmente (plan tipo enterprise) |
+CobraYa Condominios es **superior a CobraYa**: incluye todo CobraYa (cobranza
+recurrente, QR bancario, portal, validación de pagos y WhatsApp CRM oficial) y
+además el módulo condominial completo.
 
-> El plan se activa manualmente por el equipo comercial — no está en el flujo de autoservicio de `/planes`. Incluye `monthly_billing` (CobraYa base) + `condominios` (módulo condominial) activados juntos; no incluye POS, productos ni tienda online.
+| Plan | Unidades activas | Volumen/mes | Usuarios/agentes | Mensual | Anual |
+|------|------------------|-------------|------------------|---------|-------|
+| **Condominios 100** | Hasta 100 | Bs. 100.000 | 3 | Bs. 449 | Bs. 4.490 |
+| **Condominios 300** ⭐ | Hasta 300 | Bs. 300.000 | 5 | Bs. 699 | Bs. 6.990 |
+| **Condominios 600** | Hasta 600 | Bs. 600.000 | 10 | Bs. 999 | Bs. 9.990 |
+| **Condominios 1000** | Hasta 1.000 | Bs. 1.000.000 | 15 | Bs. 1.399 | Bs. 13.990 |
+| **Corporativo** | +1.000 | Personalizado | Personalizado | Cotizar | — |
+
+> El plan anual equivale a pagar 10 meses y recibir 12.
+
+**Se factura por unidad ACTIVA, no por residente.** Un departamento con cinco
+personas cuenta como una unidad.
+
+Los cuatro planes por tramo se contratan desde `/planes`. Solo el Corporativo
+pasa por el equipo comercial. Incluyen `monthly_billing` (CobraYa base) +
+`condominios` (módulo condominial); no incluyen POS, productos ni tienda
+online.
+
+> ⚠️ **No vendas Condominios como "X unidades por Bs. X".** Lo que se vende es
+> la administración completa: expensas automáticas, pagos con QR, portal y app
+> del residente, comunicados, reservas de áreas comunes, visitas, encomiendas
+> y contabilidad del condominio.
 
 ---
 

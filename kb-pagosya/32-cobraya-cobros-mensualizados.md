@@ -24,14 +24,29 @@ CobraYa es el módulo de **cobranza recurrente automatizada** de PagosYa. Diseñ
 
 ## 📦 Planes y precios
 
-| Plan | Clientes | Mensual | Anual | Costo/cliente/mes |
-|------|----------|---------|-------|-------------------|
-| **CobraYa 300** ⭐ | Hasta 300 | Bs. 199 | Bs. 1.990 | Bs. 0.66 |
-| **CobraYa 500** | Hasta 500 | Bs. 399 | Bs. 3.990 | Bs. 0.80 |
-| **CobraYa 1000** | Hasta 1.000 | Bs. 699 | Bs. 6.990 | Bs. 0.70 |
-| **Corporativo** | +1.000 | A negociar | — | — |
+Cada plan define **tres** capacidades: clientes activos, volumen mensual procesado y agentes de WhatsApp CRM.
 
-> 💡 **Ahorro vs pasarela (1%):** Para 300 clientes de Bs.150, CobraYa cuesta Bs.199/mes vs Bs.450/mes de pasarela = **56% menos**.
+| Plan | Clientes activos | Volumen/mes | Agentes WhatsApp | Mensual | Anual |
+|------|------------------|-------------|------------------|---------|-------|
+| **CobraYa 300** ⭐ | Hasta 300 | Bs. 100.000 | 3 | Bs. 349 | Bs. 3.490 |
+| **CobraYa 500** | Hasta 500 | Bs. 250.000 | 5 | Bs. 549 | Bs. 5.490 |
+| **CobraYa 1000** | Hasta 1.000 | Bs. 500.000 | 10 | Bs. 849 | Bs. 8.490 |
+| **Corporativo** | +1.000 | Personalizado | Personalizado | Cotizar | — |
+
+> El plan anual equivale a pagar 10 meses y recibir 12.
+
+**WhatsApp CRM oficial va incluido en todos los planes CobraYa** — bandeja
+compartida, chatbot y recordatorios sobre la Plataforma de WhatsApp Business.
+PagosYa es Tech Provider verificado por Meta.
+
+> ⚠️ **Nunca digas "X clientes por Bs. X" ni calcules costo por cliente.**
+> CobraYa no se vende por cantidad de clientes: se vende como solución de
+> cobranza completa. Si el lead pregunta el costo por cliente, respondé con
+> lo que el plan resuelve (cobranza automática, recordatorios, QR, portal,
+> conciliación y WhatsApp CRM), no con una división.
+
+**Clientes antiguos:** quien contrató antes de agosto/2026 mantiene su precio
+y sus límites anteriores. No se le cambia la facturación.
 
 ---
 
@@ -247,14 +262,14 @@ CobraYa se integra directamente con los **3 bancos principales de Bolivia** para
 
 ### 🆓 Cero comisión — Nuestro mayor diferencial
 
-**PagosYa NO cobra comisión por transacción.** Esta es una ventaja competitiva enorme frente a las pasarelas de pago tradicionales:
+**PagosYa NO cobra comisión por transacción.** Es una ventaja competitiva real frente a las pasarelas tradicionales. La tarifa 0% es de PagosYa; las condiciones del banco emisor del QR se rigen por el convenio de cada comercio.
 
 | | PagosYa CobraYa | Pasarela de pago típica |
 |---|----------------|------------------------|
-| Comisión por pago | **0%** | 1% – 5% |
-| Costo mensual | Plano fijo desde Bs.199 | Variable según volumen |
-| 300 clientes × Bs.150 | **Bs.199/mes total** | Bs.450/mes solo en comisiones |
-| 1.000 clientes × Bs.150 | **Bs.699/mes total** | Bs.1.500/mes solo en comisiones |
+| Comisión de PagosYa por pago | **0%** | 1% – 5% |
+| Costo mensual | Tarifa fija desde Bs. 349 | Variable según volumen |
+| 300 clientes × Bs.150 | **Bs. 349/mes total** | Bs. 450/mes solo en comisiones |
+| 1.000 clientes × Bs.150 | **Bs. 849/mes total** | Bs. 1.500/mes solo en comisiones |
 
 > 💡 **Somos posiblemente el único sistema en Bolivia que ofrece cobranza recurrente + QR bancario integrado + cero comisión.** El dueño paga una tarifa plana mensual y se olvida de porcentajes por transacción.
 

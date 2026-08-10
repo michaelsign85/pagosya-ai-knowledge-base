@@ -72,12 +72,15 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 > Plan especializado para negocios que cobran membresías, mensualidades o cuotas periódicas: academias, escuelas, guarderías, condominios, coworkings y clubes.
 
-| Plan | Clientes | Mensual | Anual | Por cliente/mes |
-|------|----------|---------|-------|-----------------|
-| **CobraYa 300** ⭐ | Hasta 300 | **Bs. 199** | Bs. 1.990 | Bs. 0.66 |
-| **CobraYa 500** | Hasta 500 | **Bs. 399** | Bs. 3.990 | Bs. 0.80 |
-| **CobraYa 1000** | Hasta 1.000 | **Bs. 699** | Bs. 6.990 | Bs. 0.70 |
-| **Corporativo** | +1.000 | **A negociar** | — | — |
+| Plan | Clientes activos | Volumen/mes | Agentes WhatsApp | Mensual | Anual |
+|------|------------------|-------------|------------------|---------|-------|
+| **CobraYa 300** ⭐ | Hasta 300 | Bs. 100.000 | 3 | **Bs. 349** | Bs. 3.490 |
+| **CobraYa 500** | Hasta 500 | Bs. 250.000 | 5 | **Bs. 549** | Bs. 5.490 |
+| **CobraYa 1000** | Hasta 1.000 | Bs. 500.000 | 10 | **Bs. 849** | Bs. 8.490 |
+| **Corporativo** | +1.000 | Personalizado | Personalizado | **Cotizar** | — |
+
+> ⚠️ **Nunca calcules ni menciones costo por cliente.** CobraYa no se vende por
+> cantidad de clientes.
 
 **Incluye en todos los tiers:**
 - ✅ Cobranza automática mensual con generación de cobros
@@ -90,12 +93,31 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 - ✅ Import/Export CSV de clientes
 - ✅ Auditoría de cambios (anulaciones, vencimientos)
 - ✅ Facturación SIAT
+- ✅ **WhatsApp CRM oficial incluido** (bandeja compartida, chatbot y recordatorios sobre la Plataforma de WhatsApp Business — PagosYa es Tech Provider verificado por Meta)
 
 **No incluye:** POS, productos, inventario, tienda online ni API de checkout externo.
 
 **💰 Comparativa vs pasarela de pago (1%):**
-- 300 clientes a Bs.150 c/u: **CobraYa Bs.199/mes** vs pasarela Bs.450/mes = **56% de ahorro**
-- 1.000 clientes a Bs.150 c/u: **CobraYa Bs.699/mes** vs pasarela Bs.1.500/mes = **53% de ahorro**
+- 300 clientes a Bs.150 c/u: **CobraYa Bs. 349/mes** vs pasarela Bs. 450/mes
+- 1.000 clientes a Bs.150 c/u: **CobraYa Bs. 849/mes** vs pasarela Bs. 1.500/mes
+
+La comisión 0% es de PagosYa; las condiciones del banco emisor del QR se rigen
+por el convenio de cada comercio.
+
+---
+
+### 🧭 Jerarquía comercial — en qué orden ofrecer
+
+    WhatsApp CRM          Bs. 249 → 449 → 699
+            ↓             (atención y ventas por WhatsApp)
+    CobraYa               Bs. 349 → 549 → 849
+            ↓             (WhatsApp CRM + cobranza recurrente)
+    CobraYa Condominios   Bs. 449 → 699 → 999 → 1.399
+                          (WhatsApp CRM + CobraYa + administración de condominios)
+
+Cada nivel contiene al anterior. **Nunca ofrezcas CobraYa por debajo del
+WhatsApp CRM de entrada**: CobraYa ya incluye el CRM, así que su precio inicial
+siempre está por encima de Bs. 249.
 
 ---
 
