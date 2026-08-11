@@ -165,11 +165,21 @@ para la búsqueda del agente: una fila puede llegar al modelo SIN el encabezado 
 
 ---
 
-## Período de prueba
+## No hay prueba gratis
 
-- **14 días gratis** al registrarse — disponible para todos los planes, incluido Checkout Web
-- Límite durante el trial: Bs. 15.000 en ventas, 1 tienda, 1 empleado
-- No requiere tarjeta de crédito para iniciar
+**PagosYa NO ofrece período de prueba, trial ni demostración gratuita del
+sistema.** No lo menciones nunca, ni siquiera como respuesta a "puedo probarlo
+antes de pagar".
+
+Si el lead quiere conocer el sistema antes de contratar, tenés dos caminos —
+**preguntá cuál prefiere** en lugar de asumir:
+
+1. **Verlo ahora**: videos, material y detalle de cada plan en
+   https://pagosya.com.bo/links
+2. **Demostración en vivo**: reunión de 20 minutos con el equipo, agendada.
+
+> Cuentas antiguas pueden seguir con un trial vigente contratado antes. Eso es
+> soporte a un cliente existente, no una oferta: no lo ofrezcas a nadie nuevo.
 
 ---
 

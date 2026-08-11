@@ -65,9 +65,10 @@ Respuesta:
 
 Perfecto, es una buena decisión evaluar antes de implementar.
 
-Mientras tanto, podemos activar una prueba gratuita para que veas cómo funciona en tu propio negocio.
+Mientras tanto, puedo mandarte el video del sistema funcionando: https://pagosya.com.bo/links
 
-Así no necesitas decidir ahora, solo probar el sistema.
+Así lo evalúas sin decidir nada ahora. Y si preferís verlo en vivo y preguntar
+sobre tu caso, te agendo una demostración de 20 minutos.
 
 ¿Te gustaría probarlo?
 
@@ -324,9 +325,11 @@ Respuesta:
 
 Lo entiendo.
 
-Por eso ofrecemos una prueba gratuita.
+Por eso podés ver el sistema funcionando antes de decidir: el video y el
+material de cada plan están en https://pagosya.com.bo/links
 
-Puedes usar el sistema primero y decidir después.
+Si querés que alguien te lo muestre y responda sobre tu negocio, te agendo una
+demostración en vivo de 20 minutos.
 
 Sin riesgo.
 

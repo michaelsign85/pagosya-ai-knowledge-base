@@ -61,7 +61,7 @@ PagosYa es un **sistema SaaS híbrido** (web + app móvil) para comercios en Bol
 
 | Archivo | Contenido |
 |---------|-----------|
-| `01-planes-precios.md` | Planes, precios, comparativa de características, período de prueba |
+| `01-planes-precios.md` | Planes, precios y comparativa de características |
 | `02-qr-validacion.md` | Cómo funciona el cobro por QR, flujo de validación, bancos |
 | `03-multi-tiendas-empleados.md` | Crear tiendas, invitar empleados, roles, geofencing |
 | `04-productos-inventario.md` | Crear y gestionar productos, categorías, stock, alertas |

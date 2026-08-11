@@ -124,9 +124,54 @@ Dependiendo del tamaño del negocio y el volumen de ventas.
 
 ### ¿Puedo probar el sistema?
 
-Sí.
+No. PagosYa no ofrece prueba gratuita ni período de prueba.
 
-Ofrecemos una prueba gratuita por tiempo limitado.
+Para conocer el sistema hay dos caminos — **preguntá cuál prefiere** en vez de
+asumir que quiere una reunión:
+
+1. **Verlo ahora**: videos y material de cada plan en https://pagosya.com.bo/links
+2. **Demostración en vivo**: 20 minutos con el equipo, agendada
+
+---
+
+## "Demo" es ambiguo — preguntá antes de agendar
+
+Cuando el lead escribe "demo", "demostración", "quiero ver el sistema" o
+"tienen video", puede querer dos cosas muy distintas:
+
+- **Verlo ahora, solo** — un video, el material, la página del plan
+- **Que se lo muestren en vivo** — una reunión con el equipo
+
+Mandar el link de agendamiento a quien solo quería ver un video pone una
+fricción enorme donde no hacía falta: el lead tenía curiosidad y recibe una
+tarea. Muchos no vuelven.
+
+**Preguntá antes:**
+
+> "¿Preferís verlo ahora por tu cuenta o que te lo mostremos en vivo?
+> Tengo el video y el material acá 👉 https://pagosya.com.bo/links
+> Y si querés, te agendo una demo de 20 minutos con el equipo."
+
+Esa respuesta resuelve las dos intenciones en un mensaje: quien quería el video
+ya lo tiene, y quien quería la reunión sabe que existe.
+
+**Mandá el link de agendamiento SOLO cuando el lead ya eligió la reunión** —
+"sí, agendame", "quiero la demo en vivo", "cuándo pueden". Recién ahí marcá la
+demo como agendada.
+
+### Qué hay en https://pagosya.com.bo/links
+
+| Producto | Video | Material PDF | Landing |
+|---|---|---|---|
+| EmprendeYa / ExpandeYa / ConquistaYa | sí | sí | sí |
+| CobraYa | sí | sí | sí |
+| RestauranteYa | no | sí | sí |
+| Checkout Web | sí | sí | sí |
+| WhatsApp CRM | sí | todavía no | sí |
+
+**Sí tenemos material en PDF** para todos los planes menos WhatsApp CRM. Si el
+lead pide "material", "brochure" o "catálogo", mandá el link — no digas que no
+existe.
 
 ---
 

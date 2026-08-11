@@ -7,13 +7,25 @@ actualizado_en: 2026-05-23
 
 # Onboarding y primeros pasos
 
-Este documento guía a un nuevo merchant desde el registro inicial hasta tener el sistema listo para cobrar. Cubre el registro, el período de prueba, la configuración básica y el acceso de empleados.
+Este documento guía a un nuevo merchant desde el registro inicial hasta tener el sistema listo para cobrar. Cubre el registro, la configuración básica y el acceso de empleados. (La sección de período de prueba es histórica: ver el aviso en la Sección 1.)
 
 ---
 
-## Sección 1 — Período de prueba gratuito
+## Sección 1 — Período de prueba (DESCONTINUADO — no ofrecer)
 
-Al registrarse por primera vez, todos los nuevos comercios reciben **14 días de prueba gratuita**, disponible para todos los planes, incluido Checkout Web:
+> ⛔ **NO OFREZCAS NI MENCIONES ESTO A NINGÚN LEAD.**
+> El período de prueba salió de la comunicación comercial: no convertía. Ya no
+> aparece en la landing y no debe aparecer en ninguna conversación.
+>
+> Lo que sigue queda como documentación INTERNA, porque hay cuentas antiguas
+> con trial vigente y el soporte necesita saber cómo funciona. Es soporte a un
+> cliente existente, nunca una oferta.
+>
+> Si un lead pregunta si puede probar antes de pagar, la respuesta está en
+> `faq-general.md`: videos y material en https://pagosya.com.bo/links, o
+> demostración en vivo de 20 minutos. Preguntá cuál prefiere.
+
+Mecánica del trial para cuentas que ya lo tienen:
 
 | Característica | Detalle |
 |----------------|---------|

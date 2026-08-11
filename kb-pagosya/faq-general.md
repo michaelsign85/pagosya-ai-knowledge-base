@@ -46,7 +46,7 @@ No. PagosYa cobra únicamente una mensualidad fija según el plan elegido. No ha
 Pago anual equivale a aproximadamente 2 meses gratis.
 
 **¿Puedo probar PagosYa antes de pagar?**
-Sí. Todos los negocios nuevos reciben **14 días gratis** al registrarse, para cualquiera de los planes, incluido Checkout Web. No se requiere tarjeta de crédito. El período de prueba incluye un límite de Bs. 15,000 en ventas. El trial es válido una sola vez por persona (se verifica por CI y teléfono).
+No hay período de prueba gratuito. Lo que sí podés hacer, sin costo y sin registrarte: ver los videos y el material de cada plan en https://pagosya.com.bo/links, o agendar una demostración en vivo de 20 minutos con el equipo. Preguntale al lead cuál de las dos prefiere.
 
 **¿Puedo cambiar de plan?**
 Sí. Puedes subir o bajar de plan en cualquier momento desde la sección **Suscripción** del panel. El cambio es inmediato.
@@ -56,16 +56,18 @@ El sistema bloquea el acceso hasta que se renueve el plan. Los datos se conserva
 
 ---
 
-## Período de prueba
+## Conocer el sistema antes de contratar
 
-**¿Cuántos días dura el período de prueba?**
-14 días calendario desde el momento del registro.
+**¿Hay período de prueba gratis?**
+No. PagosYa no ofrece trial ni prueba gratuita.
 
-**¿Hay límite de ventas en el período de prueba?**
-Sí. El límite es Bs. 15,000 en ventas durante el período de prueba. Al elegir un plan pago, el límite sube según el plan contratado.
+**Entonces, ¿cómo conozco el sistema?**
+De dos formas, y conviene preguntar cuál prefiere:
+- **Ahora mismo**: videos, material y detalle de cada plan en https://pagosya.com.bo/links
+- **En vivo**: demostración de 20 minutos con el equipo, agendada
 
-**¿Puedo usar la integración bancaria durante el trial?**
-Sí. Puedes configurar y probar la integración bancaria durante el período de prueba.
+**¿Puedo ver la integración bancaria funcionando?**
+Sí, en la demostración en vivo se muestra el cobro con QR de punta a punta.
 
 ---
 

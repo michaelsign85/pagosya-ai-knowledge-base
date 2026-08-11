@@ -1,5 +1,12 @@
 # Modo Restaurante — PagosYa
 
+> ⛔ **O TRIAL DESTE MÓDULO NÃO É OFERECIDO A LEADS.**
+> Este documento é interno. O trial do Modo Restaurante saiu da comunicação
+> comercial junto com o trial geral — não converte. Se um lead perguntar como
+> conhecer o sistema: vídeos e material em https://pagosya.com.bo/links, ou
+> demonstração ao vivo de 20 minutos. Pergunte qual ele prefere.
+
+
 ## Visão Geral
 
 O **Modo Restaurante** é um módulo adicional pago que se ativa por cima de qualquer plano existente do PagosYa (EmprendeYa, ExpandeYa ou ConquistaYa). Ele transforma o POS padrão em um sistema completo para negócios de alimentação: restaurantes, cafeterias, bares, hamburgueiras, pizzarias, padarias e food trucks.

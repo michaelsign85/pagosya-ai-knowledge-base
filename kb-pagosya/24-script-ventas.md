@@ -133,9 +133,10 @@ Este es el paso más importante.
 
 Mensaje:
 
-Podemos activar una prueba gratuita para que veas cómo funciona en tu negocio.
+Te mando el video del sistema funcionando para que lo veas ahora mismo:
+https://pagosya.com.bo/links
 
-La activación toma menos de 1 minuto.
+Si preferís que te lo muestren en vivo, agendo una demostración de 20 minutos.
 
 ¿Te gustaría probar el sistema?
 
@@ -288,9 +289,9 @@ PagosYa permite confirmar pagos QR automáticamente y evitar pagos falsos.
 
 Además puedes controlar ventas e inventario.
 
-Podemos activar una prueba gratuita para que veas cómo funciona.
+Podés ver cómo funciona ahora mismo en el video: https://pagosya.com.bo/links
 
-¿Te gustaría probar el sistema?
+¿Preferís verlo por tu cuenta o que te lo mostremos en vivo en 20 minutos?
 
 ---
 
