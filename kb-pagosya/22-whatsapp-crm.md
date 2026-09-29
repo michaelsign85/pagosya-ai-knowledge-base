@@ -1,6 +1,6 @@
 # WhatsApp CRM — Documentação Completa de Funcionalidades
 > **Uso:** Material de referência para Landing Page e para o assistente responder dúvidas de lojistas
-> **Atualizado:** agosto/2026
+> **Atualizado:** setembro/2026
 
 ---
 
@@ -167,13 +167,34 @@ A Meta calcula isso pelo comportamento de **quem recebe**: bloqueios e denúncia
 Central de atendimento onde toda a equipe vê e responde mensagens de um único número.
 
 - Lista única de contatos com preview da última mensagem e badge de não lidas
+- **Filtros rápidos:** No leídos · Mis chats · Sin asignar · Grupos · por etiqueta
 - Histórico completo ao clicar no contato
 - Registro de qual atendente respondeu
 - Texto, imagens, vídeos, áudios, documentos, stickers e localização
 - Atribuição de contatos a atendentes específicos
 - Status de leitura (✓ enviado · ✓✓ entregue · ✓✓ lido)
 - Suporte a grupos
+- **Nova conversa** a partir de um número, sem esperar o cliente escrever
+- **Arquivar** contatos que já não precisam de atenção
+- **Bot ON/OFF por conversa:** silencia o chatbot só naquele contato, quando um humano assume
+- Botão **Agendar** na barra do contato *(ver Agenda de Citas)*
 - Histórico persistido — nunca se perde
+
+### A barra de escrever (o que o atendente tem à mão)
+
+| Botão | O que faz |
+|---|---|
+| 📎 **Anexar** | Documento · Fotos e vídeos · **Câmera** (tira a foto na hora, no celular) · Áudio — até 16 MB |
+| 🌐 **Compartilhar tienda** | Manda o link da tienda online na conversa *(quem tem tienda pelo plano-base ou pelo Commerce)* |
+| 🔗 **Link de cobro** | Cobra o cliente dentro do chat — ver módulo *Cobros no chat* |
+| ✨ **Assistente de IA** | Reescreve o que o atendente digitou: melhorar, corrigir gramática, expandir, encurtar, tom amigável, tom formal, simplificar, traduzir ES/EN |
+| ☁️ **Plantilla** | Envia uma plantilla aprovada direto da conversa *(só API oficial)* |
+| `/` | Abre as respostas rápidas pelo atalho |
+
+**Janela de 24h fechada:** na API oficial, quando o cliente não escreve há mais de 24h, aparece uma faixa vermelha no lugar do campo de texto. Um toque nela abre as plantillas aprovadas — o atendente não fica travado sem saber o que fazer.
+
+### Painel do contato
+Ao lado da conversa, quatro abas: **Info** (dados do contato) · **Etiquetas** · **Notas** internas · **Ventas** (histórico de compras do cliente na loja).
 
 ---
 
@@ -362,6 +383,25 @@ O sistema compila tudo num "manual" que o bot consulta a cada resposta.
 ### Sobre a chave de IA
 Cada lojista usa **sua própria chave** — o PagosYa não cobra por mensagem de IA nem revende tokens. As chaves ficam guardadas no servidor e **nunca passam pelo navegador**.
 
+### Outros ajustes do bot
+- **Mensagem de boas-vindas** com intervalo configurável (padrão: 1 vez a cada 24h por contato — não repete a cada "hola")
+- **Horário de atendimento** por dia da semana, com fuso horário e mensagem fora de hora
+- **Aba Agendamento:** o bot envia o link da agenda quando o cliente pede hora *(ver Agenda de Citas)*
+- **Aba Histórico:** tudo o que o bot respondeu, e por qual regra ou IA
+
+### 🔌 Modo webhook externo (n8n, Make ou sistema próprio)
+*Para quem já tem automação própria ou uma agência que monta fluxos.*
+
+Em vez do bot interno, o CRM **encaminha cada mensagem recebida para uma URL** do lojista e publica no chat a resposta que o sistema dele devolver.
+
+- Escolha na aba **Ajustes** do chatbot: "Bot de PagosYa" ou "Webhook externo"
+- Autenticação por **segredo** (header `Authorization: Bearer ...`) gerado no próprio CRM
+- A tela traz o passo a passo para n8n e exemplos do que chega e do que deve ser devolvido
+- Proteção contra duplicado se o sistema externo reenviar
+- **Limitação:** só mensagens com texto são encaminhadas — uma imagem sem legenda não chega ao webhook
+
+**Quando indicar:** cliente com fluxo já pronto em n8n/Make, ou que quer ligar o WhatsApp a um sistema interno. Para quem não tem nada, o bot interno com IA resolve sem precisar de técnico.
+
 ---
 
 ## 10. 🎨 Promoções com IA
@@ -430,6 +470,14 @@ O bot pergunta com qual profissional e **envia o link**. O cliente escolhe o hor
 
 Nos dois casos **o horário fica bloqueado** enquanto aguarda.
 
+### Agendar sem sair da conversa
+O atendente marca a cita **de dentro do chat**: escolhe profissional, serviço, data e um dos horários livres, e o nome e telefone do cliente já vêm preenchidos. Os horários são os mesmos da página pública — nada é inventado.
+
+### Painel da agenda
+- **Calendário mensal** com as citas do mês
+- Filtros por profissional e por estado
+- Atualização **em tempo real**: uma reserva feita pelo link aparece na hora para a equipe
+
 ### Avisos automáticos
 - **Lembrete ao cliente** antes da consulta (tempo configurável)
 - **Aviso ao profissional** quando entra uma cita nova
@@ -439,7 +487,33 @@ Nos dois casos **o horário fica bloqueado** enquanto aguarda.
 
 ---
 
-## 12. 📥 Importação de Contatos
+## 12. 💳 Cobros no Chat (Link de Cobro)
+*Nos três planos · funciona nos dois provedores*
+
+O atendente **cobra o cliente sem sair da conversa**. É a ponte entre o atendimento e o dinheiro entrando — o que um CRM genérico não faz.
+
+**Como funciona:**
+1. No chat, toca no botão 🔗, digita **valor**, **motivo** e escolhe a **validade**
+2. O cliente recebe **a imagem do QR de pagamento** com o valor e o motivo, pronta para escanear — ou para salvar e subir pela galeria no app do banco, que é como se paga na Bolívia
+3. Na legenda vai também o **link**: se o QR vencer, abrir o link gera um novo
+4. Quando o pagamento cai, **quem enviou o cobro** recebe um aviso na tela **com som**
+
+**Validade do link:** 30 min · 1h · 3h · 12h · 1 dia · 3 dias · 7 dias
+
+**Aviso só para quem enviou:** numa equipe de 5 atendentes, só o que mandou o cobro é avisado — os outros não se confundem sobre quem deve dar sequência.
+
+### Tela "Links de Cobro"
+Todos os cobros enviados pelo CRM, em tempo real:
+- Totais: **Enviados · Pagados · Cobrado (Bs) · Pendente (Bs)** — seguem os filtros
+- Busca por cliente, telefone ou motivo
+- Filtro por estado (Pendente, Pagado) e **por atendente**
+- Cada cobro mostra quem enviou, quando e o estado (Pendente · Pagado · Vencido · Cancelado)
+
+**Frase pronta:** *"Você responde, manda o QR na mesma conversa e o sistema te avisa quando o cliente pagou. Sem ir ao app do banco conferir."*
+
+---
+
+## 13. 📥 Importação de Contatos
 *Igual nos dois provedores*
 
 Carregar lista de CSV ou TXT.
@@ -455,7 +529,7 @@ Carregar lista de CSV ou TXT.
 
 ---
 
-## 13. 📊 Métricas e Dashboard
+## 14. 📊 Métricas e Dashboard
 *Igual nos dois provedores*
 
 **KPIs:** Contatos · Enviados · Recebidos · Não lidas · Respostas do chatbot (30d) · Taxa de leitura
@@ -475,14 +549,14 @@ Os números refletem a **base completa**, sem corte por volume.
 
 ---
 
-## 14. 🔍 Histórico e Exportação
+## 15. 🔍 Histórico e Exportação
 *Igual nos dois provedores*
 
 Busca global em mensagens antigas, exportação em CSV ou TXT.
 
 ---
 
-## 15. ⭐ Pesquisa de Satisfação (CSAT)
+## 16. ⭐ Pesquisa de Satisfação (CSAT)
 *Igual nos dois provedores*
 
 Avaliação de 1 a 5 estrelas enviada após o atendimento, com NPS calculado e período de carência configurável (padrão 7 dias).
@@ -514,6 +588,15 @@ Avaliação de 1 a 5 estrelas enviada após o atendimento, com NPS calculado e p
 - 🔒 Isolamento por empresa e usuário
 - 🔒 Chaves de API guardadas no servidor, nunca expostas
 - 🔒 Agendamentos e envios processados no servidor
+
+### Quem pode fazer o quê
+| Ação | Funcionário (atendente) | Dono da conta |
+|---|---|---|
+| Ver conversas, responder, enviar mídia e plantillas | ✅ | ✅ |
+| Conectar / desconectar o número | ❌ | ✅ |
+| Criar plantillas novas na Meta | ❌ | ✅ |
+
+O atendente trabalha normalmente, mas não consegue derrubar a conexão nem mexer na conta de Meta por engano.
 
 ---
 
@@ -571,6 +654,27 @@ Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsAp
 
 **Segundo número de WhatsApp ainda não está disponível.** Está no roteiro. Não prometa.
 
+**Messenger e Instagram na mesma bandeja: ainda em piloto fechado.** Já funciona internamente (o mesmo chatbot e pipeline respondendo em todos os canais), mas **não está liberado para clientes**. Não prometa nem use em anúncio até ser liberado.
+
+**Quem compra só o WhatsApp (sem plano PagosYa)** entra direto no CRM, com um menu enxuto: WhatsApp CRM, Agenda, Empleados (para cadastrar os atendentes), Guia, Configurações e Suporte. Não passa pelo cadastro bancário.
+
+## 🧑‍💻 WhatsApp API Gateway — produto separado, para desenvolvedores
+
+**Não é o CRM.** É para empresa que já tem **ERP, CRM ou sistema próprio** e quer ligá-lo ao WhatsApp oficial sem passar pela burocracia da Meta.
+
+| | Mensal | Anual |
+|---|---|---|
+| **API Gateway** | Bs 699 | Bs 6.990 |
+
+- Acesso à **Meta Cloud API oficial** pelo PagosYa (Tech Provider)
+- **API Keys** (Bearer) e **Webhooks** de mensagens e estados em tempo real
+- Envio de texto, mídia e plantillas
+- Logs de requisições e monitor de tráfego
+- Sem limite de agentes — quem atende está no sistema do cliente
+- Painel próprio em `/whatsapp-api`, com documentação
+
+**Como diferenciar na conversa:** *"Sua equipe vai atender pela nossa tela?"* → CRM. *"Vocês já têm um sistema e querem que ele fale pelo WhatsApp?"* → API Gateway.
+
 ---
 
 # 🏆 RESUMO DE CAPACIDADES
@@ -596,6 +700,9 @@ Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsAp
 | Provedores de IA | **3** (Gemini, OpenAI, Claude) |
 | Modelos de imagem | **5** (3 Nano Banana + 2 OpenAI) |
 | Destino do agendamento | **3** (contato, etapa do pipeline, número avulso) |
+| Validade do link de cobro | **30 min a 7 dias** (7 opções) |
+| Ações do assistente de IA no chat | **9** |
+| Modos do chatbot | **2** (bot interno ou webhook externo) |
 | Busca no histórico | **200 resultados** |
 | CSAT | **1 a 5 estrelas**, NPS de -100 a +100 |
 | Cores de etiqueta | **10** |
@@ -623,11 +730,13 @@ Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsAp
 5. Envio para a etapa "Clientes recorrentes" do pipeline
 
 ### 🛍️ Varejo / E-commerce
-1. **Importar** lista de clientes (CSV)
-2. **Promoção com IA:** foto do produto → imagem → copy
-3. Salvar como **plantilla** e enviar para todos
-4. **Chatbot** responde rastreamento, horário e preços
-5. **Métricas** de engajamento
+1. Cliente pergunta preço no WhatsApp → atendente **manda o QR de cobro** na mesma conversa
+2. O pagamento cai e o atendente **é avisado com som** — sem conferir o app do banco
+3. **Importar** lista de clientes (CSV)
+4. **Promoção com IA:** foto do produto → imagem → copy
+5. Salvar como **plantilla** e enviar para todos
+6. **Chatbot** responde rastreamento, horário e preços
+7. **Métricas** de engajamento
 
 ### 💼 Equipe Comercial
 1. **Kanban:** Lead → Proposta → Negociação → Fechado
@@ -687,11 +796,26 @@ Um crédito de **Bs 20 adiciona 1 agente por 30 dias**. Quando expira, o agente 
 **"O bot pode marcar consultas?"**
 Ele envia o link da agenda, e o cliente escolhe o horário. Isso garante que o horário oferecido é real.
 
+**"Posso cobrar o cliente pelo WhatsApp?"**
+Sim, nos três planos. No chat você digita o valor e o motivo, e o cliente recebe o QR para pagar. Quando ele paga, você é avisado na hora, com som.
+
+**"Já uso n8n / Make. Posso ligar ao CRM?"**
+Sim. No chatbot, escolha o modo **Webhook externo**: cada mensagem recebida vai para o seu fluxo, e o que ele responder aparece no chat.
+
+**"Tenho meu próprio sistema. Posso só usar a API do WhatsApp?"**
+Sim, com o **WhatsApp API Gateway** (Bs 699/mês). É um produto separado do CRM, para desenvolvedores.
+
+**"Funciona com Messenger e Instagram?"**
+Ainda não para clientes — está em piloto. Hoje o CRM é para WhatsApp.
+
+**"Meu atendente pode desconectar o número sem querer?"**
+Não. Só o dono da conta conecta, desconecta ou cria plantillas novas. O atendente responde e envia normalmente.
+
 **"Qual conexão devo usar?"**
 API oficial — é a única oferecida para contas novas. Quem já está na Evolution continua funcionando e pode reconectar, mas não indicamos mais essa via: o risco de banimento do número é real e a Meta oficial resolve a mesma necessidade com plantillas.
 
 ---
 
-*Atualizado em: agosto/2026*
+*Atualizado em: setembro/2026*
 *Sistema: PagosYa WhatsApp CRM*
 *PagosYa é Meta Tech Provider oficial*
