@@ -101,6 +101,7 @@ Para escrever a quem **não** falou nas últimas 24 horas, só com plantilla apr
 - [ ] Entendeu que **responder é grátis** e só iniciar conversa custa?
 - [ ] Vai usar IA? Sabe que precisa de **chave própria**?
 - [ ] Quantas pessoas vão atender? *(define o plano: 3, 5 ou 10 agentes)*
+- [ ] Vai cobrar pelo chat? Tem conta no **BNB ou Banco Económico**?
 
 ---
 
@@ -492,6 +493,10 @@ O atendente marca a cita **de dentro do chat**: escolhe profissional, serviço, 
 
 O atendente **cobra o cliente sem sair da conversa**. É a ponte entre o atendimento e o dinheiro entrando — o que um CRM genérico não faz.
 
+> ⚠️ **Requisito:** o cobro precisa de uma **conta bancária integrada ao PagosYa** — **BNB** ou **Banco Económico (BANECO)**, em Configurações → Integrações *(ver doc de integrações bancárias)*. É o único recurso do CRM que depende de banco: bandeja, chatbot, IA e agenda funcionam sem ele. Quem compra só o WhatsApp entra no CRM sem cadastrar banco, e o sistema pede a integração quando ele tenta mandar o primeiro cobro. Quem não tem conta no BANECO pode pedir a abertura pelo próprio formulário.
+>
+> **Pergunte:** *"Você vai querer cobrar pelo WhatsApp? Tem conta no BNB ou no Banco Económico?"*
+
 **Como funciona:**
 1. No chat, toca no botão 🔗, digita **valor**, **motivo** e escolhe a **validade**
 2. O cliente recebe **a imagem do QR de pagamento** com o valor e o motivo, pronta para escanear — ou para salvar e subir pela galeria no app do banco, que é como se paga na Bolívia
@@ -797,7 +802,7 @@ Um crédito de **Bs 20 adiciona 1 agente por 30 dias**. Quando expira, o agente 
 Ele envia o link da agenda, e o cliente escolhe o horário. Isso garante que o horário oferecido é real.
 
 **"Posso cobrar o cliente pelo WhatsApp?"**
-Sim, nos três planos. No chat você digita o valor e o motivo, e o cliente recebe o QR para pagar. Quando ele paga, você é avisado na hora, com som.
+Sim, nos três planos. No chat você digita o valor e o motivo, e o cliente recebe o QR para pagar. Quando ele paga, você é avisado na hora, com som. Para isso sua conta do **BNB ou do Banco Económico** precisa estar integrada ao PagosYa.
 
 **"Já uso n8n / Make. Posso ligar ao CRM?"**
 Sim. No chatbot, escolha o modo **Webhook externo**: cada mensagem recebida vai para o seu fluxo, e o que ele responder aparece no chat.
