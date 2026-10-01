@@ -144,6 +144,12 @@ Sí. El inventario de la tienda online está sincronizado con el inventario fís
 **¿Cuántas imágenes puede tener un producto?**
 Hasta 5 imágenes y 1 video corto por producto.
 
+**¿Mis clientes pueden reservar turnos desde la tienda online?**
+Sí, con la plantilla **Barbería** (para negocios de servicios) y el plan **WhatsApp CRM**. El cliente ve los horarios libres reales de la Agenda y reserva sin salir de la tienda. Más profesiones (médico, dentista, clínica, salón) en camino.
+
+**¿Puedo tener un chat en mi tienda online?**
+Sí, con el plan **WhatsApp CRM**: Personalizar Tienda → Integraciones → **Chat en tu tienda**. Responde el mismo chatbot de tu WhatsApp y los mensajes llegan a la bandeja del CRM con el canal **Web**.
+
 ---
 
 ## Inventario y productos

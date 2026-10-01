@@ -1,8 +1,8 @@
 ---
 title: Tienda online integrada
-version: v4
+version: v5
 audiencia: merchants
-actualizado_en: 2026-08-04
+actualizado_en: 2026-10-01
 ---
 
 # Tienda online integrada
@@ -18,7 +18,9 @@ La **Tienda Online** de PagosYa convierte tu negocio físico en una tienda digit
 - Pago con tarjeta de crédito/débito (si tiene integración Red Enlace 3DS activa)
 - **Contra entrega**: el cliente paga al recibir, con QR en el acto o efectivo
 - Pedidos organizados en panel de gestión, con **alerta sonoro de nuevo pedido** en el panel
-- **5 plantillas de diseño** listas para usar, todas adaptadas a celular y tablet
+- **6 plantillas de diseño** listas para usar, todas adaptadas a celular y tablet
+- **Plantilla de servicios con reservas en línea** (Barbería): el cliente reserva su turno dentro de la tienda, con horarios reales de la Agenda
+- **Chat en la tienda**: los clientes chatean con tu bot y los mensajes llegan a la bandeja del WhatsApp CRM *(requiere WhatsApp CRM)*
 - Personalización completa: plantilla, colores, tipografía, logo, banners, menú, contacto
 - Entrega física (delivery/retiro) o entrega digital (email/WhatsApp)
 - Enlace propio: `tutienda.pagosya.shop` o dominio personalizado
@@ -78,6 +80,8 @@ Las tiendas creadas se muestran en **tarjetas** con:
 
 El **Personalizador** es el panel central de configuración de la tienda online. Se organiza en pestañas en la barra lateral: **Diseño**, **General**, **Banners**, **Menú**, **Contacto**, **Integraciones**, **Entrega** y **Preview**.
 
+> El Personalizador siempre abre con la configuración guardada más reciente. Si el comercio dice que "un cambio se perdió", pedirle que cierre y vuelva a abrir el Personalizador y revise el campo: lo que se ve ahí es exactamente lo que está guardado.
+
 ---
 
 ### Pestaña 1: Diseño y plantilla
@@ -93,6 +97,7 @@ Define el aspecto general de la tienda. Cambiar la plantilla **conserva** produc
 | **Restaurante & Delivery** | Restaurantes y cafeterías. Menú en lista, con resumen de pedido siempre visible. |
 | **Infoproductos & Licencias** | Productos digitales: licencias, cursos, streaming y entrega por correo. |
 | **Catálogo Mayorista** | Venta por volumen: catálogo con SKU, compra por caja y resumen comercial. |
+| **Barbería** *(Agenda)* | Barberías y negocios de servicios: servicios, equipo y **reserva de turnos en línea** con los horarios reales de la Agenda. Incluye sección de tienda para vender productos. |
 
 **Antes de elegir**, cada plantilla ofrece dos vistas previas:
 - **Ver demostración**: muestra la plantilla con contenido de ejemplo.
@@ -103,6 +108,36 @@ En ambas se puede alternar entre **escritorio, tablet y celular** para ver cómo
 **Además, en esta pestaña se configura:**
 - **Colores**: principal, acento, fondo, superficie y texto.
 - **Tipografía**: fuente para títulos y para texto.
+
+---
+
+### Plantilla Barbería — reservas dentro de la tienda
+
+Es la primera **plantilla de servicios**. Toda la página lleva al cliente a reservar: no necesita llamar ni escribir para pedir horario. Próximamente: médico, dentista, clínica y salón de belleza, con la misma lógica.
+
+**Qué muestra (todo sale de la Agenda de Citas, no se carga dos veces):**
+- **Portada** con el botón **"Reservar turno"** y una tarjeta **"Próximo turno libre"** con el primer horario real disponible.
+- **Servicios** con precio y duración. Cada uno tiene su botón **Reservar**.
+- **Equipo**: foto, cargo, descripción y próximo horario libre de cada profesional, con el botón **"Reservar con [nombre]"**.
+- **Tienda**: los productos del catálogo (pomadas, aceites, etc.) con el mismo carrito y checkout de siempre. Solo aparece si la tienda tiene productos.
+- **Horario de atención**, armado solo a partir de los horarios de la Agenda — si el comercio cambia la Agenda, la página se actualiza sola. Dirección con botón **"Cómo llegar"** (Google Maps).
+- En el celular, una **barra fija abajo** con "Reservar turno" y WhatsApp.
+
+**Cómo reserva el cliente:** toca Reservar → elige profesional (si hay uno solo, se salta) → servicio → horario → escribe nombre y WhatsApp → listo. Todo en una ventana dentro de la tienda, sin salir de la página. Es el mismo flujo del link de agenda `/agenda/...`, así que **nunca muestra un horario que no exista**.
+
+**Sin portada propia:** si el comercio no sube un banner, la Barbería usa una imagen profesional de barbería ya incluida.
+
+**Requisitos para que las reservas funcionen:**
+1. Plan **WhatsApp CRM** activo (la Agenda es parte del CRM).
+2. En **Agenda**: profesionales cargados, con horario y con **enlace público activo**. Los servicios son opcionales (sin servicios, se usa la duración por defecto).
+
+**Sin WhatsApp CRM** la plantilla igual se puede usar: muestra el equipo y los servicios, pero los botones pasan a **"Reservar por WhatsApp"** (abre un mensaje ya escrito, ej.: "Hola, quiero reservar Corte + barba con Mateo"). Al dueño, y solo a él, le aparece un aviso de que las reservas en línea necesitan el WhatsApp CRM, con el botón **Ver planes**.
+
+**¿A qué agenda llegan las reservas?** A la Agenda de la **tienda a la que pertenece esa tienda online**. Si el comercio tiene varias tiendas, en la vista previa el dueño ve el aviso *"Las reservas de esta tienda online entran en la agenda de [tienda]"* con el botón **Ver agenda**, que abre la Agenda correcta. Si esa tienda no tiene WhatsApp conectado, el aviso lo dice: la cita entra igual, pero **sin recordatorio** por WhatsApp.
+
+> **Si el cliente dice "hice una reserva y no aparece en la agenda":** casi siempre está mirando la Agenda de otra tienda. En la Agenda, cambiar el selector de tienda (arriba, al lado del título) a la tienda de la tienda online.
+
+**Medición:** cada reserva confirmada envía el evento **Schedule** al Meta Pixel y un evento a Google Analytics, si están configurados en Integraciones.
 
 ---
 
@@ -129,6 +164,7 @@ Los banners son las imágenes destacadas que aparecen en la parte superior de la
 - **Enlace**: URL destino al hacer clic en el banner
 - **Categoría**: enlace rápido a una categoría del catálogo
 - **Texto del botón**: etiqueta del botón (ej: "Ver Ofertas")
+- **Tarjeta de texto sobre el banner**: mostrar u ocultar el título, subtítulo y descripción encima de la imagen. **Desactivar cuando la imagen ya trae su propio texto/diseño.**
 - **Usar botón**: mostrar u ocultar el botón de acción
 - **Activo**: activar o desactivar el banner sin eliminarlo
 - **Orden**: subir o bajar el banner en el carrusel
@@ -149,10 +185,13 @@ Los banners son las imágenes destacadas que aparecen en la parte superior de la
 | Restaurante & Delivery | 1600 × 900 px | 16:9 |
 | Infoproductos & Licencias | 1600 × 900 px | 16:9 |
 | Catálogo Mayorista | 1600 × 900 px | 16:9 |
+| Barbería | 1600 × 900 px | 16:9 |
 
 La pestaña Banners muestra siempre la medida correcta de la plantilla activa. Como cada portada recorta la imagen de forma distinta, conviene dejar el texto y los elementos importantes hacia el centro.
 
-> **Banner solo con imagen**: si se dejan vacíos el título, el subtítulo y la descripción, la portada muestra únicamente la imagen, sin textos superpuestos. Es la opción indicada cuando la imagen ya trae su propio texto.
+> **Banner con imagen que ya trae texto (arte lista):** desactivar **"Tarjeta de texto sobre el banner"** y, si la imagen no necesita botón, **"Usar botón"**. Así la portada muestra solo la imagen, sin textos ni botón encima. Funciona en Clásico, Modern Commerce, Restaurante y Barbería. En la Barbería, además, la imagen se muestra **entera en tablet y celular** (sin recortar el texto) y los botones de reserva pasan a una franja debajo de la imagen.
+>
+> En el celular, una imagen horizontal queda chica. Si el texto de la imagen es pequeño, conviene una arte con letras grandes.
 
 ---
 
@@ -202,6 +241,26 @@ Conecta la tienda con herramientas de analítica y remarketing:
 
 Ingresar el ID correspondiente de cada plataforma. Los eventos de vista de producto, agregar al carrito y compra se registran automáticamente.
 
+#### Chat en tu tienda *(requiere WhatsApp CRM)*
+
+Agrega un **botón de chat** en la esquina inferior izquierda de la tienda online, en todas las plantillas.
+
+- El cliente escribe su **nombre** y, si quiere, su **WhatsApp**, y empieza a chatear.
+- Responde el **mismo chatbot del WhatsApp CRM** (reglas, IA, agenda, horario de atención). No hay que configurar nada aparte.
+- Las conversaciones llegan a la **bandeja del WhatsApp CRM** con el canal **Web** (ícono de globo violeta), junto con WhatsApp e Instagram. El equipo responde desde ahí y la respuesta aparece en el chat de la tienda en segundos.
+- **Mensaje de bienvenida** opcional (máx. 200 caracteres). Si se deja vacío: "¡Hola! Bienvenido a [tienda]. ¿En qué te podemos ayudar?".
+- Los links que manda el bot (agenda, pago) se pueden tocar en el chat.
+
+**Cómo activarlo:** Personalizar Tienda → Integraciones → **Chat en tu tienda** → activar → **Guardar Todo**.
+
+**Sin WhatsApp CRM:** la opción se ve (con el sello 🔒 WhatsApp CRM), pero al intentar activarla aparece el aviso *"El chat de la tienda es parte del WhatsApp CRM"* con el botón **Comprar WhatsApp CRM**.
+
+**Cosas a saber:**
+- Los mensajes llegan a la bandeja de la tienda **donde está conectado el WhatsApp** del dueño (si la tienda de la tienda online no tiene WhatsApp propio).
+- Si el chatbot está apagado, los mensajes igual llegan a la bandeja para responder a mano.
+- Si el cliente cierra la página, la respuesta queda guardada y la ve cuando vuelve a la tienda (en el mismo navegador). Por eso se le pide el WhatsApp: en la conversación aparece el número para seguir por WhatsApp.
+- Hay límite anti-spam: un cliente no puede mandar más de 10 mensajes por minuto.
+
 ---
 
 ### Pestaña 7: Entrega
@@ -227,9 +286,24 @@ Configura el modo y opciones de entrega disponibles para los clientes:
 
 ---
 
-### Vista previa (Preview)
+### Vista previa (Preview) y Editor visual
 
-La pestaña **Preview** muestra cómo verán los clientes la tienda con la configuración actual, sin salir del personalizador. También es accesible desde el botón de globo en la tarjeta de cada tienda.
+La pestaña **Preview** guarda los cambios y abre la tienda en el **Editor visual**, que muestra cómo verán los clientes la tienda. También es accesible desde el botón de globo en la tarjeta de cada tienda.
+
+**Barra superior del Editor visual:**
+
+| Botón | Qué hace |
+|---|---|
+| **Salir** | Vuelve al panel de tiendas online |
+| **Editar diseño** | Modo edición: al hacer clic en un texto o sección de la tienda se edita en el panel lateral (textos, visibilidad y espaciado de secciones, colores, tipografía) |
+| **Probar como cliente** | Muestra la tienda **funcionando como la publicada**: se puede agregar al carrito, reservar turnos y usar el chat. Para volver a editar, tocar **Editar diseño** |
+| Escritorio / Tablet / Celular | Cambia el tamaño de la vista |
+| **Guardar borrador** | Guarda el diseño sin publicarlo |
+| **Publicar** | Publica **el diseño** (textos y estilos del editor) |
+
+> ⚠️ **"Probar como cliente" es real:** las reservas y pedidos que se hagan ahí entran de verdad en la Agenda y en Pedidos. Después de probar, cancelar la cita de prueba en Agenda.
+>
+> ⚠️ **"Publicar" del editor no publica la tienda.** Solo publica el diseño. Para que la tienda esté abierta al público, el estado de la tienda debe ser **Publicada** (formulario de edición de la tienda).
 
 ---
 
@@ -455,6 +529,32 @@ Sí. Las ventas de la tienda online aparecen en los Reportes de Ventas con canal
 **¿Puedo publicar o despublicar la tienda online cuando quiera?**
 
 Sí. Desde el formulario de edición de la tienda, el toggle de "Publicada / Borrador" permite activar o desactivar el acceso público en cualquier momento sin perder ninguna configuración.
+
+**¿Puedo recibir reservas de turnos desde la tienda online?**
+
+Sí, con la plantilla **Barbería** y el plan **WhatsApp CRM**. El cliente reserva dentro de la tienda con los horarios reales de la Agenda. Sin el CRM, la plantilla funciona pero las reservas se piden por WhatsApp.
+
+**Hice una reserva de prueba y no aparece en la Agenda.**
+
+La reserva entra en la Agenda de la tienda a la que pertenece la tienda online. Si el comercio tiene varias tiendas, cambiar el selector de tienda en la Agenda. En la vista previa de la Barbería, el botón **Ver agenda** abre directamente la Agenda correcta.
+
+**El nombre que aparece al reservar no es de ningún profesional que conozco.**
+
+Son los profesionales de la Agenda **de esa tienda**. Cada tienda tiene sus propios profesionales, servicios y citas.
+
+**Subí un banner con texto en la imagen y encima aparecen otros textos y un botón.**
+
+En Banners, desactivar **"Tarjeta de texto sobre el banner"** y **"Usar botón"**, y guardar.
+
+**Activé el chat en la tienda pero no aparece.**
+
+1. Confirmar que se tocó **Guardar Todo** después de activar, y que al reabrir el Personalizador sigue activado.
+2. El chat no aparece en el modo **Editar diseño**: usar **Probar como cliente** o abrir la tienda publicada.
+3. El dueño necesita el plan **WhatsApp CRM** activo.
+
+**Los mensajes del chat de la tienda no llegan a la bandeja.**
+
+Llegan a la bandeja del WhatsApp CRM con el filtro **Web**. Si el bot no responde, revisar que el **chatbot esté encendido** en el WhatsApp CRM — es la misma configuración que en WhatsApp.
 
 **¿Los clientes de la tienda online se agregan a la base de clientes?**
 

@@ -1,6 +1,6 @@
 # WhatsApp CRM — Documentação Completa de Funcionalidades
 > **Uso:** Material de referência para Landing Page e para o assistente responder dúvidas de lojistas
-> **Atualizado:** setembro/2026
+> **Atualizado:** outubro/2026
 
 ---
 
@@ -168,6 +168,7 @@ A Meta calcula isso pelo comportamento de **quem recebe**: bloqueios e denúncia
 Central de atendimento onde toda a equipe vê e responde mensagens de um único número.
 
 - Lista única de contatos com preview da última mensagem e badge de não lidas
+- **Vários canais na mesma bandeja:** WhatsApp e **Web** (chat da tienda online) — cada conversa mostra o ícone do canal, e há filtro por canal (*Todos los canales · WhatsApp · Web*). O chat de todos os canais tem o mesmo visual do WhatsApp *(ver módulo 17)*
 - **Filtros rápidos:** No leídos · Mis chats · Sin asignar · Grupos · por etiqueta
 - Histórico completo ao clicar no contato
 - Registro de qual atendente respondeu
@@ -471,6 +472,13 @@ O bot pergunta com qual profissional e **envia o link**. O cliente escolhe o hor
 
 Nos dois casos **o horário fica bloqueado** enquanto aguarda.
 
+### Reservas pela tienda online (plantilla Barbería)
+Quem tem **tienda online** pode escolher a plantilla **Barbería** (Personalizar Tienda → Diseño). A página da tienda mostra os serviços, a equipe e o **próximo horário livre** — tudo tirado desta Agenda — e o cliente **reserva sem sair do site**, com o mesmo fluxo do link da agenda.
+
+- A reserva entra na Agenda da **tienda dona da tienda online**. Se o lojista tem várias tiendas, ele precisa olhar a Agenda dessa tienda (seletor no topo da Agenda).
+- Sem o WhatsApp CRM, a plantilla funciona, mas os botões viram **"Reservar por WhatsApp"**.
+- Detalhes completos no documento da **Tienda Online** (seção "Plantilla Barbería").
+
 ### Agendar sem sair da conversa
 O atendente marca a cita **de dentro do chat**: escolhe profissional, serviço, data e um dos horários livres, e o nome e telefone do cliente já vêm preenchidos. Os horários são os mesmos da página pública — nada é inventado.
 
@@ -568,6 +576,35 @@ Avaliação de 1 a 5 estrelas enviada após o atendimento, com NPS calculado e p
 
 ---
 
+## 17. 🌐 Chat da Tienda Online (canal Web)
+*Precisa de tienda online + WhatsApp CRM ativo*
+
+Um **botão de chat** na tienda online do lojista. O visitante conversa com o **mesmo chatbot** do WhatsApp e a conversa entra **na mesma bandeja**, com o canal **Web** (ícone de globo roxo).
+
+**Como ativar:** Tienda Online → Personalizar Tienda → **Integraciones** → **Chat en tu tienda** → ativar → Guardar Todo. Opcional: mensagem de boas-vindas.
+
+**Como funciona para o visitante:**
+1. Toca no botão de chat (canto inferior esquerdo da tienda)
+2. Escreve o **nome** e, se quiser, o **WhatsApp**
+3. Conversa: o bot responde na hora; links de agenda e pagamento são clicáveis
+
+**Na bandeja:**
+- Filtro **Web** e ícone do canal na lista
+- Cabeçalho com o nome do visitante e o **WhatsApp que ele deixou** (um clique abre a conversa no WhatsApp)
+- Mesmas ferramentas: atribuir atendente, etiquetas, etapa do pipeline, **Bot ON/OFF**, Agendar, respostas rápidas
+- **Sem janela de 24h:** o atendente pode responder a qualquer momento
+
+**É a mesma configuração do WhatsApp** (regra omnichannel): regras, IA, horário, agenda e pipeline são os do WhatsApp. Não existe configuração separada para o canal Web.
+
+**Limitações atuais:**
+- Se o visitante fechar a página, a resposta fica guardada e ele vê quando voltar à tienda (no mesmo navegador). Por isso o WhatsApp é pedido no início.
+- Pesquisa de satisfação (CSAT) e modo **Webhook externo** (n8n) ainda não funcionam no canal Web.
+- Envio de QR de cobrança direto no chat Web ainda não está disponível.
+
+**Sem o WhatsApp CRM:** a opção aparece em Integraciones com o selo 🔒, e ao tentar ativar o lojista vê o aviso de compra com o botão **Comprar WhatsApp CRM**.
+
+---
+
 # 🔗 TECNOLOGIA E SEGURANÇA
 
 ### Conexão WhatsApp
@@ -626,6 +663,7 @@ O anual equivale a **10 meses** — dois meses grátis.
 - **Chatbot completo** — palavra-chave, menus, horários, fora de horário, handoff
 - **Inteligência artificial** com a chave do lojista
 - **Agenda de citas completa**, incluindo o bot enviando o link sozinho
+- **Chat da tienda online (canal Web)** e **reservas pela plantilla Barbería** — para quem também tem tienda online
 - **Link de cobro no chat** com aviso de pagamento
 - Métricas básicas de atendimento
 
@@ -660,6 +698,10 @@ Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsAp
 **Segundo número de WhatsApp ainda não está disponível.** Está no roteiro. Não prometa.
 
 **Messenger e Instagram na mesma bandeja: ainda em piloto fechado.** Já funciona internamente (o mesmo chatbot e pipeline respondendo em todos os canais), mas **não está liberado para clientes**. Não prometa nem use em anúncio até ser liberado.
+
+**O chat da tienda online (canal Web) JÁ está liberado** para todo cliente com WhatsApp CRM e tienda online. Esse pode ser oferecido.
+
+**Chat Web e Agenda podem cair em tiendas diferentes.** As mensagens do chat Web vão para a tienda onde está o **WhatsApp** do dono (é lá que estão a bandeja e o bot). Já as reservas da plantilla Barbería vão para a Agenda da **tienda da tienda online**. Para o lojista com várias tiendas, o ideal é deixar profissionais e WhatsApp na mesma tienda.
 
 **Quem compra só o WhatsApp (sem plano PagosYa)** entra direto no CRM, com um menu enxuto: WhatsApp CRM, Agenda, Empleados (para cadastrar os atendentes), Guia, Configurações e Suporte. Não passa pelo cadastro bancário.
 
@@ -728,11 +770,13 @@ Quem já tem ExpandeYa ou ConquistaYa **não perde nada** ao contratar o WhatsAp
 7. **CSAT** após o atendimento
 
 ### 💇 Salão / Barbearia
-1. Cada profissional com **seu link de agenda**
-2. Link na bio do Instagram — cliente agenda a qualquer hora
-3. **Tempo de preparo** entre atendimentos, invisível para o cliente
-4. **Promoções com IA** para dias parados
-5. Envio para a etapa "Clientes recorrentes" do pipeline
+1. **Tienda online com a plantilla Barbería:** serviços, equipe e reserva dentro do site, mais a vitrine de produtos (pomadas, óleos)
+2. **Chat na tienda** respondido pelo mesmo bot do WhatsApp
+3. Cada profissional com **seu link de agenda**
+4. Link na bio do Instagram — cliente agenda a qualquer hora
+5. **Tempo de preparo** entre atendimentos, invisível para o cliente
+6. **Promoções com IA** para dias parados
+7. Envio para a etapa "Clientes recorrentes" do pipeline
 
 ### 🛍️ Varejo / E-commerce
 1. Cliente pergunta preço no WhatsApp → atendente **manda o QR de cobro** na mesma conversa
@@ -811,7 +855,16 @@ Sim. No chatbot, escolha o modo **Webhook externo**: cada mensagem recebida vai 
 Sim, com o **WhatsApp API Gateway** (Bs 699/mês). É um produto separado do CRM, para desenvolvedores.
 
 **"Funciona com Messenger e Instagram?"**
-Ainda não para clientes — está em piloto. Hoje o CRM é para WhatsApp.
+Ainda não para clientes — está em piloto. Hoje o CRM atende **WhatsApp** e o **chat da sua tienda online (canal Web)**.
+
+**"Posso ter um chat no meu site que responda sozinho?"**
+Sim, na sua **tienda online PagosYa**. Ative em Personalizar Tienda → Integraciones → Chat en tu tienda. O mesmo chatbot do WhatsApp responde, e as conversas aparecem na bandeja com o canal Web.
+
+**"Ativei o chat da tienda e o bot não responde."**
+O chatbot precisa estar **ligado** no WhatsApp CRM — é a mesma configuração. Mesmo com o bot desligado, as mensagens chegam na bandeja (filtro **Web**) para responder à mão.
+
+**"Meus clientes podem marcar horário pela minha tienda online?"**
+Sim, com a plantilla **Barbería** (outras profissões em breve). O cliente vê os horários livres reais e reserva sem sair do site.
 
 **"Meu atendente pode desconectar o número sem querer?"**
 Não. Só o dono da conta conecta, desconecta ou cria plantillas novas. O atendente responde e envia normalmente.
@@ -821,6 +874,6 @@ API oficial — é a única oferecida para contas novas. Quem já está na Evolu
 
 ---
 
-*Atualizado em: setembro/2026*
+*Atualizado em: outubro/2026*
 *Sistema: PagosYa WhatsApp CRM*
 *PagosYa é Meta Tech Provider oficial*
