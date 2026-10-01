@@ -155,9 +155,29 @@ tarea. Muchos no vuelven.
 Esa respuesta resuelve las dos intenciones en un mensaje: quien quería el video
 ya lo tiene, y quien quería la reunión sabe que existe.
 
-**Mandá el link de agendamiento SOLO cuando el lead ya eligió la reunión** —
-"sí, agendame", "quiero la demo en vivo", "cuándo pueden". Recién ahí marcá la
-demo como agendada.
+**Agendá la demo SOLO cuando el lead ya eligió la reunión** — "sí, agendame",
+"quiero la demo en vivo", "cuándo pueden". La demo se agenda **en el mismo chat**,
+sin mandar link: se ofrecen 3 horarios libres de la agenda y el lead responde con
+el número. El bot de ventas ya lo hace solo; si atiende una persona, usa el botón
+**Agendar** del chat (abre la agenda con nombre y teléfono ya cargados).
+
+## Antes y después de la demo (equipo humano)
+
+1. **Al agendar**, el lead pasa solo a la columna **Demo Agendada** del pipeline y
+   recibe el **recordatorio con el link del Meet 1 hora antes** (botones *Confirmo
+   asistencia* y *Reagendar*). El recordatorio aparece en el chat como "Programado".
+2. **Antes de entrar a la reunión**, pausá el bot en esa conversación (botón **Bot ON**
+   del chat → queda en pausa) para que no responda por encima tuyo.
+3. **Durante o después**, dejá una **nota interna** (ícono de post-it) con lo que se
+   habló: necesidad, objeciones, próximos pasos. El cliente no la ve.
+4. **Al terminar**, mové la tarjeta en el pipeline:
+   - **Demo Feita** → la cita queda *Completada* en la agenda y arranca solo el
+     seguimiento post-demo (+2 h, +2 días, +7 y +18 días)
+   - **Convertido**, si cerró en la reunión → no recibe seguimiento de "¿te quedó
+     alguna duda?"
+   - **Não Compareceu**, si no entró → arranca la secuencia para reagendar
+5. Si el lead vuelve a escribir y querés que el bot lo atienda, reactivá el bot en el
+   chat.
 
 ### Qué hay en https://pagosya.com.bo/links
 

@@ -178,7 +178,18 @@ Central de atendimento onde toda a equipe vê e responde mensagens de um único 
 - Suporte a grupos
 - **Nova conversa** a partir de um número, sem esperar o cliente escrever
 - **Arquivar** contatos que já não precisam de atenção
-- **Bot ON/OFF por conversa:** silencia o chatbot só naquele contato, quando um humano assume
+- **Bot por conversa — três estados no botão do topo do chat:**
+  - **Bot ON** (verde): o bot responde esse contato
+  - **Bot en pausa** (amarelo): o bot se calou sozinho — porque a conversa foi **atribuída a um atendente** (com a opção *Pausar el bot al asignar* ligada) ou porque **o próprio bot pediu um humano** (handoff)
+  - **Bot OFF**: alguém silenciou à mão
+  - O estado muda **na hora**, sem recarregar a página. O bot só volta a responder quando alguém clica no botão — **nunca volta sozinho**
+- **Alertas para o atendente** (som + notificação do navegador):
+  - quando chega mensagem numa conversa **atribuída a ele** e ele não está olhando
+  - quando **lhe atribuem** uma conversa
+  - quando **o bot pede um humano** — esse vai para quem tem a conversa; sem atribuição, para toda a equipe
+  - O **sino 🔔** ao lado da busca liga/silencia os alertas naquele navegador. Ao abrir o CRM **não toca nada** por mensagens antigas — só pelo que chega depois
+  - A notificação do navegador só aparece com a aba em segundo plano e depois de o atendente **permitir notificações** no navegador
+- **Áudios recebidos:** clicar em **"Clic para cargar audio"** baixa e já toca (um clique só)
 - Botão **Agendar** na barra do contato *(ver Agenda de Citas)*
 - Histórico persistido — nunca se perde
 
@@ -192,11 +203,14 @@ Central de atendimento onde toda a equipe vê e responde mensagens de um único 
 | ✨ **Assistente de IA** | Reescreve o que o atendente digitou: melhorar, corrigir gramática, expandir, encurtar, tom amigável, tom formal, simplificar, traduzir ES/EN |
 | ☁️ **Plantilla** | Envia uma plantilla aprovada direto da conversa *(só API oficial)* |
 | `/` | Abre as respostas rápidas pelo atalho |
+| 📝 **Nota interna** (ícone de post-it) | Troca o campo para modo nota — clicar de novo volta a escrever ao cliente. O texto **não vai para o cliente**, fica na conversa em amarelo com o aviso *"Solo la ve tu equipo"*. Serve para deixar o resumo de uma ligação, de uma reunião ou o que o próximo atendente precisa saber |
 
 **Janela de 24h fechada:** na API oficial, quando o cliente não escreve há mais de 24h, aparece uma faixa vermelha no lugar do campo de texto. Um toque nela abre as plantillas aprovadas — o atendente não fica travado sem saber o que fazer.
 
 ### Painel do contato
-Ao lado da conversa, quatro abas: **Info** (dados do contato) · **Etiquetas** · **Notas** internas · **Ventas** (histórico de compras do cliente na loja).
+Ao lado da conversa (clicar no nome do contato), quatro abas: **Info** (dados do contato) · **Etiquetas** (todas as do contato — a lista de conversas mostra só as primeiras, por falta de espaço) · **Notas** internas · **Ventas** (histórico de compras do cliente na loja).
+
+**Notas internas aparecem também no meio da conversa**, na ordem em que foram escritas, junto com as mensagens — inclusive o **resumo que o bot deixa** quando passa a conversa para um humano (motivo, o que o cliente quer, plano sugerido). Quem assume já lê o contexto sem perguntar de novo ao cliente.
 
 ---
 
@@ -207,7 +221,8 @@ Organizar contatos por categorias visuais (leads quentes, VIPs, pagamento penden
 
 - Etiquetas com nome e cor (10 cores)
 - Múltiplas etiquetas por contato
-- Filtro da lista de conversas por etiqueta
+- Filtro da lista de conversas por etiqueta (barra **ETIQUETAS** no topo)
+- A lista de conversas mostra as primeiras etiquetas de cada contato; **todas** ficam no painel do contato → aba **Etiquetas**
 - Distribuição visível nas métricas
 
 ---
@@ -273,6 +288,13 @@ Ficha completa: empresa, e-mail, cargo, notas, histórico de compras.
 - Progresso em tempo real, com pausa e cancelamento
 - Variáveis dinâmicas (`{{nombre}}`, `{{telefono}}`)
 - Relatório de falhas com **motivo explicado em linguagem clara**
+
+**Nome do cliente nas plantillas (`{{nombre}}`):**
+- Ao escolher uma plantilla, a primeira variável **já vem preenchida com `{{nombre}}`** — cada contato recebe o próprio nome
+- Escrever só `nombre`, `{nombre}` ou `[nombre]` também funciona
+- Vai só o **primeiro nome**, sem emojis (ex.: "CRISTHIAN ✌🏽" → "Cristhian"); nome de negócio com artigo sai inteiro ("La Salvadora")
+- Contato **sem nome** utilizável (vazio, só emoji, "User_67") recebe **"estimado cliente"** — nunca o número de telefone
+- ⚠️ Qualquer outro texto digitado na variável vai **igual para todos** os contatos
 
 ---
 
@@ -340,6 +362,8 @@ Programar mensagens para data e hora específicas.
 
 **Estados:** Pendente · Enviado · Falhou · Cancelado — com motivo da falha em linguagem clara.
 
+**A mensagem enviada aparece na conversa** do contato, com remetente **"Programado"** e os checks de entrega (✓ enviado · ✓✓ entregue · ✓✓ azul lido). Vale também para os **lembretes da Agenda**. É assim que se confirma que o cliente recebeu: o estado "Enviado" na lista só diz que saiu do sistema.
+
 **Relatório de envio para etapa:** quantos receberam, quantos falharam e por quê.
 
 ---
@@ -388,7 +412,9 @@ Cada lojista usa **sua própria chave** — o PagosYa não cobra por mensagem de
 ### Outros ajustes do bot
 - **Mensagem de boas-vindas** com intervalo configurável (padrão: 1 vez a cada 24h por contato — não repete a cada "hola")
 - **Horário de atendimento** por dia da semana, com fuso horário e mensagem fora de hora
-- **Aba Agendamento:** o bot envia o link da agenda quando o cliente pede hora *(ver Agenda de Citas)*
+- **Pausar el bot al asignar** (aba Ajustes): quando a conversa é atribuída a um atendente, o bot **para de responder aquele contato** para não falar por cima da pessoa. Para voltar, o atendente clica no botão do bot no chat. Recomendado para quem tem equipe atendendo junto com o bot
+- **Responder al texto de las fotos** (aba Ajustes): se o cliente manda foto, vídeo ou documento **com texto** ("¿tienen este?"), o bot responde ao texto. Desligado, foto não aciona o bot
+- **Aba Agendamento:** quando o cliente pede hora, o bot **envia o link da agenda** ou **agenda na própria conversa** — o lojista escolhe *(ver Agenda de Citas)*
 - **Aba Histórico:** tudo o que o bot respondeu, e por qual regra ou IA
 
 ### 🔌 Modo webhook externo (n8n, Make ou sistema próprio)
@@ -400,7 +426,11 @@ Em vez do bot interno, o CRM **encaminha cada mensagem recebida para uma URL** d
 - Autenticação por **segredo** (header `Authorization: Bearer ...`) gerado no próprio CRM
 - A tela traz o passo a passo para n8n e exemplos do que chega e do que deve ser devolvido
 - Proteção contra duplicado se o sistema externo reenviar
-- **Limitação:** só mensagens com texto são encaminhadas — uma imagem sem legenda não chega ao webhook
+- **Áudios, fotos e documentos também chegam** ao webhook, com um link para baixar o arquivo (mesma credencial). Assim o fluxo do lojista pode, por exemplo, **transcrever áudios** com a própria chave de IA
+- O sistema externo pode responder com **texto ou arquivo** (imagem, vídeo, documento, áudio)
+- Pode deixar uma **nota interna** no chat (campo `note`) — ideal para o resumo do cliente ao passar para um humano
+- Pode **pausar o bot** naquele contato (campo `handoff: true`) — o atendente vê "Bot en pausa" e o bot só volta quando alguém reativa no chat
+- As opções *Pausar el bot al asignar* e *Responder al texto de las fotos* valem também neste modo
 
 **Quando indicar:** cliente com fluxo já pronto em n8n/Make, ou que quer ligar o WhatsApp a um sistema interno. Para quem não tem nada, o bot interno com IA resolve sem precisar de técnico.
 
@@ -452,11 +482,19 @@ Sistema de hora marcada para **clínicas, consultórios, salões, barbearias e o
    - Abre sem login, vê os horários **realmente livres** e escolhe
    - O mesmo link serve para enviar por WhatsApp, colar na bio do Instagram ou no Google Meu Negócio
 
-### Por que o link (e não o bot perguntando tudo)
+### O bot agenda de dois jeitos — o lojista escolhe
+*Chatbot → aba Agendamento → "¿Cómo agenda el bot?"*
 
-O bot pergunta com qual profissional e **envia o link**. O cliente escolhe o horário na tela.
+| Modo | O que acontece | Bom para |
+|---|---|---|
+| **Enviar el enlace** (padrão) | O bot pergunta com qual profissional e manda o **link da agenda**; o cliente escolhe o horário na página | Quem prefere que o cliente veja a agenda inteira |
+| **Agendar en el chat** | O bot oferece **3 horários livres** na conversa, o cliente responde com o número ("2") e a cita fica marcada ali mesmo, com confirmação | Quem perde clientes no link ("mucho trámite") — o cliente nem sai do WhatsApp |
 
-**Motivo:** o horário vem direto do banco de dados. O bot nunca fala uma data — então **não tem como inventar disponibilidade**, que é o pior erro possível numa agenda de clínica.
+**Nos dois modos o bot não inventa horário:** os horários vêm da agenda, lidos na hora. No modo chat o bot só confirma depois que a cita ficou gravada; se outro cliente pegou o mesmo horário um segundo antes, ele oferece outras opções. O modo chat entende pedidos como *"mañana por la tarde"* e funciona **só no WhatsApp**.
+
+**Reagendar pelo bot (modo chat):** o cliente escreve **"reagendar"** (ou toca o botão *Reagendar* do lembrete) e o bot oferece novos horários. Ao confirmar o novo, a **cita anterior é cancelada sozinha** — junto com o lembrete dela.
+
+A mensagem de confirmação só diz *"Te enviamos un recordatorio antes"* quando o lembrete foi de fato programado.
 
 ### Proteções
 
@@ -483,16 +521,21 @@ Quem tem **tienda online** pode escolher a plantilla **Barbería** (Personalizar
 O atendente marca a cita **de dentro do chat**: escolhe profissional, serviço, data e um dos horários livres, e o nome e telefone do cliente já vêm preenchidos. Os horários são os mesmos da página pública — nada é inventado.
 
 ### Painel da agenda
-- **Calendário mensal** com as citas do mês
+- Visão **Día** (lista do dia, com setas para avançar/voltar) e **Mes** (calendário)
+- O calendário do mês mostra **semanas completas**: nos últimos dias do mês já aparecem os primeiros do mês seguinte, **com as citas** (mais claros). Para ver o mês inteiro seguinte, usar a seta **›**
+- Clicar num dia do calendário abre esse dia na visão diária
 - Filtros por profissional e por estado
-- Atualização **em tempo real**: uma reserva feita pelo link aparece na hora para a equipe
+- Estados da cita: **Pendiente · Confirmada · Completada · Cancelada · No asistió**. Marcar *No asistió* registra a falta do cliente
+- **Editar profissional** (nome, telefone, horário) a qualquer momento
+- Atualização **em tempo real**: uma reserva feita pelo link ou pelo bot aparece na hora para a equipe
 
 ### Avisos automáticos
-- **Lembrete ao cliente** antes da consulta (tempo configurável)
+- **Lembrete ao cliente** antes da consulta — escolhido na Agenda: **1, 2, 3, 6, 12 ou 24 horas antes**, ou *Sin recordatorio*
 - **Aviso ao profissional** quando entra uma cita nova
 - Remarcar **atualiza** o lembrete; cancelar **cancela** o lembrete
+- O lembrete enviado **aparece na conversa** do cliente (remetente "Programado"), com os checks de entrega
 
-⚠️ **Na API oficial**, o lembrete precisa de uma plantilla aprovada — porque 24h antes da consulta a janela quase sempre está fechada.
+⚠️ **Na API oficial**, o lembrete precisa de uma plantilla aprovada — porque horas antes da consulta a janela de 24h quase sempre está fechada. Na Agenda há o botão **"Activar recordatorio por WhatsApp"**: ele cria a plantilla e manda para a Meta. Enquanto a Meta não aprova, aparece **"Verificar aprobación"**. A plantilla traz dois botões para o cliente: **Confirmo asistencia** e **Reagendar** (este último abre o reagendamento pelo bot).
 
 ---
 
@@ -843,7 +886,7 @@ Não. O plano de WhatsApp **soma** ao que você já tem, nunca tira. Nesse caso 
 Um crédito de **Bs 20 adiciona 1 agente por 30 dias**. Quando expira, o agente extra é bloqueado, mas as conversas dele não se perdem.
 
 **"O bot pode marcar consultas?"**
-Ele envia o link da agenda, e o cliente escolhe o horário. Isso garante que o horário oferecido é real.
+Sim, de dois jeitos (o lojista escolhe na aba Agendamento do chatbot): **envia o link da agenda** para o cliente escolher, ou **agenda na própria conversa**, oferecendo 3 horários livres. Nos dois casos os horários vêm da agenda real — o bot não inventa disponibilidade.
 
 **"Posso cobrar o cliente pelo WhatsApp?"**
 Sim, nos três planos. No chat você digita o valor e o motivo, e o cliente recebe o QR para pagar. Quando ele paga, você é avisado na hora, com som. Para isso sua conta do **BNB ou do Banco Económico** precisa estar integrada ao PagosYa.
@@ -868,6 +911,36 @@ Sim, com a plantilla **Barbería** (outras profissões em breve). O cliente vê 
 
 **"Meu atendente pode desconectar o número sem querer?"**
 Não. Só o dono da conta conecta, desconecta ou cria plantillas novas. O atendente responde e envia normalmente.
+
+**"O bot continua respondendo enquanto eu atendo o cliente."**
+Ligue **Pausar el bot al asignar** (Chatbot → Ajustes) e atribua a conversa a você: o bot se cala naquele contato. Ou clique no botão **Bot ON** do topo do chat para silenciá-lo na hora. Para o bot voltar, clique de novo — ele nunca volta sozinho.
+
+**"O botão diz 'Bot en pausa'. O que aconteceu?"**
+O bot se calou sozinho porque a conversa foi atribuída a um atendente ou porque o próprio bot pediu um humano. O motivo e o resumo do cliente ficam numa **nota amarela** na conversa. Para reativar, clique no botão.
+
+**"Como deixo um recado para a equipe sem o cliente ver?"**
+Use a **nota interna** (ícone de post-it na barra de escrever). Fica em amarelo na conversa com o aviso "Solo la ve tu equipo".
+
+**"Não escuto os áudios dos clientes."**
+Clique em **"Clic para cargar audio"** — ele baixa e toca. Se nada acontecer, recarregue a página com **Ctrl+F5** (o navegador pode estar com uma versão antiga do sistema).
+
+**"Onde vejo todas as etiquetas de um contato?"**
+A lista de conversas mostra só as primeiras. Clique no nome do contato dentro do chat → aba **Etiquetas**.
+
+**"Toca o som de notificação toda hora."**
+Os alertas tocam para mensagens de conversas **atribuídas a você**, quando lhe atribuem uma conversa e quando o bot pede um humano. Para silenciar naquele navegador, clique no **sino 🔔** ao lado da busca.
+
+**"O lembrete da cita saiu? O estado diz 'Enviado' mas não sei se chegou."**
+Abra a conversa do cliente: o lembrete aparece como mensagem com remetente "Programado" e os checks — ✓✓ cinza = entregue, ✓✓ azul = lido.
+
+**"Não encontro a cita de amanhã no calendário."**
+Na visão **Mes**, os primeiros dias do mês seguinte aparecem no fim do calendário. Para ver o mês inteiro, avance com a seta **›**. Na visão **Día**, avance os dias com a seta.
+
+**"O cliente quer mudar o horário da cita."**
+Com o bot no modo **Agendar en el chat**, o cliente escreve "reagendar" (ou toca *Reagendar* no lembrete) e escolhe outro horário — a cita antiga é cancelada sozinha. Também dá para remarcar pela própria Agenda.
+
+**"Mandei uma plantilla em massa e saiu 'Hola, nombre'."**
+A variável estava escrita como texto comum. Hoje o campo já vem preenchido com `{{nombre}}`, e `nombre` sozinho também é entendido. Qualquer outro texto digitado vai igual para todos os contatos.
 
 **"Qual conexão devo usar?"**
 API oficial — é a única oferecida para contas novas. Quem já está na Evolution continua funcionando e pode reconectar, mas não indicamos mais essa via: o risco de banimento do número é real e a Meta oficial resolve a mesma necessidade com plantillas.
