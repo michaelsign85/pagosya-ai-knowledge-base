@@ -1,8 +1,8 @@
 ---
 title: Checkout Web, API, sandbox y documentación para developers
-version: v1
+version: v2
 audiencia: developers, merchants, soporte, ventas
-actualizado_en: 2026-08-02
+actualizado_en: 2026-10-03
 ---
 
 # Checkout Web: API, sandbox y documentación para developers
@@ -61,6 +61,26 @@ Flujo:
 7. La venta aparece en PagosYa con el canal **Checkout Web**.
 
 El valor técnico del canal es `external_checkout`; la interfaz lo muestra como **Checkout Web**.
+
+---
+
+## Planes y modalidades
+
+La API es la misma en los tres planes. Cambia lo que la API devuelve y cómo ve el pago el cliente final.
+
+| Plan | Precio mensual | Precio anual | Cómo cobra | Ideal para |
+|---|---|---|---|---|
+| Checkout Web | Bs. 249 | Bs. 2.490 | Redirección: la API devuelve `checkout_url` y el cliente paga en la página segura de PagosYa | Tiendas online y sitios web |
+| Checkout Embedded | Bs. 349 | Bs. 3.490 | QR dentro del sistema del comercio: la API devuelve la imagen del QR (`qr.data_url`) con el sello "pagosya.com.bo" debajo | Kiosks, totems, apps y sistemas propios |
+| Checkout White-label | Bs. 649 | Bs. 6.490 | Igual al Embedded, pero el QR llega sin ninguna marca de PagosYa | Marcas, revendedores y fabricantes de kiosks |
+
+Los tres incluyen hasta Bs. 150.000 en ventas/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. El plan anual paga 10 meses y recibe 12.
+
+El sello de PagosYa va debajo del QR, fuera del código: el QR del banco no se modifica y cualquier app bancaria lo lee igual.
+
+Cambio de plan: al subir de plan (por ejemplo de Checkout Web a Embedded), los días que quedan del plan actual se convierten en días extra del nuevo plan, según el valor pagado. Se hace desde **Mi suscripción** o desde el card de Embedded en el dashboard de Checkout Web.
+
+Más detalles y comparación: https://www.pagosya.com.bo/developers#modalidades
 
 ---
 
@@ -164,7 +184,7 @@ Producción funciona dentro del dashboard normal de PagosYa. No hay un dashboard
 Checklist:
 
 1. Completar las pruebas de sandbox.
-2. Contratar y activar el Plan Checkout Web.
+2. Contratar y activar el plan de la modalidad elegida: Checkout Web, Checkout Embedded o Checkout White-label.
 3. Configurar una integración bancaria habilitada.
 4. Generar credenciales en **Checkout Web → API Keys**.
 5. Registrar una URL HTTPS en **Checkout Web → Webhooks**.
@@ -303,6 +323,18 @@ En **Checkout Web → Órdenes**. Las ventas confirmadas también aparecen en re
 
 En https://www.pagosya.com.bo/checkout-web/webhooks, con login y Plan Checkout Web activo.
 
+### ¿Puedo mostrar el QR dentro de mi app o kiosk, sin redirigir al cliente?
+
+Sí, con el plan Checkout Embedded (Bs. 349/mes) o Checkout White-label (Bs. 649/mes). La API devuelve la imagen del QR lista para mostrar. Con el plan Checkout Web (Bs. 249/mes) el cliente es redirigido a la página de pago de PagosYa.
+
+### ¿Cuál es la diferencia entre Embedded y White-label?
+
+Ambos entregan el QR para mostrarlo en tu sistema. En Embedded el QR lleva debajo el sello "pagosya.com.bo". En White-label el QR llega sin ninguna marca de PagosYa.
+
+### ¿Puedo probar el Embedded en sandbox?
+
+Sí. El sandbox devuelve los mismos campos `embedded_enabled`, `qr` y `branding` con un QR ficticio. Enviando `"branding_mode": "white_label"` se previsualiza el QR sin sello.
+
 ### ¿La documentación de producción es pública?
 
 La introducción y el sandbox son públicos. La referencia completa de producción está dentro del dashboard del plan activo.
@@ -316,7 +348,7 @@ La introducción y el sandbox son públicos. La referencia completa de producci�
 - Explicar que sandbox no procesa pagos ni webhooks.
 - No prometer aprobación automática de credenciales.
 - No pedir ni recibir API keys, HMAC secrets o credenciales bancarias por chat.
-- No inventar endpoints, precios, plazos o funciones.
+- No inventar endpoints, precios, plazos o funciones. Los únicos precios de Checkout Web son los de la tabla "Planes y modalidades".
 - Para producción, indicar que se requiere plan e integración bancaria activos.
 - Para errores, pedir código HTTP, mensaje, `checkout_id` u `order_id`, nunca la clave completa.
 - Derivar casos no resueltos a soporte@pagosya.com.bo.
