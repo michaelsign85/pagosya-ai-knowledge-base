@@ -178,9 +178,6 @@ Si el lead quiere conocer el sistema antes de contratar, tenés dos caminos —
    https://pagosya.com.bo/links
 2. **Demostración en vivo**: reunión de 20 minutos con el equipo, agendada.
 
-> Cuentas antiguas pueden seguir con un trial vigente contratado antes. Eso es
-> soporte a un cliente existente, no una oferta: no lo ofrezcas a nadie nuevo.
-
 ---
 
 ## 💳 Créditos adicionales

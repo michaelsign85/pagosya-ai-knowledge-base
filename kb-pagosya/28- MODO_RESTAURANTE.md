@@ -1,10 +1,9 @@
 # Modo Restaurante — PagosYa
 
-> ⛔ **O TRIAL DESTE MÓDULO NÃO É OFERECIDO A LEADS.**
-> Este documento é interno. O trial do Modo Restaurante saiu da comunicação
-> comercial junto com o trial geral — não converte. Se um lead perguntar como
-> conhecer o sistema: vídeos e material em https://pagosya.com.bo/links, ou
-> demonstração ao vivo de 20 minutos. Pergunte qual ele prefere.
+> ⛔ **NÃO EXISTE TRIAL NEM PERÍODO DE PROVA** — nem do Modo Restaurante nem do
+> PagosYa. Nunca ofereça. Se um lead perguntar como conhecer o sistema: vídeos e
+> material em https://pagosya.com.bo/links, ou demonstração ao vivo de 20
+> minutos. Pergunte qual ele prefere.
 
 
 ## Visão Geral
@@ -19,19 +18,17 @@ Funciona tanto na **versão web** quanto no **app Android nativo**.
 
 | Tipo | Valor | Observação |
 |---|---|---|
-| Trial | Grátis | 15 dias, 1 por usuário, sem cartão |
 | Mensal | Bs 79/mês | Renovação automática |
 | Anual | Bs 790/ano | Equivale a Bs 65,8/mês — economia de 17% |
 
-**Regras do trial:**
-- Apenas 1 trial por usuário (anti-abuso via RPC `activate_restaurant_trial`)
-- Dados, recetas e insumos são mantidos mesmo após expirar — não são apagados
-- Após expirar, o módulo desativa mas o histórico permanece
+**Ao expirar a licença:**
+- Dados, recetas e insumos são mantidos — não são apagados
+- O módulo desativa mas o histórico permanece
 
 **Ativação de licença paga:**
 - Acionada via webhook após confirmação de pagamento
 - RPC `activate_restaurant_license` registra plano, data de início, data de expiração e transaction ID
-- Status possíveis: `trial`, `active`, `expired`, `cancelled`
+- Status possíveis: `active`, `expired`, `cancelled`
 
 **Tabela de controle:** `restaurant_licenses`
 
@@ -40,8 +37,8 @@ Funciona tanto na **versão web** quanto no **app Android nativo**.
 ## Acesso e Navegação
 
 - Menu lateral (sidebar): ícone de chef (`ChefHat`) → rota `/restaurante`
-- **Com licença ativa (trial ou paga):** exibe diretamente a página de configuração (`ThermalPrinterConfig`)
-- **Sem licença (none, expired, cancelled):** exibe a landing page informativa com os planos e botão de trial
+- **Com licença ativa:** exibe diretamente a página de configuração (`ThermalPrinterConfig`)
+- **Sem licença (none, expired, cancelled):** exibe a landing page informativa com os planos
 - O card "Restaurante" que existia em **Configuraciones Avanzadas** foi removido — toda a gestão passa pelo menu lateral dedicado
 
 ---
@@ -265,7 +262,7 @@ Tela pública de self-service em qualquer tablet ou monitor touchscreen.
 | Arquivo | Responsabilidade |
 |---|---|
 | `pages/RestaurantePage.tsx` | Rota `/restaurante` — verifica licença e decide o que renderizar |
-| `pages/RestauranteLandingPage.tsx` | Landing page informativa com planos e botão de trial |
+| `pages/RestauranteLandingPage.tsx` | Landing page informativa com planos |
 | `components/printer/ThermalPrinterConfig.tsx` | Configuração completa: modo, tipo operação, estações, impressoras |
 | `components/printer/AutoatencionSettingsSection.tsx` | Configuração do autoatendimento (dentro do ThermalPrinterConfig) |
 | `pages/AutoatencionPage.tsx` | Interface pública do tablet (sem autenticação) |
@@ -279,7 +276,7 @@ Tela pública de self-service em qualquer tablet ou monitor touchscreen.
 
 | Tabela | Uso |
 |---|---|
-| `restaurant_licenses` | Licenciamento (trial, mensal, anual) |
+| `restaurant_licenses` | Licenciamento (mensal, anual) |
 | `restaurant_ingredients` | Cadastro de insumos com estoque |
 | `restaurant_ingredient_movements` | Histórico de movimentos de estoque |
 | `restaurant_product_recipes` | Fichas técnicas dos produtos |
@@ -291,7 +288,6 @@ Tela pública de self-service em qualquer tablet ou monitor touchscreen.
 
 | Função | Quem chama | O que faz |
 |---|---|---|
-| `activate_restaurant_trial(p_user_id)` | Frontend autenticado | Ativa 15 dias de trial (1 por usuário) |
 | `activate_restaurant_license(p_user_id, p_plan_type, p_payment_transaction_id)` | Webhook de pagamento | Ativa licença paga mensal ou anual |
 
 ### Armazenamento local (Capacitor Preferences)
@@ -329,8 +325,8 @@ Tela pública de self-service em qualquer tablet ou monitor touchscreen.
 ### Para o cliente final:
 1. Acessa `/restaurante` no menu lateral
 2. Vê a landing page com os benefícios e planos
-3. Clica em **"Probar 15 Días Gratis"** (ou escolhe um plano pago)
-4. Sistema ativa a licença via RPC `activate_restaurant_trial`
+3. Escolhe o plano (mensal ou anual) e paga por QR
+4. Após o pagamento, o sistema ativa a licença via RPC `activate_restaurant_license`
 5. A página atualiza automaticamente e exibe a tela de configuração
 
 ### Configuração inicial recomendada:
@@ -349,7 +345,7 @@ Tela pública de self-service em qualquer tablet ou monitor touchscreen.
 **O Modo Restaurante substitui o plano atual?**
 Não. É um módulo adicional que se soma ao plano existente. O cliente mantém todos os recursos do plano e ganha os recursos de restaurante.
 
-**O que acontece quando o trial expira?**
+**O que acontece quando a licença expira?**
 O modo restaurante desativa no POS. Os dados (insumos, receitas, histórico) são mantidos e ficam acessíveis quando o cliente adquirir um plano.
 
 **Precisa de impressora física?**
@@ -391,5 +387,3 @@ A licença está vinculada ao usuário (owner). Cada loja configurada sob o mesm
 > **Controle total da cozinha, da mesa ao custo — em um único sistema.**
 
 Sem sistemas paralelos. Sem integrações complicadas. O garçom já usa o POS do PagosYa para vender; agora a cozinha também recebe os pedidos pelo mesmo sistema, os insumos são controlados automaticamente e o cliente pode pedir sozinho pelo tablet.
-
-**15 dias grátis, sem cartão, sem compromiso.**

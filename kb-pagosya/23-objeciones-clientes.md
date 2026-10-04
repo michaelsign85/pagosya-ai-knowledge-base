@@ -9,7 +9,7 @@ El objetivo es:
 - Entender la preocupación
 - Responder con seguridad
 - Mostrar el valor del sistema
-- Llevar el cliente a probar el sistema
+- Llevar el cliente a ver el sistema (material o demo en vivo)
 
 ---
 
@@ -70,7 +70,7 @@ Mientras tanto, puedo mandarte el video del sistema funcionando: https://pagosya
 Así lo evalúas sin decidir nada ahora. Y si preferís verlo en vivo y preguntar
 sobre tu caso, te agendo una demostración de 20 minutos.
 
-¿Te gustaría probarlo?
+¿Qué preferís?
 
 ---
 
@@ -138,7 +138,7 @@ El sistema no depende de capturas ni comprobantes.
 
 El pago se confirma directamente con el banco.
 
-Además, ofrecemos una prueba para que puedas ver cómo funciona antes de tomar una decisión.
+Si quieres verlo funcionando antes de decidir, te muestro el sistema en una demostración en vivo de 20 minutos.
 
 ---
 
@@ -387,10 +387,10 @@ Siempre:
 Escuchar  
 Entender  
 Explicar  
-Ofrecer prueba  
+Ofrecer demo o material  
 
 El objetivo siempre es:
 
-Activar la prueba  
 Agendar una demo  
+Enviar el material (https://pagosya.com.bo/links)  
 O continuar la conversación

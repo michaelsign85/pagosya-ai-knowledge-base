@@ -70,7 +70,7 @@ Historial de ventas
 
 Puedes decir:
 
-Podemos activar tu prueba ahora mismo.  
-Solo toma 1 minuto.
+Te agendo una demostración de 20 minutos para que lo veas funcionando con tu negocio.  
+O, si ya lo tienes claro, eliges tu plan en https://www.pagosya.com.bo/planes
 
-¿Te gustaría probar el sistema?
+¿Qué prefieres?

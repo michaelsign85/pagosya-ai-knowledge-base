@@ -7,37 +7,18 @@ actualizado_en: 2026-05-23
 
 # Onboarding y primeros pasos
 
-Este documento guía a un nuevo merchant desde el registro inicial hasta tener el sistema listo para cobrar. Cubre el registro, la configuración básica y el acceso de empleados. (La sección de período de prueba es histórica: ver el aviso en la Sección 1.)
+Este documento guía a un nuevo merchant desde el registro inicial hasta tener el sistema listo para cobrar. Cubre el registro, la configuración básica y el acceso de empleados.
 
 ---
 
-## Sección 1 — Período de prueba (DESCONTINUADO — no ofrecer)
+## Sección 1 — No hay período de prueba
 
-> ⛔ **NO OFREZCAS NI MENCIONES ESTO A NINGÚN LEAD.**
-> El período de prueba salió de la comunicación comercial: no convertía. Ya no
-> aparece en la landing y no debe aparecer en ninguna conversación.
->
-> Lo que sigue queda como documentación INTERNA, porque hay cuentas antiguas
-> con trial vigente y el soporte necesita saber cómo funciona. Es soporte a un
-> cliente existente, nunca una oferta.
->
-> Si un lead pregunta si puede probar antes de pagar, la respuesta está en
-> `faq-general.md`: videos y material en https://pagosya.com.bo/links, o
-> demostración en vivo de 20 minutos. Preguntá cuál prefiere.
+PagosYa **no tiene período de prueba, trial ni plan de prueba**. No lo ofrezcas
+ni lo menciones. Para usar el sistema hay que elegir y pagar un plan.
 
-Mecánica del trial para cuentas que ya lo tienen:
-
-| Característica | Detalle |
-|----------------|---------|
-| **Duración** | 14 días desde el registro |
-| **Costo** | Gratis — sin tarjeta de crédito, sin compromiso |
-| **Acceso** | Completo a todas las funcionalidades del sistema |
-| **Límite de ventas** | Bs. 15,000/mes durante el período de prueba |
-| **Requiere** | Solo email y contraseña |
-
-> El período de prueba solo puede usarse una vez por persona. Si ya fue usado, el sistema lo detecta y solicita elegir un plan directamente.
-
-Al terminar el período de prueba, el negocio debe elegir un plan para seguir usando el sistema. Mientras tanto, tiene acceso completo para evaluar todas las funcionalidades.
+Si un lead pregunta si puede probar antes de pagar, tiene dos caminos (preguntá
+cuál prefiere): ver los videos y el material en https://pagosya.com.bo/links, o
+una demostración en vivo de 20 minutos con el equipo.
 
 ---
 
@@ -83,10 +64,8 @@ El formulario incluye verificación **Cloudflare Turnstile** (captcha invisible)
 
 ### Después del registro
 
-- Si viene de una oferta de plan con compra directa → redirige al **checkout del plan elegido**
-- Si es registro normal de prueba → redirige al **Dashboard**
+- Redirige al **checkout del plan elegido** para pagarlo por QR
 - El sistema crea automáticamente el perfil del propietario con rol `owner`
-- Se envía una notificación de bienvenida: **"🎁 ¡14 días gratis para ti!"**
 
 ---
 
@@ -211,13 +190,9 @@ Cuando llega un pago QR confirmado, aparece un **popup de pago recibido** con el
 
 ## Preguntas frecuentes
 
-**¿Necesito tarjeta de crédito para el período de prueba?**
+**¿Puedo probar el sistema gratis antes de pagar?**
 
-No. El período de prueba de 14 días es completamente gratuito y no requiere datos de pago. Solo email y contraseña.
-
-**¿Cuál es el límite de ventas durante la prueba?**
-
-Bs. 15,000/mes. Al elegir un plan, el límite sube según el plan: EmprendeYa (Bs.40,000), ExpandeYa (Bs.80,000), ConquistaYa y otros (Bs.150,000).
+No. No hay período de prueba. Para conocerlo antes de contratar: videos y material en https://pagosya.com.bo/links, o una demostración en vivo de 20 minutos.
 
 **¿Puedo empezar a vender el mismo día del registro?**
 
@@ -227,10 +202,6 @@ Sí. Desde el primer inicio de sesión se puede agregar productos y procesar ven
 
 No. Los empleados solo pueden acceder mediante un enlace de invitación generado por el owner desde el panel. Esto garantiza que nadie se agregue sin autorización.
 
-**¿Qué pasa si el período de prueba vence antes de elegir un plan?**
+**¿Necesito tarjeta de crédito?**
 
-El acceso al sistema se restringe hasta elegir y pagar un plan. Los datos (productos, clientes, ventas) se conservan y están disponibles cuando se activa el plan.
-
-**¿Puedo cambiar de plan durante la prueba?**
-
-Sí. En cualquier momento de la prueba se puede ir a **Suscripción** y elegir un plan pagando directamente por QR. Los créditos de prueba no se descuentan del plan nuevo.
+No. Los planes se pagan por QR bancario.

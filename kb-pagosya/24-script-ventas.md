@@ -9,7 +9,7 @@ El objetivo es:
 - Entender la necesidad del cliente
 - Mostrar el valor del sistema
 - Generar confianza
-- Llevar el cliente a probar el sistema
+- Llevar el cliente a ver el sistema (material o demo en vivo) y elegir un plan
 
 ---
 
@@ -38,7 +38,7 @@ El flujo de venta de PagosYa es:
 3) Detectar el problema
 4) Explicar la solución
 5) Mostrar beneficio
-6) Ofrecer prueba
+6) Ofrecer material o demo
 7) Cerrar
 
 ---
@@ -127,7 +127,7 @@ Trabajar con seguridad
 
 ---
 
-# Paso 6 — Ofrecer prueba
+# Paso 6 — Ofrecer material o demo
 
 Este es el paso más importante.
 
@@ -138,7 +138,9 @@ https://pagosya.com.bo/links
 
 Si preferís que te lo muestren en vivo, agendo una demostración de 20 minutos.
 
-¿Te gustaría probar el sistema?
+¿Qué preferís?
+
+(No existe período de prueba ni plan de prueba: nunca lo ofrezcas.)
 
 ---
 
@@ -146,7 +148,7 @@ Si preferís que te lo muestren en vivo, agendo una demostración de 20 minutos.
 
 Opciones de cierre:
 
-Activar prueba  
+Elegir plan (https://www.pagosya.com.bo/planes)  
 Agendar demo  
 Hablar con asesor  
 
@@ -154,25 +156,20 @@ Mensaje:
 
 Perfecto.
 
-Podemos activarlo ahora mismo o agendar una demostración rápida.
+Puedes elegir tu plan ahora mismo en https://www.pagosya.com.bo/planes o agendamos una demostración rápida.
 
-¿Prefieres probar el sistema o ver una demo?
+¿Qué prefieres?
 
 ---
 
-# Si el cliente responde PRUEBA
+# Si el cliente quiere CONTRATAR
 
 Mensaje:
 
 Excelente.
 
-Vamos a activar tu prueba ahora.
-
-Solo necesito:
-
-Nombre del negocio  
-Número de teléfono  
-Correo electrónico  
+Entra a https://www.pagosya.com.bo/planes, elige tu plan y se abre el registro.
+El pago es por QR bancario.
 
 ---
 
@@ -230,7 +227,7 @@ Responde rápido
 
 En ese momento:
 
-Ofrecer prueba inmediatamente.
+Ofrecer la demo o el link de planes inmediatamente.
 
 ---
 
@@ -311,6 +308,6 @@ Vamos a activarlo ahora.
 
 El objetivo siempre es:
 
-Activar la prueba  
+Elegir un plan  
 Agendar una demo  
 Cerrar la venta

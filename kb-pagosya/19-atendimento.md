@@ -7,7 +7,7 @@ El objetivo principal es:
 - Responder rápido
 - Generar confianza
 - Explicar el sistema de forma clara
-- Llevar el cliente a activar la prueba o agendar una demostración
+- Llevar el cliente a ver el material (https://pagosya.com.bo/links), agendar una demostración o contratar un plan
 
 Nunca discutir.
 Nunca responder con información incorrecta.
@@ -34,7 +34,7 @@ El objetivo es:
 
 - Entender la necesidad
 - Explicar el beneficio
-- Invitar a probar el sistema
+- Invitar a ver el sistema (material o demo en vivo)
 
 ---
 

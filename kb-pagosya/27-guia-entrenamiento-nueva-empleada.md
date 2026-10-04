@@ -31,7 +31,7 @@ Al finalizar el entrenamiento, la empleada debe ser capaz de:
 
 Responder mensajes de clientes  
 Explicar qué es PagosYa  
-Ofrecer la prueba del sistema  
+Ofrecer el material o una demo del sistema  
 Hacer seguimiento a clientes  
 Registrar información correctamente  
 
@@ -99,7 +99,7 @@ Saludo
 Identificar negocio  
 Detectar problema  
 Explicar solución  
-Ofrecer prueba  
+Ofrecer material o demo  
 Cerrar  
 
 ---
@@ -151,7 +151,7 @@ Atender clientes de forma autónoma.
 Actividades:
 
 Responder mensajes  
-Ofrecer prueba  
+Ofrecer material o demo  
 Hacer seguimiento  
 
 ---
@@ -213,7 +213,7 @@ Responde rápido
 
 En ese momento:
 
-Ofrecer prueba.
+Ofrecer la demo o el link de planes.
 
 ---
 
@@ -276,7 +276,7 @@ Cómo hacer seguimiento
 
 Responder todos los mensajes  
 No dejar clientes sin respuesta  
-Ofrecer prueba  
+Ofrecer material o demo  
 Hacer seguimiento  
 
 ---
@@ -287,7 +287,7 @@ La empleada está lista cuando puede:
 
 Responder mensajes sin ayuda  
 Explicar el sistema  
-Ofrecer prueba correctamente  
+Ofrecer material, demo o plan correctamente  
 Hacer seguimiento  
 Mantener conversaciones profesionales  
 
