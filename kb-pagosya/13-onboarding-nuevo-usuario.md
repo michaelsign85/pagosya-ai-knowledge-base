@@ -45,9 +45,12 @@ Al terminar el período de prueba, el negocio debe elegir un plan para seguir us
 
 ### Cómo registrarse
 
-1. Ir a `app.pagosya.com.bo` o descargar la app móvil.
-2. En la pantalla principal, hacer clic en **"Crear cuenta"** o **"Registrarse"**.
+1. Ir a **www.pagosya.com.bo/planes** (o descargar la app móvil).
+2. Elegir el plan y tocar su botón: se abre el formulario de registro con ese plan ya seleccionado.
 3. Completar el formulario de registro.
+
+> El único dominio de PagosYa es **www.pagosya.com.bo**. No existe `app.pagosya.com.bo`: nunca enviar ese enlace.
+> Quien ya tiene cuenta inicia sesión en **www.pagosya.com.bo/auth**.
 
 ### Campos del formulario de registro
 
@@ -139,7 +142,7 @@ Los empleados no se registran solos — solo pueden unirse al sistema mediante u
 
 ### Cómo registrarse como empleado
 
-1. Abrir el enlace de invitación recibido (empieza con `app.pagosya.com.bo/employee-register?token=...`).
+1. Abrir el enlace de invitación recibido (empieza con `www.pagosya.com.bo/crear-cuenta?token=...`).
 2. El sistema muestra el nombre del empleado (precargado desde la invitación) y el email.
 3. Completar:
    - **Nombre completo** (editable si necesita corrección)

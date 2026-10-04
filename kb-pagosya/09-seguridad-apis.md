@@ -150,7 +150,6 @@ Solo los siguientes dominios pueden llamar a las Edge Functions:
 ```
 https://www.pagosya.com.bo
 https://pagosya.com.bo
-https://app.pagosya.com.bo
 https://pagosya.vercel.app
 http://localhost:5173    (desarrollo local)
 http://localhost:3000    (desarrollo local)

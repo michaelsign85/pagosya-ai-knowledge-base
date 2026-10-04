@@ -120,7 +120,6 @@ Las Edge Functions de PagosYa solo aceptan peticiones de orígenes autorizados. 
 |---|---|
 | `https://www.pagosya.com.bo` | Sitio web principal |
 | `https://pagosya.com.bo` | Sitio web (sin www) |
-| `https://app.pagosya.com.bo` | Aplicación web |
 | `https://pagosya.vercel.app` | Deploy en Vercel |
 | `http://localhost:5173` | Desarrollo local (Vite) |
 | `http://localhost:3000` | Desarrollo local alternativo |

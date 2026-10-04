@@ -50,7 +50,7 @@ PagosYa es un **sistema SaaS híbrido** (web + app móvil) para comercios en Bol
 
 | Canal | URL / Descripción |
 |-------|-------------------|
-| **Web (panel admin)** | `app.pagosya.com.bo` |
+| **Web (panel admin)** | `www.pagosya.com.bo` |
 | **App móvil** | iOS y Android (Capacitor) — mismo panel, optimizado para caja |
 | **Tienda online pública** | `{subdominio}.pagosya.shop` o dominio personalizado |
 | **Checkout externo** | Enlace de pago para integrar en sitios externos |
