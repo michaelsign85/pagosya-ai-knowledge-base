@@ -1,8 +1,8 @@
 ---
 title: Tienda online integrada
-version: v5
+version: v6
 audiencia: merchants
-actualizado_en: 2026-10-01
+actualizado_en: 2026-10-07
 ---
 
 # Tienda online integrada
@@ -18,6 +18,7 @@ La **Tienda Online** de PagosYa convierte tu negocio físico en una tienda digit
 - Pago con tarjeta de crédito/débito (si tiene integración Red Enlace 3DS activa)
 - **Contra entrega**: el cliente paga al recibir, con QR en el acto o efectivo
 - Pedidos organizados en panel de gestión, con **alerta sonoro de nuevo pedido** en el panel
+- **Portal de seguimiento para el cliente** (`/mipedido`): sigue el estado de su pedido en tiempo real, sin cuenta ni contraseña
 - **6 plantillas de diseño** listas para usar, todas adaptadas a celular y tablet
 - **Plantilla de servicios con reservas en línea** (Barbería): el cliente reserva su turno dentro de la tienda, con horarios reales de la Agenda
 - **Chat en la tienda**: los clientes chatean con tu bot y los mensajes llegan a la bandeja del WhatsApp CRM *(requiere WhatsApp CRM)*
@@ -480,6 +481,31 @@ Desde el menú lateral hacer clic en **"Pedidos"** (o la sección de pedidos de 
 Los pedidos con método de pago "contra entrega" tienen un indicador especial. Al momento de la entrega, el merchant puede:
 1. Hacer clic en **"Cobrar con QR"**: genera un QR para que el cliente pague en el acto. El sistema detecta el pago en tiempo real.
 2. O hacer clic en **"Marcar como pagado"**: para pagos en efectivo sin QR.
+
+### Portal de seguimiento del pedido (para el cliente)
+
+El cliente final tiene una página pública para **seguir su pedido en tiempo real**, sin crear cuenta ni contraseña: solo con el número de pedido.
+
+**Dónde está:** en la misma dirección de la tienda, agregando `/mipedido` (también funciona `/seguimiento`):
+- `tutienda.pagosya.shop/mipedido?orden=00049`
+- en el dominio personalizado de la tienda, igual (`mitienda.com/mipedido`)
+- si el cliente entra sin número, la página le pide ingresarlo (ej.: `00049` o `#00049`) y pulsa **Rastrear**
+
+**Qué ve el cliente:**
+- Número de orden y fecha, con el nombre y teléfono de la tienda
+- Un avance de **4 pasos**: **Confirmado → En preparación → En camino** (o **Listo para retiro**, si eligió retirar en la tienda) **→ Entregado**, con un mensaje que explica el paso actual. Si el pedido se canceló, lo indica.
+- Datos de entrega (dirección o local de retiro) y del pago: método, **Pagado** o **Pendiente de pago**, y total
+- Resumen de productos con cantidades y precios
+- Botón **"Contactar a la Tienda por WhatsApp"** con el número de pedido ya escrito
+
+La página **se actualiza sola**: cuando el comercio cambia el estado del pedido en el panel, el cliente lo ve sin recargar.
+
+**Cómo le llega el enlace al cliente** (lo envía el comercio desde el panel):
+- En el **alerta de nuevo pedido**, el botón **"📲 Notificar por WhatsApp"** le manda al cliente un mensaje de agradecimiento con el enlace de seguimiento.
+- Al **cambiar el estado** de un pedido (en preparación, enviado o listo para retiro, entregado), el panel ofrece enviar al cliente un mensaje de WhatsApp con el nuevo estado y el enlace; el mensaje se puede editar antes de enviarlo.
+- Si el comercio tiene el **WhatsApp CRM conectado**, el mensaje sale por su número directamente. Si no, se abre WhatsApp con el mensaje listo para enviar.
+
+> Los pasos "En preparación" y "En camino / Listo para retiro" solo avanzan si el comercio actualiza el estado del pedido en el panel. Si el comercio no lo actualiza, el cliente sigue viendo "Confirmado".
 
 ---
 
