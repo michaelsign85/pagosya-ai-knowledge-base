@@ -2,7 +2,7 @@
 title: Visión general del sistema PagosYa
 version: v3
 audiencia: merchants
-actualizado_en: 2026-05-23
+actualizado_en: 2026-10-15
 ---
 
 # Visión general del sistema PagosYa
@@ -38,6 +38,8 @@ PagosYa es un **sistema SaaS híbrido** (web + app móvil) para comercios en Bol
 | **ExpandeYa** | Bs. 169 | Bs. 1,690 | Bs. 80,000/mes | 3 | 3 |
 | **ConquistaYa** | Bs. 249 | Bs. 2,490 | Bs. 150,000/mes | 6 | 6 |
 | **Plan Checkout Web** | Bs. 249 | Bs. 2,490 | Bs. 150,000/mes | 1 | 1 |
+| **Checkout Embedded** | Bs. 349 | Bs. 3,490 | Bs. 150,000/mes | 1 | 1 |
+| **Checkout White-label** | Bs. 649 | Bs. 6,490 | Bs. 150,000/mes | 1 | 1 |
 | **RestauranteYa** | Bs. 329 | Bs. 3,290 | Bs. 150,000/mes | 6 | 6 |
 
 **Créditos adicionales:** Bs. 20 por crédito. Cada crédito agrega Bs. 5,000 al límite mensual (permanente) o 1 tienda + 1 empleado por 30 días.

@@ -2,7 +2,7 @@
 title: Planes y precios PagosYa
 version: v3
 audiencia: merchants
-actualizado_en: 2026-07-06
+actualizado_en: 2026-10-15
 ---
 
 PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los precios actuales corresponden a la generación **v2 (2026)**. Los clientes con planes anteriores (v1) mantienen sus condiciones mientras su suscripción esté activa.
@@ -65,6 +65,23 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 - Hasta **Bs. 150.000 en ventas / mes**
 - 1 tienda · 1 empleado
 - **No incluye**: POS, productos, facturas, tienda online
+
+### 🟦 Checkout Embedded — Bs. 349 / mes *(Bs. 3.490 / año)*
+
+- Todo lo de Plan Checkout Web
+- Devuelve el QR para mostrarlo dentro de una app, kiosk o sistema propio
+- Incluye la marca PagosYa debajo del QR, fuera del código bancario
+- Hasta **Bs. 150.000 en ventas / mes**
+- 1 tienda · 1 empleado
+
+### ⬜ Checkout White-label — Bs. 649 / mes *(Bs. 6.490 / año)*
+
+- Todo lo de Checkout Embedded
+- QR sin marca PagosYa para marcas, revendedores y fabricantes de kiosks
+- Hasta **Bs. 150.000 en ventas / mes**
+- 1 tienda · 1 empleado
+
+> En los tres planes de Checkout Web la API y los webhooks son los mismos. La modalidad se valida por la suscripción activa: una API key no conserva privilegios de un plan anterior después de un downgrade o vencimiento.
 
 ---
 

@@ -2,7 +2,7 @@
 title: Múltiples tiendas y gestión de empleados
 version: v3
 audiencia: merchants
-actualizado_en: 2026-05-22
+actualizado_en: 2026-10-15
 ---
 
 # Múltiples tiendas y gestión de empleados
@@ -24,6 +24,8 @@ El número de tiendas disponibles depende del plan activo:
 | ConquistaYa | 6 |
 | RestauranteYa | 6 |
 | Checkout Web | 1 |
+| Checkout Embedded | 1 |
+| Checkout White-label | 1 |
 
 Si el negocio crece y necesita más tiendas de las que incluye el plan, se pueden agregar tiendas adicionales mediante **créditos** desde Configuraciones → Créditos.
 
@@ -92,6 +94,8 @@ El número de empleados también depende del plan:
 | ConquistaYa | 6 |
 | RestauranteYa | 6 |
 | Checkout Web | 1 |
+| Checkout Embedded | 1 |
+| Checkout White-label | 1 |
 
 Si se necesitan más empleados, se pueden agregar con créditos adicionales.
 

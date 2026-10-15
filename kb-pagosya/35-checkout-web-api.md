@@ -2,7 +2,7 @@
 title: Checkout Web, API, sandbox y documentación para developers
 version: v2
 audiencia: developers, merchants, soporte, ventas
-actualizado_en: 2026-10-03
+actualizado_en: 2026-10-15
 ---
 
 # Checkout Web: API, sandbox y documentación para developers
@@ -79,6 +79,12 @@ Los tres incluyen hasta Bs. 150.000 en ventas/mes, 1 tienda, 1 empleado, webhook
 El sello de PagosYa va debajo del QR, fuera del código: el QR del banco no se modifica y cualquier app bancaria lo lee igual.
 
 Cambio de plan: al subir de plan (por ejemplo de Checkout Web a Embedded), los días que quedan del plan actual se convierten en días extra del nuevo plan, según el valor pagado. Se hace desde **Mi suscripción** o desde el card de Embedded en el dashboard de Checkout Web.
+
+### Regla de entitlement y cambio a un plan más barato
+
+La API key de producción no congela la modalidad contratada. Cada llamada de producción valida la suscripción vigente de la cuenta. Si una cuenta baja de Embedded o White-label a Checkout Web, la clave existente sigue identificando al comercio, pero deja de habilitar QR embebido y respuestas White-label. Si la suscripción vence o es cancelada, la API de producción deja de aceptar operaciones.
+
+El sandbox es separado y no concede entitlement de producción: probar con una modalidad más cara no libera esa modalidad después del downgrade.
 
 Más detalles y comparación: https://www.pagosya.com.bo/developers#modalidades
 

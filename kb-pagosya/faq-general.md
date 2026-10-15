@@ -2,7 +2,7 @@
 title: Preguntas frecuentes PagosYa
 version: v5
 audiencia: merchants
-actualizado_en: 2026-08-02
+actualizado_en: 2026-10-15
 ---
 
 # Preguntas Frecuentes — PagosYa
@@ -41,9 +41,15 @@ No. PagosYa cobra únicamente una mensualidad fija según el plan elegido. No ha
 | ExpandeYa | Bs. 169/mes | Bs. 1,690/año |
 | ConquistaYa | Bs. 249/mes | Bs. 2,490/año |
 | Checkout Web | Bs. 249/mes | Bs. 2,490/año |
+| Checkout Embedded | Bs. 349/mes | Bs. 3,490/año |
+| Checkout White-label | Bs. 649/mes | Bs. 6,490/año |
 | RestauranteYa | Bs. 329/mes | Bs. 3,290/año |
 
 Pago anual equivale a aproximadamente 2 meses gratis.
+
+**¿Cuál es la diferencia entre los planes de Checkout Web?**
+
+Los tres tienen límite de Bs. 150.000/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. **Checkout Web** redirige al cliente a la página segura de PagosYa; **Checkout Embedded** devuelve el QR para mostrarlo dentro del sistema, con la marca PagosYa; **Checkout White-label** devuelve el mismo QR sin la marca. El derecho se valida por la suscripción vigente, incluso para API keys ya creadas: al bajar de plan, la cuenta pierde las capacidades de la modalidad anterior.
 
 **¿Puedo probar PagosYa antes de pagar?**
 No hay período de prueba gratuito. Lo que sí podés hacer, sin costo y sin registrarte: ver los videos y el material de cada plan en https://pagosya.com.bo/links, o agendar una demostración en vivo de 20 minutos con el equipo. Preguntale al lead cuál de las dos prefiere.
