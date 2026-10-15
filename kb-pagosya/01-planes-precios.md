@@ -214,21 +214,25 @@ Si el lead quiere conocer el sistema antes de contratar, tenés dos caminos —
 
 Nia **no es un plan nuevo**: es un add-on de inteligencia artificial que se suma al plan PagosYa que el comerciante ya tiene. Funciona enteramente por WhatsApp: registra gastos, crea recordatorios y genera cobros — conversando, sin abrir la app.
 
+**Un solo plan** (desde 15/10/2026): **Nia — secretaria virtual con integración bancaria.**
+
 | Plan | Mensual | Anual | Interacciones/mes | Incluye |
 |------|--------|-------|-------------------|---------|
-| **Nia Básico** | Bs. 0 | Bs. 0 | 50 | Gastos, recordatorios, resúmenes, dashboard con realtime |
-| **Nia Plus** | Bs. 29/mes | **Bs. 290/año** | 300 | Todo lo de Básico + edición de movimientos y recordatorios |
-| **Nia Pro** | Bs. 49/mes | **Bs. 490/año** | 300 | Todo lo de Plus + **cobro por WhatsApp** con confirmación automática de pago |
+| **Nia** | **Bs. 29,90/mes** | **Bs. 299/año** | 300 | Gastos e ingresos (texto, audio, foto), recordatorios, resúmenes diarios, panel en vivo y **cobro por WhatsApp con QR de su banco** con aviso automático de pago |
 
-> **Anual = 2 meses gratis** (se pagan 10, se usan 12). Plus equivale a
-> Bs. 24,17/mes y Pro a Bs. 40,83/mes. El selector Mensual/Anual está arriba de
-> las tarjetas, en el link de planes.
+> **Prueba gratis de 7 días**, con todo liberado (incluido el cobro), desde el
+> primer mensaje a Nia. **Ya no existe plan gratis** (Nia Básico, Plus y Pro
+> fueron reemplazados): al terminar la prueba, Nia deja de procesar mensajes
+> hasta que se active el plan.
+>
+> **Anual = 2 meses gratis** (se pagan 10, se usan 12): equivale a Bs. 24,92/mes.
+> El selector Mensual/Anual está arriba de la tarjeta, en el link de planes.
 
 **Qué puede hacer:**
 - 📝 Registrar gastos e ingresos por texto, audio o foto de recibo
 - ⏰ Crear recordatorios puntuales, recurrentes (diario/semanal/mensual) y cursos (ej.: medicación cada X horas)
 - 📊 Consultar resumen del mes: "¿cuánto gasté?"
-- 💳 **Cobrar por WhatsApp** (solo Nia Pro): genera un link de pago y avisa cuando entra
+- 💳 **Cobrar por WhatsApp**: genera el QR de pago de su banco y avisa cuando entra (necesita banco vinculado)
 - 🌎 Disponible en español y portugués
 
 **🎯 A dónde mandar al lead que quiere contratarla:**
@@ -236,12 +240,11 @@ Nia **no es un plan nuevo**: es un add-on de inteligencia artificial que se suma
 ### 👉 https://www.pagosya.com.bo/nia-pagosya#planes
 
 > «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
-> Ahí está la sección **Planes**: elegí el que quieras.
-> Podés empezar con **Nia Básico sin ningún costo** y subir cuando quieras.»
+> Probala **7 días gratis**, con todo incluido. Después son **Bs 29,90 al mes**
+> (o Bs 299 al año).»
 
-El link abre directo en los planes. Los tres se contratan solos, con pago QR —
-**no hay que hablar con ventas ni esperar activación**. Básico es gratis y no
-pide tarjeta.
+El link abre directo en el plan. Se contrata solo, con pago QR — **no hay que
+hablar con ventas ni esperar activación**. La prueba no pide tarjeta.
 
 **Cómo se conecta después de contratar:** desde el panel PagosYa → Nia → «Generar código y conectar WhatsApp» → el link abre WhatsApp con el código ya escrito, solo hay que enviarlo.
 

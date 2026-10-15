@@ -2,7 +2,7 @@
 title: "Nia — Asistente IA por WhatsApp"
 version: 1.0
 audiencia: "merchants, agents, support"
-actualizado_en: 2026-07-31
+actualizado_en: 2026-10-15
 ---
 
 **Nia** es el asistente personal con inteligencia artificial de PagosYa. Funciona **enteramente por WhatsApp**: el usuario escribe, manda un audio o una foto de recibo, y Nia registra gastos, crea recordatorios y genera cobros — conversando, sin abrir la app.
@@ -19,25 +19,30 @@ actualizado_en: 2026-07-31
 **Qué decirle:**
 
 > «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
-> Ahí abajo está la sección **Planes**: elegí el que quieras.
-> Podés empezar con **Nia Básico sin ningún costo** y subir cuando quieras.»
+> Probala **7 días gratis**, con todo incluido. Después son **Bs 29,90 al mes**
+> (o Bs 299 al año).»
 
 **Reglas:**
 
 - El link ya abre directo en la sección de planes — no hace falta pedir que baje
-- **Nunca** decir que hay que hablar con ventas o esperar activación: los tres
-  planes se contratan solos desde ahí
-- Si duda por el precio, recordarle que **Básico es gratis** y no pide tarjeta
+- **Nunca** decir que hay que hablar con ventas o esperar activación: el plan se
+  contrata solo desde ahí
+- **Ya no hay plan gratis.** Nia Básico, Plus y Pro dejaron de existir el
+  15/10/2026. Si alguien los menciona, explicarle que ahora hay **un solo plan,
+  Nia, a Bs 29,90/mes**, con 7 días de prueba
+- Si duda por el precio, recordarle que **los primeros 7 días son gratis** y no
+  piden tarjeta
 - Si ya es cliente PagosYa y está logueado, también puede ir por el panel:
   **Planes → sección Nia**. Pero para un lead que todavía no tiene cuenta, el
   link de arriba es el camino corto
 
 | Si el lead dice… | Respuesta |
 |---|---|
-| «¿Cuánto cuesta?» | Básico Bs. 0 · Plus Bs. 29/mes · Pro Bs. 49/mes → mandar el link |
-| «¿Hay descuento por pagar el año?» | Sí: **2 meses gratis**. Plus Bs. 290/año, Pro Bs. 490/año. En el link hay un selector Mensual/Anual |
-| «Quiero probarla» | Básico es gratis, 50 interacciones al mes → mandar el link |
-| «¿Cómo la contrato?» | Mandar el link, sección Planes, elegir y pagar con QR |
+| «¿Cuánto cuesta?» | **Bs. 29,90/mes**, un solo plan con todo → mandar el link |
+| «¿Hay descuento por pagar el año?» | Sí: **2 meses gratis**, Bs. 299/año. En el link hay un selector Mensual/Anual |
+| «Quiero probarla» | **7 días gratis** con todo incluido, desde el primer mensaje → mandar el link |
+| «¿Hay plan gratis?» | No. Hay **7 días de prueba**; después Bs. 29,90/mes |
+| «¿Cómo la contrato?» | Mandar el link, sección Planes, activar y pagar con QR |
 | **«¿Cómo la activo?»** | **Mandar el link.** Solo si YA dijo que tiene cuenta PagosYa, explicarle lo del código de vinculación |
 | **«No tengo cuenta PagosYa»** | **Perfecto, no hace falta tenerla antes.** La cuenta se crea al elegir el plan → mandar el link |
 | «Sí» / «Dale» / «Quiero» | Mandar el link. Nunca responder con pasos de panel a alguien que no dijo tener cuenta |
@@ -77,15 +82,24 @@ a un panel que todavía no existe para él — y la conversación muere ahí.
 
 Nia **no es un plan nuevo**: es un **add-on** que se suma a la suscripción que el comerciante ya tiene (EmprendeYa, ExpandeYa, ConquistaYa, CobraYa, etc.). El plan principal no cambia.
 
+Desde el **15/10/2026** hay **un solo plan**: **Nia — secretaria virtual con
+integración bancaria**.
+
 | Plan | Mensual | Anual | Interacciones/mes | Incluye |
 |--------|--------|-------|-------------------|---------|
-| **Nia Básico** | Bs. 0 | Bs. 0 | 50 | Gastos, recordatorios, resúmenes |
-| **Nia Plus** | Bs. 29/mes | **Bs. 290/año** | 300 | Todo lo anterior |
-| **Nia Pro** | Bs. 49/mes | **Bs. 490/año** | 300 | Todo + **cobro por WhatsApp** con confirmación automática |
+| **Nia** | **Bs. 29,90/mes** | **Bs. 299/año** | 300 | Gastos e ingresos, recordatorios, resúmenes diarios, panel en vivo y **cobro por WhatsApp** con QR de su banco y confirmación automática |
 
-> **El anual da 2 meses gratis**: se pagan 10 y se usan 12. Plus sale a Bs. 24,17
-> por mes y Pro a Bs. 40,83. En el link de planes hay un selector Mensual/Anual
-> arriba de las tarjetas — el precio cambia al tocarlo.
+> **Prueba de 7 días**: todo número que le escribe a Nia por primera vez tiene 7
+> días con todo liberado (300 interacciones, cobro y resúmenes). Quienes ya
+> usaban Nia el 15/10/2026 recibieron sus 7 días a partir de esa fecha.
+> Al terminar la prueba, Nia responde solo con el aviso para activar el plan.
+>
+> **Ya no existen** Nia Básico (gratis), Nia Plus ni Nia Pro. Quien tenía Nia
+> Plus pagado lo conserva hasta que vence; al renovar, pasa al plan Nia.
+>
+> **El anual da 2 meses gratis**: se pagan 10 y se usan 12 — equivale a
+> Bs. 24,92 por mes. En el link de planes hay un selector Mensual/Anual arriba de
+> la tarjeta.
 
 ### Créditos adicionales
 
@@ -163,7 +177,7 @@ internet), Nia los procesa **todos** juntos y responde con la lista.
 - Llegan por plantilla aprobada de WhatsApp, incluso fuera de la ventana de 24h
 - Se editan o cancelan respondiendo al mensaje o desde el panel (título, fecha/hora, recurrencia, notas)
 
-### 3. Resúmenes diarios *(Nia Plus y Pro)*
+### 3. Resúmenes diarios *(plan Nia y prueba)*
 
 Dos mensajes al día, **activados de fábrica** — el usuario no tiene que descubrir
 ni configurar nada para empezar a recibirlos. La primera vez que entra al panel
@@ -182,7 +196,7 @@ un aviso le dice que están activos y le ofrece cambiarlos o apagarlos.
   a responder — y al responder llega el detalle
 - No consumen interacciones del plan
 
-### 4. Cobro por WhatsApp *(solo Nia Pro)*
+### 4. Cobro por WhatsApp *(plan Nia y prueba, con banco vinculado)*
 
 ```
 "cobrale 175 Bs a Ana Quispe por el servicio de julio"
@@ -255,25 +269,26 @@ del cliente:
 | **Cobro** | 30 días corridos desde la compra |
 | **Interacciones** | se renuevan el 1 de cada mes |
 
-Ejemplo: contrata Nia Pro el **20/08** y paga Bs 49. Ese pago cubre hasta el
+Ejemplo: contrata Nia el **20/08** y paga Bs 29,90. Ese pago cubre hasta el
 **19/09**. Tiene 300 interacciones del 20/08 al 31/08 y, el **1/09**, la cuota
 se renueva: 300 más hasta el 19/09. **600 interacciones por un solo pago.**
 
 Quien contrata a mitad de mes no pierde nada — recibe un segundo lote antes de
-volver a pagar. Y el upgrade **no borra** lo ya consumido en el mes: si gastó
-las 50 del Básico y sube a Plus el día 20, le quedan 250 hasta fin de mes, y
+volver a pagar. Activar el plan **no borra** lo ya consumido en el mes: si
+gastó 80 durante la prueba y activa el día 20, le quedan 220 hasta fin de mes, y
 300 limpias el día 1.
 
 Los créditos son aparte: **no vencen** y se usan solo cuando se agotaron las
 interacciones del plan.
 
 **Cuando alguien llega al límite**, Nia le avisa por WhatsApp y le ofrece la
-salida que corresponda, con el link a `pagosya.com.bo/suscripcion`.
+salida que corresponda, con el link a `pagosya.com.bo/suscripcion`:
 
-> ⚠️ A quien ya tiene **Nia Plus** no se le ofrece subir a Pro para resolver
-> esto: **Plus y Pro tienen la misma cuota (300)**. Para ellos la única salida
-> real son los créditos. Pro se vende por el cobro por WhatsApp, no por
-> cantidad de interacciones.
+| Situación | Qué ofrece Nia |
+|---|---|
+| Terminó la prueba de 7 días | Activar el plan Nia (Bs 29,90/mes o Bs 299/año) |
+| Gastó las 300 durante la prueba | Activar el plan Nia, o créditos |
+| Tiene el plan y gastó las 300 del mes | Créditos (el plan es uno solo, no hay a qué subir) |
 
 **Rajadas de mensajes:** si el usuario manda varios audios seguidos (típico de quien estuvo sin internet y acumuló), Nia los procesa **todos**, no solo el último — cada uno puede ser un gasto distinto.
 
@@ -296,7 +311,7 @@ Un solo paso, y es un link:
 ### 👉 https://www.pagosya.com.bo/nia-pagosya#planes
 
 > «Entrá acá 👉 https://www.pagosya.com.bo/nia-pagosya#planes
-> Elegí el plan que quieras — podés empezar con **Nia Básico sin ningún costo**.
+> Probala **7 días gratis**; después son **Bs 29,90 al mes**.
 > Al elegirlo creás tu cuenta ahí mismo, y enseguida conectás tu WhatsApp.»
 
 La cuenta se crea **en ese flujo**, al elegir el plan. No hay que registrarse
@@ -433,7 +448,7 @@ Modelo económico (`gpt-4.1-mini`) con salida estructurada en JSON. Transcripci�
 |--------|---------|
 | Precisión del recordatorio | ±5 minutos (el cron corre cada 5) |
 | Moneda | Solo bolivianos (Bs). Un usuario que diga "reales" recibe un pedido de aclaración |
-| Cobro | Exige **Nia Pro** y banco vinculado a la cuenta |
+| Cobro | Exige el **plan Nia** (o estar en la prueba) y banco vinculado a la cuenta |
 | Video y documentos | No se procesan (sí audio e imagen) |
 | Un número por cuenta | Cada número se vincula a una sola cuenta |
 
@@ -442,7 +457,7 @@ Modelo económico (`gpt-4.1-mini`) con salida estructurada en JSON. Transcripci�
 ## ❓ Preguntas frecuentes
 
 **¿Necesito cambiar de plan para usar Nia?**
-No. Es un add-on: el plan actual sigue igual y Nia se suma encima.
+No. Es un add-on: el plan actual sigue igual y Nia se suma encima, por Bs 29,90/mes.
 
 **¿Qué pasa si llego al límite de interacciones?**
 Nia avisa y deja de procesar mensajes de IA hasta el mes siguiente. Los comandos del menú siguen funcionando, y se pueden comprar créditos para continuar.
@@ -460,28 +475,26 @@ No. Recibe un link, abre la página, escanea el QR con el app de su banco y list
 No. Funciona en un número propio y dedicado; solo ve los mensajes enviados a ese número.
 
 **¿Puedo probarla sin pagar?**
-Sí. **Nia Básico viene incluido en todos los planes**, con 50 interacciones al
-mes: registrar gastos e ingresos, recordatorios y resúmenes. Nia Plus y Nia Pro
-suben a 300 y agregan edición y cobro.
+Sí: **7 días gratis**, con todo incluido (también el cobro por WhatsApp), desde
+el primer mensaje a Nia. Después hay que activar el plan, Bs 29,90/mes. Nia ya
+**no viene incluida gratis** en los planes PagosYa.
 
 **¿Cómo la contrato?**
-Entrá a **https://www.pagosya.com.bo/nia-pagosya#planes**, elegí el plan y pagá
+Entrá a **https://www.pagosya.com.bo/nia-pagosya#planes**, activá el plan y pagá
 con QR. Se activa sola al confirmarse el pago, sin esperar a nadie ni hablar con
 ventas. Si ya sos cliente y estás logueado, también podés ir por el panel:
 **Planes** → sección Nia.
 
 **¿Conviene pagar el año?**
-El anual da **2 meses gratis**: Plus Bs. 290 en vez de Bs. 348, y Pro Bs. 490 en
-vez de Bs. 588. En el link de planes hay un selector **Mensual / Anual** arriba
-de las tarjetas.
+El anual da **2 meses gratis**: Bs. 299 en vez de Bs. 358,80. En el link de
+planes hay un selector **Mensual / Anual** arriba de la tarjeta.
 
-**¿Puedo empezar gratis?**
-Sí. En ese mismo link, **Nia Básico cuesta Bs. 0** y no pide tarjeta: 50
-interacciones al mes para registrar gastos e ingresos, crear recordatorios y ver
-resúmenes. Se sube a Plus o Pro cuando quieras.
+**¿Hay un plan gratis?**
+No, desde el 15/10/2026. Hay **7 días de prueba** con todo liberado y sin
+tarjeta; después, un solo plan de **Bs. 29,90/mes**.
 
 **¿Necesito conectar un banco?**
-Solo si vas a **cobrar por WhatsApp** (Nia Pro), porque ahí se genera un QR de
+Solo si vas a **cobrar por WhatsApp**, porque ahí se genera un QR de
 pago. Para gastos, ingresos, recordatorios y resúmenes no hace falta ninguna
 integración bancaria.
 
