@@ -49,10 +49,11 @@ La pantalla de Suscripción tiene tres secciones principales:
 
 ## Sección 2 — Planes disponibles
 
-PagosYa ofrece cinco planes comerciales. Los créditos son complementarios a cualquier plan.
+PagosYa ofrece estos planes comerciales (lista completa en `01-planes-precios.md`). Los créditos son complementarios a cualquier plan.
 
 | Plan | Precio/mes | Precio/año | Límite ventas | Tiendas | Empleados |
 |------|-----------|-----------|---------------|---------|-----------|
+| **MercadoYa** | Bs. 39,90 | Bs. 399 | Bs. 40,000/mes | 1 | 2 (ayudantes) |
 | **EmprendeYa** | Bs. 79 | Bs. 790 | Bs. 40,000/mes | 1 | 1 |
 | **ExpandeYa** | Bs. 169 | Bs. 1,690 | Bs. 80,000/mes | 3 | 3 |
 | **ConquistaYa** | Bs. 249 | Bs. 2,490 | Bs. 150,000/mes | 6 | 6 |

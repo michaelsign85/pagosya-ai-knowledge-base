@@ -19,6 +19,7 @@ El número de tiendas disponibles depende del plan activo:
 
 | Plan | Tiendas incluidas |
 |------|-------------------|
+| MercadoYa | 1 |
 | EmprendeYa | 1 |
 | ExpandeYa | 3 |
 | ConquistaYa | 6 |
@@ -89,6 +90,7 @@ El número de empleados también depende del plan:
 
 | Plan | Empleados incluidos |
 |------|---------------------|
+| MercadoYa | 2 (ayudantes) |
 | EmprendeYa | 1 |
 | ExpandeYa | 3 |
 | ConquistaYa | 6 |

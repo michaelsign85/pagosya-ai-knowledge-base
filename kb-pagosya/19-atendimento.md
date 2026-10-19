@@ -78,6 +78,21 @@ que vino por WhatsApp CRM**, salvo que él mismo pida un sistema de ventas,
 inventario o punto de venta. Son productos distintos: uno organiza la atención,
 el otro administra el negocio.
 
+### Si el lead vino por MercadoYa (puestos de mercado y ferias)
+
+No preguntes por empleados, tiendas ni facturación: MercadoYa es un solo plan.
+Lo único que hay que confirmar es **el banco**:
+
+> "¿En qué banco tenés tu cuenta del negocio?"
+
+| Responde | Qué hacer |
+|---|---|
+| **BNB** o **Banco Económico** | Mandá https://www.pagosya.com.bo/mercadoya y ofrecé la **prueba gratis de 7 días** |
+| Red Enlace, Ganadero u otro | Avisá que el QR fijo con aviso por voz solo funciona con BNB o Banco Económico. Si no puede abrir cuenta en uno de ellos, MercadoYa no le sirve |
+
+No ofrezcas EmprendeYa ni ExpandeYa a un puesto de mercado salvo que pida
+productos, inventario o facturas. Detalle del plan: `36-mercadoya.md`.
+
 ### Lo que NO se promete del WhatsApp CRM
 
 La conexión es la **API oficial de WhatsApp Business** y PagosYa es Tech
@@ -188,6 +203,10 @@ el número. El bot de ventas ya lo hace solo; si atiende una persona, usa el bot
 | RestauranteYa | no | sí | sí |
 | Checkout Web | sí | sí | sí |
 | WhatsApp CRM | sí | todavía no | sí |
+
+**MercadoYa no está en /links**: para ese plan mandá directo
+https://www.pagosya.com.bo/mercadoya (muestra cómo suena el aviso, el precio y la prueba
+gratis).
 
 **Sí tenemos material en PDF** para todos los planes menos WhatsApp CRM. Si el
 lead pide "material", "brochure" o "catálogo", mandá el link — no digas que no

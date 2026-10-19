@@ -1,7 +1,8 @@
 # Modo Restaurante — PagosYa
 
-> ⛔ **NÃO EXISTE TRIAL NEM PERÍODO DE PROVA** — nem do Modo Restaurante nem do
-> PagosYa. Nunca ofereça. Se um lead perguntar como conhecer o sistema: vídeos e
+> ⛔ **NÃO EXISTE TRIAL NEM PERÍODO DE PROVA** — nem do Modo Restaurante nem dos
+> planos de venda do PagosYa (as únicas exceções são MercadoYa e Nia, que não
+> servem para restaurante). Nunca ofereça. Se um lead perguntar como conhecer o sistema: vídeos e
 > material em https://pagosya.com.bo/links, ou demonstração ao vivo de 20
 > minutos. Pergunte qual ele prefere.
 

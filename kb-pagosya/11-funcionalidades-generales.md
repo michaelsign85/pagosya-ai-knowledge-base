@@ -34,6 +34,7 @@ PagosYa es un **sistema SaaS híbrido** (web + app móvil) para comercios en Bol
 
 | Plan | Precio/mes | Precio/año | Límite ventas | Tiendas | Empleados |
 |------|-----------|-----------|---------------|---------|-----------|
+| **MercadoYa** | Bs. 39,90 | Bs. 399 | Bs. 40,000/mes | 1 | 2 (ayudantes) |
 | **EmprendeYa** | Bs. 79 | Bs. 790 | Bs. 40,000/mes | 1 | 1 |
 | **ExpandeYa** | Bs. 169 | Bs. 1,690 | Bs. 80,000/mes | 3 | 3 |
 | **ConquistaYa** | Bs. 249 | Bs. 2,490 | Bs. 150,000/mes | 6 | 6 |

@@ -46,13 +46,14 @@ Generado en el momento de la venta con un valor exacto y una expiración definid
 
 ### QR Fijo (imprimible, valor abierto)
 
-Un código QR permanente que el comercio puede imprimir y colocar en su local o vitrina. El cliente lo escanea, ingresa el valor que quiere pagar y completa la transacción sin que el comercio tenga que hacer nada.
+Un QR bancario reutilizable que el comercio imprime y deja en el mostrador. El cliente lo escanea con la app de su banco, **escribe el monto** y paga, sin que el comercio tenga que generar nada en cada venta.
 
-- No requiere que el comercio esté mirando la pantalla.
-- El cliente abre una página pública de pago (`pagosya.com.bo/pagar/[tienda]`), ingresa el monto y paga.
-- La confirmación llega igual al sistema, en tiempo real.
-- Disponible principalmente con **Red Enlace** (interoperable con todos los bancos).
-- Con BNB también se puede generar un QR reutilizable de valor abierto.
+- **Solo existe con BNB y Banco Económico (Baneco).** Con Red Enlace o Banco Ganadero el sistema no lo genera y pide usar el QR Variable.
+- El cliente puede pagar desde **cualquier banco** (el QR es interbancario).
+- **Cada usuario genera el suyo** (dueño y cada empleado): el QR queda ligado a la tienda y a la persona.
+- Cada pago que entra se registra como **una venta nueva**, con el empleado que generó el QR, y el **aviso (notificación y voz) va al celular de ese empleado**. El dueño ve las ventas separadas por vendedor.
+- Es válido por **1 año**. Generar uno nuevo reemplaza al anterior (hay que reimprimir).
+- En el plan **MercadoYa** es la forma principal de cobro, con aviso por voz — ver `36-mercadoya.md`.
 
 ---
 
@@ -89,19 +90,17 @@ El POS sigue el mismo flujo, pero la venta ya tiene productos y totales calculad
 
 ### Cobro con QR Fijo (impreso)
 
-Ideal para negocios donde el cliente llega, escanea y paga sin que el cajero intervenga (kioscos, locales pequeños, tiendas de autoservicio).
+Ideal para negocios donde el cliente llega, escanea y paga sin que el cajero intervenga (puestos de mercado, kioscos, locales pequeños). Requiere cuenta **BNB o Banco Económico**.
 
-1. Desde **Configuraciones → QR Fijo**, generar el código QR de la tienda.
-2. Descargarlo e imprimirlo.
-3. Colocarlo en mostrador, vitrina o cualquier punto visible.
+1. Abrir **Venta Rápida** y elegir **QR Fijo** (en el plan MercadoYa: pestaña **Mi QR**).
+2. Generar el QR: el banco se toma solo de la integración bancaria de la tienda.
+3. Descargarlo o imprimirlo y colocarlo en el mostrador. Cada empleado genera el suyo.
 
-Cuando el cliente escanea:
-1. El cliente escanea el QR con cualquier cámara o app bancaria.
-2. Se abre la página pública de pago de la tienda.
-3. El cliente ingresa el monto y opcionalmente una referencia (número de pedido, nombre, etc.).
-4. El sistema genera un QR dinámico con ese valor.
-5. El cliente paga desde su app bancaria.
-6. El sistema confirma y registra la venta automáticamente.
+Cuando el cliente paga:
+1. Escanea el QR con la app de su banco.
+2. Escribe el monto y paga.
+3. El banco confirma el pago a PagosYa.
+4. La venta se registra sola, a nombre del empleado dueño de ese QR, y su celular recibe el aviso (con voz, si la tiene activada).
 
 ---
 
@@ -188,4 +187,4 @@ No. Solo un banco puede estar activo a la vez por tienda. Si el comercio quiere 
 
 **¿El QR Fijo expira?**
 
-El código QR impreso no expira (está vinculado a la URL permanente de la tienda). Cada vez que un cliente lo escanea, se genera un QR dinámico nuevo para esa transacción específica, que sí tiene expiración.
+Es válido por **1 año** desde que se genera y sirve para todos los pagos de ese período. Al vencer (o si se genera uno nuevo), hay que reimprimir el cartel con el QR nuevo.

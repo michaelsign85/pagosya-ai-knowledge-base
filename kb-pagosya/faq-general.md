@@ -37,6 +37,7 @@ No. PagosYa cobra únicamente una mensualidad fija según el plan elegido. No ha
 
 | Plan | Mensual | Anual |
 |---|---|---|
+| MercadoYa (puestos de mercado) | Bs. 39,90/mes | Bs. 399/año |
 | EmprendeYa | Bs. 79/mes | Bs. 790/año |
 | ExpandeYa | Bs. 169/mes | Bs. 1,690/año |
 | ConquistaYa | Bs. 249/mes | Bs. 2,490/año |
@@ -52,7 +53,7 @@ Pago anual equivale a aproximadamente 2 meses gratis.
 Los tres tienen límite de Bs. 150.000/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. **Checkout Web** redirige al cliente a la página segura de PagosYa; **Checkout Embedded** devuelve el QR para mostrarlo dentro del sistema, con la marca PagosYa; **Checkout White-label** devuelve el mismo QR sin la marca. El derecho se valida por la suscripción vigente, incluso para API keys ya creadas: al bajar de plan, la cuenta pierde las capacidades de la modalidad anterior.
 
 **¿Puedo probar PagosYa antes de pagar?**
-No hay período de prueba gratuito. Lo que sí podés hacer, sin costo y sin registrarte: ver los videos y el material de cada plan en https://pagosya.com.bo/links, o agendar una demostración en vivo de 20 minutos con el equipo. Preguntale al lead cuál de las dos prefiere.
+Solo **MercadoYa** (puestos de mercado) y **Nia** tienen prueba gratis de 7 días. Para los demás planes no hay período de prueba gratuito. Lo que sí podés hacer, sin costo y sin registrarte: ver los videos y el material de cada plan en https://pagosya.com.bo/links, o agendar una demostración en vivo de 20 minutos con el equipo. Preguntale al lead cuál de las dos prefiere.
 
 **¿Puedo cambiar de plan?**
 Sí. Puedes subir o bajar de plan en cualquier momento desde la sección **Suscripción** del panel. El cambio es inmediato.
@@ -65,7 +66,10 @@ El sistema bloquea el acceso hasta que se renueve el plan. Los datos se conserva
 ## Conocer el sistema antes de contratar
 
 **¿Hay período de prueba gratis?**
-No. PagosYa no ofrece trial ni prueba gratuita.
+Solo en dos productos: **MercadoYa** (7 días, en https://www.pagosya.com.bo/mercadoya) y **Nia** (7 días). Los demás planes de PagosYa no tienen trial ni prueba gratuita.
+
+**¿Qué es MercadoYa?**
+El plan para puestos de mercado y ferias: QR fijo impreso y el celular del vendedor dice cada pago en voz alta. Bs. 39,90/mes, sin comisión. Necesita cuenta BNB o Banco Económico. Detalle en `36-mercadoya.md`.
 
 **Entonces, ¿cómo conozco el sistema?**
 De dos formas, y conviene preguntar cuál prefiere:

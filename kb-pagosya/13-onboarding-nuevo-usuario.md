@@ -11,10 +11,12 @@ Este documento guía a un nuevo merchant desde el registro inicial hasta tener e
 
 ---
 
-## Sección 1 — No hay período de prueba
+## Sección 1 — Período de prueba: solo MercadoYa y Nia
 
-PagosYa **no tiene período de prueba, trial ni plan de prueba**. No lo ofrezcas
-ni lo menciones. Para usar el sistema hay que elegir y pagar un plan.
+PagosYa **no tiene período de prueba, trial ni plan de prueba**, con dos
+excepciones: **MercadoYa** (7 días, para puestos de mercado — ver
+`36-mercadoya.md`) y **Nia** (7 días). Para cualquier otro plan no lo ofrezcas
+ni lo menciones: para usar el sistema hay que elegir y pagar un plan.
 
 Si un lead pregunta si puede probar antes de pagar, tiene dos caminos (preguntá
 cuál prefiere): ver los videos y el material en https://pagosya.com.bo/links, o

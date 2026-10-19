@@ -1,8 +1,8 @@
 ---
 title: Planes y precios PagosYa
-version: v3
+version: v4
 audiencia: merchants
-actualizado_en: 2026-10-15
+actualizado_en: 2026-10-19
 ---
 
 PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los precios actuales corresponden a la generación **v2 (2026)**. Los clientes con planes anteriores (v1) mantienen sus condiciones mientras su suscripción esté activa.
@@ -10,6 +10,21 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 ---
 
 ## Planes actuales (v2 — 2026)
+
+### 🔊 MercadoYa — Bs. 39,90 / mes *(Bs. 399 / año)* — 🆕 el más económico
+> Para **puestos de mercado, ferias y kioscos**. Prueba gratis de **7 días**.
+
+- QR fijo impreso: el cliente escanea, pone el monto y paga
+- **El celular del vendedor dice cada pago en voz alta**, con el monto y el nombre de quien pagó
+- 1 puesto (tienda) · el dueño + **2 ayudantes**, cada uno con su propio QR y su propio aviso
+- Hasta **Bs. 40.000 en cobros / mes**
+- Sin comisión por venta y sin comprar aparatos (usa el celular Android)
+- **Requisito:** cuenta en **BNB** o **Banco Económico** (el QR fijo no existe con Red Enlace ni Ganadero)
+- **No incluye**: POS, productos, inventario, facturas SIAT ni tienda online
+- Link para el lead: https://www.pagosya.com.bo/mercadoya
+- Detalle completo: `36-mercadoya.md`
+
+---
 
 ### 🟣 EmprendeYa — Bs. 79 / mes *(Bs. 790 / año)*
 > Precio original: ~~Bs. 129/mes~~ — **39% de descuento**
@@ -182,11 +197,16 @@ para la búsqueda del agente: una fila puede llegar al modelo SIN el encabezado 
 
 ---
 
-## No hay prueba gratis
+## Prueba gratis: solo MercadoYa y Nia
 
-**PagosYa NO ofrece período de prueba, trial ni demostración gratuita del
-sistema.** No lo menciones nunca, ni siquiera como respuesta a "puedo probarlo
-antes de pagar".
+**Solo dos productos tienen prueba gratis de 7 días: MercadoYa y Nia.** Ningún
+otro plan de PagosYa (EmprendeYa, ExpandeYa, ConquistaYa, RestauranteYa,
+CobraYa, Condominios, WhatsApp CRM, Checkout Web) tiene período de prueba,
+trial ni demostración gratuita del sistema. Para esos, no ofrezcas ni menciones
+una prueba, ni siquiera como respuesta a "puedo probarlo antes de pagar".
+
+- **MercadoYa**: 7 días desde https://www.pagosya.com.bo/mercadoya («Probar 7 días gratis»). Una prueba por carnet.
+- **Nia**: 7 días desde el primer mensaje (ver la sección Nia más abajo).
 
 Si el lead quiere conocer el sistema antes de contratar, tenés dos caminos —
 **preguntá cuál prefiere** en lugar de asumir:
