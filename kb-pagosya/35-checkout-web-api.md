@@ -1,13 +1,13 @@
 ---
 title: Checkout Web, API, sandbox y documentación para developers
-version: v2
+version: v3
 audiencia: developers, merchants, soporte, ventas
-actualizado_en: 2026-10-15
+actualizado_en: 2026-11-13
 ---
 
 # Checkout Web: API, sandbox y documentación para developers
 
-Este documento es la fuente principal para responder preguntas sobre la API Checkout Web de PagosYa, el sandbox, las credenciales, los webhooks y el paso a producción.
+Este documento explica la API Checkout Web, los planes mensuales, sandbox, credenciales y webhooks. La contratación individual por porcentaje está en `37-checkout-comision-individual.md`; la integración global para proveedores está en `38-checkout-saas-proveedores.md`. Preguntar si integra su propio comercio o una plataforma SaaS con comercios afiliados.
 
 ---
 
@@ -18,6 +18,8 @@ Si una persona solicita la documentación de la API o pregunta cómo integrar Pa
 > Puedes consultar la documentación pública de Checkout Web aquí: https://www.pagosya.com.bo/developers
 >
 > En esa misma página puedes revisar ejemplos y solicitar una API key de sandbox. El sandbox genera un QR ficticio no pagable y no mueve fondos. Cuando la integración esté lista, puedes activar el Plan Checkout Web y configurar producción desde tu dashboard.
+
+Si tiene varios comercios en su propio SaaS, enviar **https://www.pagosya.com.bo/developers?producto=saas**. La integración global se desarrolla una sola vez; el proveedor paga mensualidad y cada afiliado su comisión. El formulario sandbox está en esa misma página, no se sustituye por un correo a soporte.
 
 Si pide una demostración, agregar:
 
@@ -66,7 +68,7 @@ El valor técnico del canal es `external_checkout`; la interfaz lo muestra como 
 
 ## Planes y modalidades
 
-La API es la misma en los tres planes. Cambia lo que la API devuelve y cómo ve el pago el cliente final.
+Hay tres **planes mensuales** y, por separado, modalidades individuales **por comisión** y planes para **proveedores SaaS**. La siguiente tabla corresponde solo a los mensuales. No afirmar que toda la oferta Checkout Web es 0%.
 
 | Plan | Precio mensual | Precio anual | Cómo cobra | Ideal para |
 |---|---|---|---|---|
@@ -74,7 +76,15 @@ La API es la misma en los tres planes. Cambia lo que la API devuelve y cómo ve 
 | Checkout Embedded | Bs. 349 | Bs. 3.490 | QR dentro del sistema del comercio: la API devuelve la imagen del QR (`qr.data_url`) con el sello "pagosya.com.bo" debajo | Kiosks, totems, apps y sistemas propios |
 | Checkout White-label | Bs. 649 | Bs. 6.490 | Igual al Embedded, pero el QR llega sin ninguna marca de PagosYa | Marcas, revendedores y fabricantes de kiosks |
 
-Los tres incluyen hasta Bs. 150.000 en ventas/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. El plan anual paga 10 meses y recibe 12.
+Los tres planes mensuales incluyen hasta Bs. 150.000 en ventas/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. Su plan anual paga 10 meses y recibe 12; esa promoción no se aplica automáticamente a SaaS.
+
+### Checkout Web individual por comisión
+
+**Embedded 1% o White Label 2%**, sin mensualidad y sin tope comercial de ventas del plan; activación única **Bs. 49,90** para nuevas contrataciones individuales. Comisión sobre pagos confirmados por API y Venta Rápida del dashboard. Ciclo estándar de **7 días** y plazo de **24 horas** para pagar cada factura cerrada, sin mínimo comercial; consultar condiciones reales de la cuenta. El atraso bloquea nuevos cobros de esa cuenta. Detalles y pago: `37-checkout-comision-individual.md`.
+
+### Checkout Web para SaaS — beta
+
+Proveedor: **Inicial Bs. 49,90/mes hasta 10 comercios; Crecimiento Bs. 99,90 hasta 50; Escala Bs. 249,90 hasta 200**. Cada afiliado paga 1% Embedded o 2% White Label a PagosYa, elegido por el administrador SaaS y aceptado por el titular. La activación del afiliado está incluida, **sin Bs. 49,90 individuales**. Una API global, un webhook global y alta bancaria desde el SaaS sin otro login del comercio. Documentación: https://www.pagosya.com.bo/developers?producto=saas. Ver `38-checkout-saas-proveedores.md`. Beta: soporte@pagosya.com.bo.
 
 El sello de PagosYa va debajo del QR, fuera del código: el QR del banco no se modifica y cualquier app bancaria lo lee igual.
 
@@ -82,7 +92,7 @@ Cambio de plan: al subir de plan (por ejemplo de Checkout Web a Embedded), los d
 
 ### Regla de entitlement y cambio a un plan más barato
 
-La API key de producción no congela la modalidad contratada. Cada llamada de producción valida la suscripción vigente de la cuenta. Si una cuenta baja de Embedded o White-label a Checkout Web, la clave existente sigue identificando al comercio, pero deja de habilitar QR embebido y respuestas White-label. Si la suscripción vence o es cancelada, la API de producción deja de aceptar operaciones.
+La API key de producción no congela la modalidad contratada. En los planes mensuales, cada llamada valida la suscripción vigente: al bajar de Embedded o White Label a Checkout Web se pierden esas capacidades, y el vencimiento bloquea nuevos cobros. En la modalidad individual por comisión se valida la configuración y sus obligaciones, sin exigir una mensualidad ficticia. En SaaS se validan la licencia del proveedor y la situación del afiliado; pagar solo una de sus deudas no elimina la otra.
 
 El sandbox es separado y no concede entitlement de producción: probar con una modalidad más cara no libera esa modalidad después del downgrade.
 
@@ -187,10 +197,10 @@ Rate limit predeterminado: 60 solicitudes por minuto por API key.
 
 Producción funciona dentro del dashboard normal de PagosYa. No hay un dashboard separado para developers sandbox.
 
-Checklist:
+Checklist para un comercio individual, mensual o por comisión; para una plataforma SaaS seguir el flujo global de `38-checkout-saas-proveedores.md`, sin copiar claves por afiliado:
 
 1. Completar las pruebas de sandbox.
-2. Contratar y activar el plan de la modalidad elegida: Checkout Web, Checkout Embedded o Checkout White-label.
+2. Contratar y activar Checkout Web en la modalidad mensual o individual por comisión elegida.
 3. Configurar una integración bancaria habilitada.
 4. Generar credenciales en **Checkout Web → API Keys**.
 5. Registrar una URL HTTPS en **Checkout Web → Webhooks**.
@@ -331,7 +341,7 @@ En https://www.pagosya.com.bo/checkout-web/webhooks, con login y Plan Checkout W
 
 ### ¿Puedo mostrar el QR dentro de mi app o kiosk, sin redirigir al cliente?
 
-Sí, con el plan Checkout Embedded (Bs. 349/mes) o Checkout White-label (Bs. 649/mes). La API devuelve la imagen del QR lista para mostrar. Con el plan Checkout Web (Bs. 249/mes) el cliente es redirigido a la página de pago de PagosYa.
+Sí. Mensual: Checkout Embedded Bs. 349/mes o White-label Bs. 649/mes. Alternativa individual por comisión: Embedded 1% o White Label 2%, activación única Bs. 49,90, sin mensualidad. La API entrega el QR según la modalidad contratada. Checkout Web mensual Bs. 249 usa redirección. Para administrar varios comercios, ofrecer SaaS.
 
 ### ¿Cuál es la diferencia entre Embedded y White-label?
 
@@ -354,7 +364,7 @@ La introducción y el sandbox son públicos. La referencia completa de producci�
 - Explicar que sandbox no procesa pagos ni webhooks.
 - No prometer aprobación automática de credenciales.
 - No pedir ni recibir API keys, HMAC secrets o credenciales bancarias por chat.
-- No inventar endpoints, precios, plazos o funciones. Los únicos precios de Checkout Web son los de la tabla "Planes y modalidades".
+- No inventar endpoints, precios, plazos o funciones. Distinguir mensualidad de Checkout Web, comisión individual y mensualidad del proveedor SaaS; consultar `01-planes-precios.md`, `37-checkout-comision-individual.md` y `38-checkout-saas-proveedores.md`.
 - Para producción, indicar que se requiere plan e integración bancaria activos.
 - Para errores, pedir código HTTP, mensaje, `checkout_id` u `order_id`, nunca la clave completa.
 - Derivar casos no resueltos a soporte@pagosya.com.bo.
