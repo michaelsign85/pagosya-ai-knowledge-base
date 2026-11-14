@@ -648,6 +648,56 @@ Um **botão de chat** na tienda online do lojista. O visitante conversa com o **
 
 ---
 
+## 18. 📞 Chamadas de Voz pelo WhatsApp *(só API Oficial — novo, nov/2026)*
+
+O atendente **recebe e faz chamadas de voz do WhatsApp dentro do CRM**, pelo número da empresa. O cliente usa o WhatsApp normal dele; o atendente fala pelo computador (microfone e alto-falante) ou pelo app.
+
+**Só funciona na API Oficial (Meta).** Não existe na Evolution. **Só voz** — a Meta ainda não oferece videochamada pela API.
+
+**Disponível nos três planos** (CRM, Ventas e Commerce). Não tem custo adicional do PagosYa.
+
+### Receber chamadas
+- O cliente toca no **ícone de telefone** na conversa com a empresa, no WhatsApp dele.
+- No CRM aparece um cartão **"Llamada entrante"** com toque, em qualquer tela (chat, pipeline, ajustes). O atendente clica em **Atender** ou **Rechazar**.
+- Com vários atendentes, **quem atende primeiro fica com a chamada**; para os outros o cartão some.
+- Se ninguém atender, a conversa fica com **"📞 Llamada perdida"** e marcada como não lida.
+- **Receber chamada é grátis.**
+
+### Ligar para o cliente
+- Botão **Llamar** no cabeçalho do chat.
+- **O cliente precisa autorizar antes.** É regra da Meta, não do PagosYa. Se ele ainda não autorizou, o CRM mostra o botão **"Pedir permiso al cliente"**, que envia o pedido oficial; o cliente toca em aceitar no WhatsApp dele e a partir daí o atendente pode ligar.
+- Quando **o cliente liga primeiro**, o WhatsApp já pergunta a ele se aceita que a empresa ligue de volta.
+- O pedido de permissão só pode ser enviado **dentro da janela de 24 horas** (o cliente escreveu ou ligou nas últimas 24h).
+
+### Histórico
+- Cada chamada vira uma linha na conversa: entrante ou saliente com a duração, perdida, rechazada, sin respuesta.
+- No menu lateral, o ícone de **telefone** abre **Llamadas**: lista de todas as chamadas, com filtros (Todas, Perdidas, Entrantes, Salientes), busca por nome ou número, e botões para **ligar de volta** ou **abrir a conversa**.
+
+### Como ativar
+As chamadas vêm **desligadas** em cada número. Quem ativa é o **dono da conta**:
+- **Pelo CRM:** clicar em **Llamar** em qualquer conversa; se estiver desligado, aparece o botão **"Activar llamadas en este número"**.
+- **Ou pelo Gestor do WhatsApp da Meta:** Números de telefone → o número → **Configuración de llamadas** → ativar.
+
+Depois de ativar, o ícone de telefone pode **demorar até 7 dias** para aparecer no WhatsApp dos clientes. Abrir as informações do contato da empresa no WhatsApp força a atualização.
+
+### ⚠️ O que precisa ser dito antes
+- **Ligar tem custo da Meta.** A Meta cobra por tempo de chamada (em frações de 6 segundos, conforme o país do cliente), **na conta Meta do lojista** — a mesma do cartão das mensagens. O PagosYa não cobra nem recebe nada disso. Sem meio de pagamento válido na Meta, não é possível ligar.
+- **A Meta só deixa ativar em números com limite de 2.000 destinatários por dia ou mais.** Número novo, ainda no limite de 250, normalmente não consegue. Se a Meta recusar, o CRM mostra o motivo.
+- **Limites da Meta para ligar:** 1 pedido de permissão por dia e 2 por semana para cada cliente; a permissão vale 7 dias (ou fica permanente, se o cliente escolher); 4 chamadas seguidas sem resposta cancelam a permissão; até 100 chamadas atendidas por dia por número.
+- **Precisa de microfone** e de autorizar o microfone no navegador na primeira chamada.
+- **Com o CRM fechado, a chamada não toca.** O dono da conta recebe uma notificação no celular (com o app instalado e as notificações ligadas); ao tocar nela o CRM abre com a chamada ainda tocando. A Meta espera de 30 a 60 segundos antes de desistir.
+- **No app Android**, as chamadas funcionam **a partir da versão 1.8.0**. Em versões anteriores o app avisa para usar o navegador. Se o lojista disser que não consegue atender pelo app, pedir para **atualizar na Play Store**.
+- **Não há gravação de chamadas.**
+
+### Respostas rápidas para dúvidas comuns
+- *"Posso ligar para qualquer cliente?"* — Só para quem autorizou. É uma proteção da Meta contra chamadas indesejadas.
+- *"O cliente paga?"* — Não. É uma chamada de WhatsApp comum para ele, usa a internet.
+- *"Funciona com o número conectado por QR (Evolution)?"* — Não. Só na API Oficial.
+- *"Posso fazer videochamada?"* — Ainda não; a Meta só liberou voz.
+- *"Não aparece o botão de ligar no WhatsApp do meu cliente."* — Conferir se as chamadas estão ativadas no número e lembrar que a Meta pode levar até 7 dias para mostrar o ícone.
+
+---
+
 # 🔗 TECNOLOGIA E SEGURANÇA
 
 ### Conexão WhatsApp
@@ -708,6 +758,7 @@ O anual equivale a **10 meses** — dois meses grátis.
 - **Agenda de citas completa**, incluindo o bot enviando o link sozinho
 - **Chat da tienda online (canal Web)** e **reservas pela plantilla Barbería** — para quem também tem tienda online
 - **Link de cobro no chat** com aviso de pagamento
+- **Chamadas de voz pelo WhatsApp** (só API Oficial; a Meta cobra à parte as chamadas feitas pela empresa)
 - Métricas básicas de atendimento
 
 ### 🟦 A partir do Ventas
