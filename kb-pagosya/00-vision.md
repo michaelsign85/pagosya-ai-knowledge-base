@@ -1,8 +1,8 @@
 ---
 title: Visión general de PagosYa
-version: v2
+version: v3
 audiencia: merchants
-actualizado_en: 2026-05-22
+actualizado_en: 2026-11-13
 ---
 
 # Visión general de PagosYa
@@ -46,7 +46,7 @@ PagosYa permite que el comercio:
 - revise reportes en tiempo real;
 - opere con múltiples tiendas;
 - use módulos especializados según su tipo de negocio;
-- mantenga una estructura de costos clara, sin comisión por venta dentro del modelo PagosYa.
+- elija costos claros: suscripción fija sin comisión en los planes mensuales, o comisión en las modalidades específicas de Checkout Web.
 
 El objetivo es que pequeños y medianos comercios puedan acceder a tecnología similar a la de grandes cadenas, pero de forma simple, accesible y adaptada al mercado boliviano.
 
@@ -54,12 +54,13 @@ El objetivo es que pequeños y medianos comercios puedan acceder a tecnología s
 
 ## Modelo de negocio
 
-PagosYa trabaja con un modelo de **suscripción mensual o anual**, según el plan elegido por el comercio.
+PagosYa ofrece **suscripción mensual o anual** para sus planes habituales y alternativas específicas de **Checkout Web por comisión**. No afirmar que PagosYa siempre cobra solo mensualidad o nunca cobra comisión.
 
 Principios principales del modelo:
 
-- **0% de comisión por ventas QR dentro del sistema PagosYa**.
-- El comercio paga una suscripción fija según su plan.
+- En los planes de suscripción fija, la comisión de PagosYa por venta QR es **0%**.
+- Checkout Web individual por comisión: **Embedded 1% o White Label 2%**, activación única **Bs. 49,90**, sin mensualidad de Checkout Web; alcanza pagos confirmados por API y Venta Rápida del dashboard. Ver `37-checkout-comision-individual.md`.
+- Para proveedores SaaS, el proveedor paga mensualidad según cupo de afiliados y cada comercio paga su comisión de 1% o 2%; su activación está incluida, sin otra tarifa individual. Ver `38-checkout-saas-proveedores.md`.
 - El dinero del cliente llega a la cuenta bancaria del comercio o al flujo bancario configurado con el proveedor correspondiente.
 - Los planes pueden incluir límites de ventas, tiendas, empleados, productos y módulos.
 - El comercio puede ampliar su capacidad con créditos o módulos adicionales cuando sea necesario.
@@ -276,7 +277,7 @@ PagosYa se diferencia porque combina en una sola plataforma:
 - WhatsApp CRM;
 - reportes;
 - validación automática de pagos QR;
-- modelo sin comisión por venta QR dentro del sistema.
+- alternativas de suscripción fija sin comisión y Checkout Web por comisión, según la modalidad contratada.
 
 No es solo una herramienta para cobrar. Es una plataforma para operar y controlar el negocio.
 
@@ -292,4 +293,4 @@ La visión es construir una plataforma accesible, escalable y conectada con el s
 
 ## Resumen corto
 
-**PagosYa es un sistema completo para comercios en Bolivia que une POS, inventario, caja, empleados, reportes, tienda online, WhatsApp CRM y confirmación automática de pagos QR, con un modelo de suscripción fija y sin comisión por venta QR dentro del sistema.**
+**PagosYa reúne herramientas de gestión y cobro para comercios en Bolivia, con planes de suscripción fija sin comisión, Checkout Web individual por comisión y una oferta para proveedores SaaS. Los módulos y condiciones dependen del producto contratado; el dinero de las ventas llega al banco del comercio.**

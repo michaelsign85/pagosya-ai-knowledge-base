@@ -1,11 +1,11 @@
 ---
 title: Planes y precios PagosYa
-version: v4
+version: v5
 audiencia: merchants
-actualizado_en: 2026-10-19
+actualizado_en: 2026-11-13
 ---
 
-PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los precios actuales corresponden a la generación **v2 (2026)**. Los clientes con planes anteriores (v1) mantienen sus condiciones mientras su suscripción esté activa.
+PagosYa ofrece planes mensuales o anuales **sin comisión por venta** y modalidades específicas de **Checkout Web por comisión**, además de **planes para proveedores SaaS**. No presentar el 0% como regla para todos los productos. Los clientes con planes anteriores (v1) mantienen sus condiciones mientras su suscripción esté activa.
 
 ---
 
@@ -98,6 +98,31 @@ PagosYa ofrece planes mensuales o anuales, **sin comisión por venta**. Los prec
 
 > En los tres planes de Checkout Web la API y los webhooks son los mismos. La modalidad se valida por la suscripción activa: una API key no conserva privilegios de un plan anterior después de un downgrade o vencimiento.
 
+### Checkout Web individual por comisión — alternativa a la mensualidad
+
+| Modalidad individual | Comisión PagosYa | Activación única | Mensualidad | Ventas del plan |
+|---|---|---|---|---|
+| Embedded, con marca | 1% | Bs. 49,90 | Sin mensualidad | Sin tope comercial |
+| White Label, sin marca | 2% | Bs. 49,90 | Sin mensualidad | Sin tope comercial |
+
+Comisión sobre pagos confirmados por **API y Venta Rápida del dashboard**. Ciclo estándar de **7 días**, pago en **24 horas** tras cerrar factura, sin mínimo comercial. El ciclo abierto todavía no se paga; el siguiente sigue acumulando. Si vence una factura impaga, se bloquean nuevos cobros de esa cuenta hasta regularizar sus obligaciones. Tasas y plazos pueden configurarse por cuenta; rigen sus condiciones aceptadas.
+
+No sumar automáticamente mensualidad y porcentaje al mismo contrato individual. Los planes mensuales de Checkout Web de la sección anterior mantienen su 0% y su límite de ventas. No se promete API sin rate limit ni otros módulos incluidos. Contratación: https://www.pagosya.com.bo/planes. Detalles: `37-checkout-comision-individual.md`.
+
+### Checkout Web para proveedores SaaS — versión beta
+
+| Plan SaaS del proveedor | Mensualidad de lanzamiento | Comercios afiliados |
+|---|---|---|
+| Inicial | Bs. 49,90/mes | Hasta 10 |
+| Crecimiento | Bs. 99,90/mes | Hasta 50 |
+| Escala | Bs. 249,90/mes | Hasta 200 |
+
+El proveedor integra **una vez globalmente** su sistema y paga la mensualidad; cada afiliado paga a PagosYa **Embedded 1% o White Label 2%**, según lo acordado por el administrador y aceptado por el titular. **La activación del afiliado está incluida, sin cobrar Bs. 49,90 por comercio.**
+
+El cupo se reserva al crear o invitar al afiliado, no solo al conectar el banco. Los planes SaaS son mensuales, sin promoción anual automática ni prueba gratis general. La plataforma requiere revisión de PagosYa antes de habilitar su pago. Si vence la mensualidad del proveedor se bloquean nuevos cobros de todos los afiliados; si vence la comisión de un comercio se bloquean solo sus cobros. Ambas obligaciones son independientes.
+
+Cards: https://www.pagosya.com.bo/planes#saas. Documentación y formulario sandbox: https://www.pagosya.com.bo/developers?producto=saas. **Versión beta**, reportar errores a **soporte@pagosya.com.bo**. Más detalles: `38-checkout-saas-proveedores.md`.
+
 ---
 
 ### 📅 CobraYa — Cobranza Recurrente *(NUEVO — 2026)*
@@ -185,6 +210,8 @@ siempre está por encima de Bs. 249.
 
 Los clientes que contrataron antes de 2026 mantienen sus condiciones originales.
 
+La advertencia de precios v1 corresponde a esos planes históricos. No invalida las tarifas vigentes SaaS de Bs. 49,90/99,90/249,90 ni la activación individual por comisión de Bs. 49,90, que son productos y conceptos distintos.
+
 Cada fila lleva su propia advertencia porque este documento se divide en fragmentos
 para la búsqueda del agente: una fila puede llegar al modelo SIN el encabezado de arriba.
 
@@ -201,7 +228,7 @@ para la búsqueda del agente: una fila puede llegar al modelo SIN el encabezado 
 
 **Solo dos productos tienen prueba gratis de 7 días: MercadoYa y Nia.** Ningún
 otro plan de PagosYa (EmprendeYa, ExpandeYa, ConquistaYa, RestauranteYa,
-CobraYa, Condominios, WhatsApp CRM, Checkout Web) tiene período de prueba,
+CobraYa, Condominios, WhatsApp CRM, Checkout Web, SaaS) tiene período de prueba,
 trial ni demostración gratuita del sistema. Para esos, no ofrezcas ni menciones
 una prueba, ni siquiera como respuesta a "puedo probarlo antes de pagar".
 

@@ -38,6 +38,8 @@ No quiero pagar mensualidad
 
 Respuesta:
 
+Si pregunta por **API/Checkout Web**, primero distinguir si es un comercio individual o un proveedor SaaS. Para el comercio individual existe **Embedded 1% o White Label 2%**, sin mensualidad, con activación única de **Bs. 49,90**. Para proveedores hay mensualidad SaaS por cupo y comisión de cada afiliado, sin activación individual por comercio. Ver `37-checkout-comision-individual.md` y `38-checkout-saas-proveedores.md`. No prometer que esta alternativa incluye todos los módulos POS.
+
 Entiendo perfectamente.
 
 Muchos clientes pensaban lo mismo al inicio, pero después se dieron cuenta de que el sistema les ayuda a evitar pérdidas y tener más control.
@@ -46,9 +48,7 @@ PagosYa no es un gasto.
 
 Es una herramienta que protege tu dinero y te ayuda a vender con más seguridad.
 
-Además, nuestros planes empiezan desde:
-
-49 Bs al mes
+El precio depende del producto y la modalidad; consultar `01-planes-precios.md` y ofrecer el plan que cubra la necesidad, sin citar una tarifa antigua como precio mínimo universal.
 
 Menos que lo que cuesta un error o un pago falso.
 
@@ -307,7 +307,7 @@ Respuesta:
 
 No hay problema.
 
-PagosYa funciona por mensualidad.
+Los planes habituales de PagosYa funcionan por suscripción. Para Checkout Web también existe contratación individual por comisión; en SaaS el proveedor paga mensualidad y sus afiliados comisión. Consultar las condiciones de la modalidad elegida.
 
 No hay contratos largos ni compromisos.
 

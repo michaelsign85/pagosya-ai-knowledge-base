@@ -1,8 +1,8 @@
 ---
 title: Preguntas frecuentes PagosYa
-version: v5
+version: v6
 audiencia: merchants
-actualizado_en: 2026-10-15
+actualizado_en: 2026-11-13
 ---
 
 # Preguntas Frecuentes — PagosYa
@@ -27,7 +27,7 @@ No. PagosYa no es una pasarela de pagos. Es un sistema POS que valida en tiempo 
 No. PagosYa no retiene ni administra fondos. Los pagos se acreditan directamente en tu cuenta bancaria según el banco integrado. PagosYa únicamente valida y confirma el pago en tiempo real.
 
 **¿PagosYa cobra comisión por venta?**
-No. PagosYa cobra únicamente una mensualidad fija según el plan elegido. No hay comisiones por ventas ni por pagos QR. Las comisiones bancarias propias de cada banco (si aplican para cobros con tarjeta) son independientes de PagosYa.
+Depende de la modalidad. Los planes de suscripción fija mantienen 0% de comisión PagosYa. Checkout Web individual por comisión cobra Embedded 1% o White Label 2% sobre pagos confirmados por API y Venta Rápida del dashboard, sin mensualidad y con activación única de Bs. 49,90. En SaaS, el proveedor paga mensualidad y cada afiliado 1% o 2%; su activación está incluida. Las tarifas del banco son independientes. Ver `37-checkout-comision-individual.md` y `38-checkout-saas-proveedores.md`.
 
 ---
 
@@ -50,7 +50,15 @@ Pago anual equivale a aproximadamente 2 meses gratis.
 
 **¿Cuál es la diferencia entre los planes de Checkout Web?**
 
-Los tres tienen límite de Bs. 150.000/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión por venta QR. **Checkout Web** redirige al cliente a la página segura de PagosYa; **Checkout Embedded** devuelve el QR para mostrarlo dentro del sistema, con la marca PagosYa; **Checkout White-label** devuelve el mismo QR sin la marca. El derecho se valida por la suscripción vigente, incluso para API keys ya creadas: al bajar de plan, la cuenta pierde las capacidades de la modalidad anterior.
+Los tres **mensuales** tienen límite de Bs. 150.000/mes, 1 tienda, 1 empleado, webhooks y 0% de comisión PagosYa. Checkout Web redirige al cliente; Embedded devuelve el QR con marca y White Label sin marca. Existe además la alternativa individual por comisión: Embedded 1% o White Label 2%, sin mensualidad, activación única Bs. 49,90 y sin tope comercial de ventas del plan. Las capacidades siempre dependen del contrato vigente; una clave anterior no conserva beneficios al bajar de modalidad.
+
+**¿Hay un plan para dueños de un SaaS con varios comercios?**
+
+Sí, **PagosYa para SaaS (beta)**: Inicial Bs. 49,90/mes hasta 10 afiliados, Crecimiento Bs. 99,90 hasta 50 y Escala Bs. 249,90 hasta 200. Cada afiliado paga 1% Embedded o 2% White Label, sin activación individual de Bs. 49,90. El cupo cuenta desde crear o invitar al comercio. Integración global una sola vez, alta bancaria desde el SaaS sin otro login de PagosYa y webhook global. Guía y formulario sandbox: https://www.pagosya.com.bo/developers?producto=saas. Bugs: soporte@pagosya.com.bo.
+
+**¿Cómo se paga la comisión y cuándo se bloquea?**
+
+Por defecto el ciclo cierra cada 7 días y hay 24 horas para liquidar la factura por QR institucional; consultar fechas reales. Sin mínimo comercial. El ciclo abierto no se paga todavía y el nuevo ciclo acumula mientras se liquida el anterior. Si vence la comisión, se bloquean nuevos cobros solo de ese comercio. Si vence la mensualidad SaaS, se bloquean los de todos sus afiliados. Pagar una obligación no elimina el bloqueo de la otra. Si ya pagó, consultar el estado sin repetir el pago.
 
 **¿Puedo probar PagosYa antes de pagar?**
 Solo **MercadoYa** (puestos de mercado) y **Nia** tienen prueba gratis de 7 días. Para los demás planes no hay período de prueba gratuito. Lo que sí podés hacer, sin costo y sin registrarte: ver los videos y el material de cada plan en https://pagosya.com.bo/links, o agendar una demostración en vivo de 20 minutos con el equipo. Preguntale al lead cuál de las dos prefiere.
@@ -59,7 +67,7 @@ Solo **MercadoYa** (puestos de mercado) y **Nia** tienen prueba gratis de 7 día
 Sí. Puedes subir o bajar de plan en cualquier momento desde la sección **Suscripción** del panel. El cambio es inmediato.
 
 **¿Qué pasa si no renuevo a tiempo?**
-El sistema bloquea el acceso hasta que se renueve el plan. Los datos se conservan. Los empleados excedentes del nuevo plan quedan bloqueados automáticamente hasta renovar o ajustar el plan.
+En planes de suscripción se aplican las restricciones de vigencia hasta renovar; los datos se conservan. En Checkout Web por comisión, el atraso de una factura bloquea nuevos cobros de esa cuenta. En SaaS, la mensualidad vencida del proveedor bloquea nuevos cobros de todos sus afiliados y la comisión vencida de uno bloquea solo los suyos. No confundir estas obligaciones.
 
 ---
 
